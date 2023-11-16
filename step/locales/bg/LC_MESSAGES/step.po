@@ -9,13 +9,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgid "Next"
 msgstr "Следваща"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -24,7 +22,6 @@ msgstr ""
 "1 звезда означава, че не е много подходящо, а 5 звезди - че е много "
 "подходящо."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -38,21 +35,18 @@ msgstr ""
 "отделена, тъй като \"червено вино\" означава нещо различно от \"червено\" и "
 "\"вино\"."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add new tags that you think are missing"
 msgstr "Добавете нови етикети, които според вас липсват"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add some initial tags"
 msgstr "Добавяне на първоначални етикети"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -63,7 +57,6 @@ msgstr ""
 "След като разгледате стимула, можете да добавите свои собствени тагове, "
 "които описват стимула."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -74,28 +67,24 @@ msgstr ""
 "След като разгледате стимула, ще видите тагове от други участници, които "
 "описват стимула."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Are any tags missing?"
 msgstr "Липсват ли някакви тагове?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Creating"
 msgstr "Създаване на"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "If you are sure, you can go ahead."
 msgstr "Ако сте сигурни, можете да продължите."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -106,7 +95,6 @@ msgstr ""
 "Ако сте първото лице, което вижда стимула, може да не видите предишни "
 "тагове."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -117,157 +105,120 @@ msgstr ""
 "Ако смятате, че тагът е грешка или е напълно неуместен, трябва да го "
 "маркирате, като щракнете върху иконата за маркиране."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "In this experiment you will:"
 msgstr "В този експеримент ще:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Is it necessary to use this many whitespaces?"
 msgstr "Необходимо ли е да се използват толкова много бели полета?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Keep tags short:"
 msgstr "Поддържайте таговете кратки:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Let's start with a practice round!"
 msgstr "Нека започнем с тренировъчен кръг!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Mark the existing tags"
 msgstr "Маркирайте съществуващите тагове"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Now, let's start the main experiment!"
 msgstr "Сега нека започнем основния експеримент!"
 
-#. ""
-#: __init__.py
-#, fuzzy
-msgctxt "STEP-Tag"
-msgid "On the next page, we will check if you are a native speaker."
-msgstr "На следващата страница ще проверим дали сте носител на езика."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Please submit or delete it first."
 msgstr "Моля, първо я изпратете или я изтрийте."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rate tags from other participants"
 msgstr "Оценете тагове от други участници"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rating"
 msgstr "Оценяване"
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Submit your response for a new tag by pressing the {ENTER_KEY} key."
 msgstr "Изпратете отговора си за нов таг, като натиснете клавиша {ENTER_KEY}."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Thanks for participating in this experiment!"
 msgstr "Благодарим ви, че участвате в този експеримент!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "That was a practice round."
 msgstr "Това беше тренировъчен кръг."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "The following tags are already completed:"
 msgstr "Следващите тагове вече са завършени:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "There is still some unsubmitted text in the tag field."
 msgstr "В полето за таг все още има неизпратен текст."
 
-#. ""
-#: __init__.py
-#, python-brace-format, fuzzy
-msgctxt "STEP-Tag"
-msgid ""
-"To participate in the experiment, you must be a native speaker of "
-"{LANGUAGE}."
-msgstr ""
-"За да участвате в експеримента, трябва да сте носител на езика {LANGUAGE}."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus, that are missing above."
 msgstr "Въведете таговете, описващи стимула, които липсват по-горе."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus."
 msgstr "Въведете тагове, описващи стимула."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type more tags"
 msgstr "Въведете още тагове"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "View a stimulus and describe it with tags."
 msgstr "Прегледайте стимула и го опишете с тагове."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You can add more than one tag."
 msgstr "Можете да добавите повече от един таг."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -277,21 +228,18 @@ msgstr ""
 "Можете да избирате тагове от падащ списък или да създавате изцяло нови "
 "тагове."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to rate all tags!"
 msgstr "Трябва да оцените всички тагове!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to supply at least one new tag!"
 msgstr "Трябва да въведете поне един нов таг!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -302,14 +250,12 @@ msgstr ""
 "Трябва да оцените уместността на всеки таг, като щракнете върху съответния "
 "брой звездички."
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Your tag contains {N_WHITESPACES} whitespaces."
 msgstr "Вашият таг съдържа {N_WHITESPACES} бели полета."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"

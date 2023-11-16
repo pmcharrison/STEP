@@ -9,13 +9,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgid "Next"
 msgstr "Kitas"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -24,7 +22,6 @@ msgstr ""
 "1 žvaigždutė reiškia, kad tai nėra labai svarbu, 5 žvaigždutės reiškia, kad "
 "tai labai svarbu."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -37,21 +34,18 @@ msgstr ""
 " sudėtinio žodžio, pavyzdžiui, \"raudonasis vynas\", atskirti negalima, nes "
 "\"raudonasis vynas\" reiškia kažką kita nei \"raudonasis\" ir \"vynas\"."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add new tags that you think are missing"
 msgstr "Pridėkite naujų žymų, kurių, jūsų manymu, trūksta"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add some initial tags"
 msgstr "Pridėkite keletą pradinių žymų"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -61,7 +55,6 @@ msgid ""
 msgstr ""
 "Peržiūrėję stimulą, galite pridėti savo žymas, apibūdinančias stimulą."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -71,28 +64,24 @@ msgid ""
 msgstr ""
 "Peržiūrėję stimulą, pamatysite kitų dalyvių žymas, apibūdinančias stimulą."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Are any tags missing?"
 msgstr "Ar trūksta kokių nors žymų?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Creating"
 msgstr "Kurti"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "If you are sure, you can go ahead."
 msgstr "Jei esate tikri, galite tęsti."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -101,7 +90,6 @@ msgid ""
 "tags."
 msgstr "Jei stimulą matote pirmą kartą, galite nematyti ankstesnių žymų."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -112,156 +100,120 @@ msgstr ""
 "Jei manote, kad žyma yra klaida arba visiškai nesvarbi, turėtumėte ją "
 "pažymėti spustelėdami vėliavėlės piktogramą."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "In this experiment you will:"
 msgstr "Atlikdami šį eksperimentą jūs:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Is it necessary to use this many whitespaces?"
 msgstr "Ar būtina naudoti tiek daug baltųjų tarpų?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Keep tags short:"
 msgstr "Žymos turi būti trumpos:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Let's start with a practice round!"
 msgstr "Pradėkime nuo treniruotės!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Mark the existing tags"
 msgstr "Pažymėkite esamas žymas"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Now, let's start the main experiment!"
 msgstr "Dabar pradėkime pagrindinį eksperimentą!"
 
-#. ""
-#: __init__.py
-#, fuzzy
-msgctxt "STEP-Tag"
-msgid "On the next page, we will check if you are a native speaker."
-msgstr "Kitame puslapyje patikrinsime, ar esate gimtakalbis."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Please submit or delete it first."
 msgstr "Pirmiausia pateikite arba ištrinkite."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rate tags from other participants"
 msgstr "Įvertinkite kitų dalyvių žymes"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rating"
 msgstr "Įvertinimas"
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Submit your response for a new tag by pressing the {ENTER_KEY} key."
 msgstr "Pateikite savo atsakymą naujai žymai paspausdami {ENTER_KEY} klavišą."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Thanks for participating in this experiment!"
 msgstr "Ačiū, kad dalyvaujate šiame eksperimente!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "That was a practice round."
 msgstr "Tai buvo treniruočių raundas."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "The following tags are already completed:"
 msgstr "Šios žymos jau baigtos:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "There is still some unsubmitted text in the tag field."
 msgstr "Žymos lauke vis dar yra nepateikto teksto."
 
-#. ""
-#: __init__.py
-#, python-brace-format, fuzzy
-msgctxt "STEP-Tag"
-msgid ""
-"To participate in the experiment, you must be a native speaker of "
-"{LANGUAGE}."
-msgstr "Norėdami dalyvauti eksperimente, turite mokėti {LANGUAGE}."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus, that are missing above."
 msgstr "Įveskite stimulą apibūdinančias žymas, kurių trūksta aukščiau."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus."
 msgstr "Įveskite stimulą apibūdinančias žymas."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type more tags"
 msgstr "Įveskite daugiau žymų"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "View a stimulus and describe it with tags."
 msgstr "Peržiūrėkite stimulą ir aprašykite jį žymėmis."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You can add more than one tag."
 msgstr "Galite pridėti daugiau nei vieną žymą."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -271,21 +223,18 @@ msgstr ""
 "Žymas galite pasirinkti iš išskleidžiamojo sąrašo arba sukurti visiškai "
 "naujas."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to rate all tags!"
 msgstr "Turite įvertinti visas žymas!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to supply at least one new tag!"
 msgstr "Turite pateikti bent vieną naują žymą!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -296,14 +245,12 @@ msgstr ""
 "Turite įvertinti kiekvienos žymės tinkamumą, spustelėdami atitinkamą "
 "žvaigždučių skaičių."
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Your tag contains {N_WHITESPACES} whitespaces."
 msgstr "Jūsų žyma turi {N_WHITESPACES} baltųjų tarpų."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"

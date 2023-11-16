@@ -9,20 +9,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgid "Next"
 msgstr "Επόμενο"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "1 star means not very relevant, 5 stars means very relevant."
 msgstr "1 αστέρι σημαίνει όχι πολύ σχετικό, 5 αστέρια σημαίνει πολύ σχετικό."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -36,21 +33,18 @@ msgstr ""
 "δεν μπορεί να διαχωριστεί, δεδομένου ότι το \"κόκκινο κρασί\" σημαίνει κάτι "
 "διαφορετικό από το \"κόκκινο\" και το \"κρασί\"."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add new tags that you think are missing"
 msgstr "Προσθέστε νέες ετικέτες που πιστεύετε ότι λείπουν"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add some initial tags"
 msgstr "Προσθέστε μερικές αρχικές ετικέτες"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -61,7 +55,6 @@ msgstr ""
 "Αφού δείτε το ερέθισμα, μπορείτε να προσθέσετε τις δικές σας ετικέτες που "
 "περιγράφουν το ερέθισμα."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -72,28 +65,24 @@ msgstr ""
 "Αφού δείτε το ερέθισμα, θα δείτε ετικέτες από άλλους συμμετέχοντες που "
 "περιγράφουν το ερέθισμα."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Are any tags missing?"
 msgstr "Λείπουν κάποιες ετικέτες;"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Creating"
 msgstr "Δημιουργία του"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "If you are sure, you can go ahead."
 msgstr "Εάν είστε σίγουροι, μπορείτε να προχωρήσετε."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -104,7 +93,6 @@ msgstr ""
 "Εάν είστε το πρώτο άτομο που βλέπει το ερέθισμα, ενδέχεται να μην δείτε "
 "προηγούμενες ετικέτες."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -115,77 +103,60 @@ msgstr ""
 "Εάν πιστεύετε ότι η ετικέτα είναι λάθος ή εντελώς άσχετη, θα πρέπει να την "
 "επισημάνετε κάνοντας κλικ στο εικονίδιο της επισήμανσης."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "In this experiment you will:"
 msgstr "Σε αυτό το πείραμα θα:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Is it necessary to use this many whitespaces?"
 msgstr "Είναι απαραίτητο να χρησιμοποιείτε τόσα πολλά κενά διαστήματα;"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Keep tags short:"
 msgstr "Να κρατάτε τις ετικέτες σύντομες:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Let's start with a practice round!"
 msgstr "Ας ξεκινήσουμε με έναν γύρο εξάσκησης!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Mark the existing tags"
 msgstr "Σημειώστε τις υπάρχουσες ετικέτες"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Now, let's start the main experiment!"
 msgstr "Τώρα, ας ξεκινήσουμε το κύριο πείραμα!"
 
-#. ""
-#: __init__.py
-#, fuzzy
-msgctxt "STEP-Tag"
-msgid "On the next page, we will check if you are a native speaker."
-msgstr "Στην επόμενη σελίδα, θα ελέγξουμε αν είστε φυσικός ομιλητής."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Please submit or delete it first."
 msgstr "Σας παρακαλούμε να το υποβάλετε ή να το διαγράψετε πρώτα."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rate tags from other participants"
 msgstr "Βαθμολογήστε τις ετικέτες των άλλων συμμετεχόντων"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rating"
 msgstr "Αξιολόγηση"
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
@@ -194,46 +165,30 @@ msgstr ""
 "Υποβάλετε την απάντησή σας για μια νέα ετικέτα πατώντας το πλήκτρο "
 "{ENTER_KEY}."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Thanks for participating in this experiment!"
 msgstr "Ευχαριστούμε για τη συμμετοχή σας σε αυτό το πείραμα!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "That was a practice round."
 msgstr "Αυτός ήταν ένας γύρος εξάσκησης."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "The following tags are already completed:"
 msgstr "Οι ακόλουθες ετικέτες έχουν ήδη ολοκληρωθεί:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "There is still some unsubmitted text in the tag field."
 msgstr "Υπάρχει ακόμη κάποιο μη υποβληθέν κείμενο στο πεδίο της ετικέτας."
 
-#. ""
-#: __init__.py
-#, python-brace-format, fuzzy
-msgctxt "STEP-Tag"
-msgid ""
-"To participate in the experiment, you must be a native speaker of "
-"{LANGUAGE}."
-msgstr ""
-"Για να συμμετάσχετε στο πείραμα, πρέπει να είστε φυσικός ομιλητής της "
-"{LANGUAGE}."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -242,35 +197,30 @@ msgstr ""
 "Πληκτρολογήστε ετικέτες που περιγράφουν το ερέθισμα, οι οποίες λείπουν "
 "παραπάνω."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus."
 msgstr "Πληκτρολογήστε ετικέτες που περιγράφουν το ερέθισμα."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type more tags"
 msgstr "Πληκτρολογήστε περισσότερες ετικέτες"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "View a stimulus and describe it with tags."
 msgstr "Δείτε ένα ερέθισμα και περιγράψτε το με ετικέτες."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You can add more than one tag."
 msgstr "Μπορείτε να προσθέσετε περισσότερες από μία ετικέτες."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -280,21 +230,18 @@ msgstr ""
 "Μπορείτε είτε να επιλέξετε ετικέτες από μια αναπτυσσόμενη λίστα είτε να "
 "δημιουργήσετε εντελώς νέες."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to rate all tags!"
 msgstr "Πρέπει να βαθμολογήσετε όλες τις ετικέτες!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to supply at least one new tag!"
 msgstr "Πρέπει να δώσετε τουλάχιστον μία νέα ετικέτα!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -305,14 +252,12 @@ msgstr ""
 "Θα πρέπει να αξιολογήσετε τη συνάφεια κάθε ετικέτας κάνοντας κλικ στην "
 "κατάλληλη ποσότητα αστεριών."
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Your tag contains {N_WHITESPACES} whitespaces."
 msgstr "Η ετικέτα σας περιέχει {N_WHITESPACES} κενά διαστήματα."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"

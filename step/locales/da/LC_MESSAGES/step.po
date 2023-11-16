@@ -9,13 +9,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgid "Next"
 msgstr "Næste"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -23,7 +21,6 @@ msgid "1 star means not very relevant, 5 stars means very relevant."
 msgstr ""
 "1 stjerne betyder ikke særlig relevant, 5 stjerner betyder meget relevant."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -36,21 +33,18 @@ msgstr ""
 " sammensat ord som 'rødvin' ikke kan adskilles, da 'rødvin' betyder noget "
 "andet end bare 'rød' og 'vin'."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add new tags that you think are missing"
 msgstr "Tilføj nye tags, som du synes mangler"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add some initial tags"
 msgstr "Tilføj nogle indledende tags"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -61,7 +55,6 @@ msgstr ""
 "Når du har set stimulus, kan du tilføje dine egne tags, der beskriver "
 "stimulus."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -72,28 +65,24 @@ msgstr ""
 "Når du har set stimulus, vil du se tags fra andre deltagere, som beskriver "
 "stimulus."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Are any tags missing?"
 msgstr "Mangler der nogle tags?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Creating"
 msgstr "Oprettelse"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "If you are sure, you can go ahead."
 msgstr "Hvis du er sikker, kan du gå i gang."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -103,7 +92,6 @@ msgid ""
 msgstr ""
 "Hvis du er den første, der ser stimulus, ser du måske ingen tidligere tags."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -114,156 +102,120 @@ msgstr ""
 "Hvis du mener, at tagget er en fejl eller helt irrelevant, skal du markere "
 "det ved at klikke på flagikonet."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "In this experiment you will:"
 msgstr "I dette eksperiment vil du:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Is it necessary to use this many whitespaces?"
 msgstr "Er det nødvendigt at bruge så mange whitespaces?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Keep tags short:"
 msgstr "Hold tags korte:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Let's start with a practice round!"
 msgstr "Lad os starte med en øvelsesrunde!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Mark the existing tags"
 msgstr "Markér de eksisterende tags"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Now, let's start the main experiment!"
 msgstr "Lad os nu starte hovedeksperimentet!"
 
-#. ""
-#: __init__.py
-#, fuzzy
-msgctxt "STEP-Tag"
-msgid "On the next page, we will check if you are a native speaker."
-msgstr "På den næste side tjekker vi, om du er modersmålstalende."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Please submit or delete it first."
 msgstr "Indsend eller slet den venligst først."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rate tags from other participants"
 msgstr "Bedøm tags fra andre deltagere"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rating"
 msgstr "Vurdering"
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Submit your response for a new tag by pressing the {ENTER_KEY} key."
 msgstr "Indsend dit svar til et nyt tag ved at trykke på {ENTER_KEY}-tasten."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Thanks for participating in this experiment!"
 msgstr "Tak, fordi du deltog i dette eksperiment!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "That was a practice round."
 msgstr "Det var en øvelsesrunde."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "The following tags are already completed:"
 msgstr "De følgende tags er allerede færdige:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "There is still some unsubmitted text in the tag field."
 msgstr "Der er stadig noget uafleveret tekst i tag-feltet."
 
-#. ""
-#: __init__.py
-#, python-brace-format, fuzzy
-msgctxt "STEP-Tag"
-msgid ""
-"To participate in the experiment, you must be a native speaker of "
-"{LANGUAGE}."
-msgstr "For at deltage i eksperimentet skal du have {LANGUAGE} som modersmål."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus, that are missing above."
 msgstr "Skriv de tags, der beskriver stimulus, som mangler ovenfor."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus."
 msgstr "Skriv tags, der beskriver stimulus."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type more tags"
 msgstr "Skriv flere tags"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "View a stimulus and describe it with tags."
 msgstr "Se en stimulus, og beskriv den med tags."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You can add more than one tag."
 msgstr "Du kan tilføje mere end ét tag."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -271,21 +223,18 @@ msgid ""
 "You can either select tags from a dropdown list or create entirely new ones."
 msgstr "Du kan enten vælge tags fra en dropdown-liste eller oprette helt nye."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to rate all tags!"
 msgstr "Du skal vurdere alle tags!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to supply at least one new tag!"
 msgstr "Du skal tilføje mindst ét nyt tag!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -296,14 +245,12 @@ msgstr ""
 "Du skal bedømme relevansen af hvert tag ved at klikke på det passende antal "
 "stjerner."
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Your tag contains {N_WHITESPACES} whitespaces."
 msgstr "Dit tag indeholder {N_WHITESPACES} mellemrum."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"

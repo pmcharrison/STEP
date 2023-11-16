@@ -9,13 +9,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgid "Next"
 msgstr "Järgmine"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -24,7 +22,6 @@ msgstr ""
 "1 tärn tähendab, et see ei ole väga oluline, 5 tärni tähendab, et see on "
 "väga oluline."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -38,21 +35,18 @@ msgstr ""
 "sest \"punane vein\" tähendab midagi muud kui lihtsalt \"punane\" ja "
 "\"vein\"."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add new tags that you think are missing"
 msgstr "Lisage uued sildid, mis teie arvates puuduvad"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add some initial tags"
 msgstr "Lisage mõned esialgsed sildid"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -63,7 +57,6 @@ msgstr ""
 "Pärast stiimuli vaatamist saate lisada oma sildid, mis kirjeldavad "
 "stiimulit."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -74,28 +67,24 @@ msgstr ""
 "Pärast stiimuli vaatamist näete teiste osalejate sildid, mis kirjeldavad "
 "stiimulit."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Are any tags missing?"
 msgstr "Kas mõni silt on puudu?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Creating"
 msgstr "Luua"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "If you are sure, you can go ahead."
 msgstr "Kui olete kindel, võite jätkata."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -106,7 +95,6 @@ msgstr ""
 "Kui te olete esimene inimene, kes stiimulit näeb, ei pruugi te näha "
 "eelnevaid silte."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -117,158 +105,120 @@ msgstr ""
 "Kui te arvate, et silt on viga või täiesti ebaoluline, peaksite selle "
 "märkima, klõpsates lipu ikoonile."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "In this experiment you will:"
 msgstr "Selles eksperimendis saate:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Is it necessary to use this many whitespaces?"
 msgstr "Kas on vaja kasutada nii palju valgeid tühikuid?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Keep tags short:"
 msgstr "Hoidke sildid lühikesed:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Let's start with a practice round!"
 msgstr "Alustame harjutusvooruga!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Mark the existing tags"
 msgstr "Märgistage olemasolevad sildid"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Now, let's start the main experiment!"
 msgstr "Alustame nüüd põhieksperimenti!"
 
-#. ""
-#: __init__.py
-#, fuzzy
-msgctxt "STEP-Tag"
-msgid "On the next page, we will check if you are a native speaker."
-msgstr "Järgmisel leheküljel kontrollime, kas te olete emakeelne kõneleja."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Please submit or delete it first."
 msgstr "Palun esitage või kustutage see kõigepealt."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rate tags from other participants"
 msgstr "Hinda teiste osalejate sildid"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rating"
 msgstr "Hindamine"
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Submit your response for a new tag by pressing the {ENTER_KEY} key."
 msgstr "Esitage oma vastus uue sildi jaoks, vajutades klahvi {ENTER_KEY}."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Thanks for participating in this experiment!"
 msgstr "Täname eksperimendis osalemise eest!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "That was a practice round."
 msgstr "See oli prooviring."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "The following tags are already completed:"
 msgstr "Järgmised sildid on juba valmis:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "There is still some unsubmitted text in the tag field."
 msgstr "Sildi väljal on veel esitamata teksti."
 
-#. ""
-#: __init__.py
-#, python-brace-format, fuzzy
-msgctxt "STEP-Tag"
-msgid ""
-"To participate in the experiment, you must be a native speaker of "
-"{LANGUAGE}."
-msgstr ""
-"Eksperimendis osalemiseks peate olema {LANGUAGE} keelt emakeelena rääkiv "
-"inimene."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus, that are missing above."
 msgstr "Kirjutage sildid, mis kirjeldavad stiimulit, mis on eespool puudu."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus."
 msgstr "Sisestage stiimulit kirjeldavad sildid."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type more tags"
 msgstr "Sisestage veel sildid"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "View a stimulus and describe it with tags."
 msgstr "Vaadake stiimulit ja kirjeldage seda siltidega."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You can add more than one tag."
 msgstr "Võite lisada rohkem kui ühe sildi."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -276,21 +226,18 @@ msgid ""
 "You can either select tags from a dropdown list or create entirely new ones."
 msgstr "Saate valida sildid kas rippmenüüst või luua täiesti uued sildid."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to rate all tags!"
 msgstr "Te peate hindama kõiki silte!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to supply at least one new tag!"
 msgstr "Te peate esitama vähemalt ühe uue sildi!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -300,14 +247,12 @@ msgid ""
 msgstr ""
 "Te peate hindama iga sildi asjakohasust, klõpsates sobiva arvu tärnidega."
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Your tag contains {N_WHITESPACES} whitespaces."
 msgstr "Teie silt sisaldab {N_WHITESPACES} valgeid tühikuid."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"

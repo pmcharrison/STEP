@@ -9,20 +9,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgid "Next"
 msgstr "Volgende"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "1 star means not very relevant, 5 stars means very relevant."
 msgstr "1 ster betekent niet erg relevant, 5 sterren betekent zeer relevant."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -35,21 +32,18 @@ msgstr ""
 "'gras', terwijl een samengesteld woord als 'rode wijn' niet gescheiden kan "
 "worden, omdat 'rode wijn' iets anders betekent dan alleen 'rood' en 'wijn'."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add new tags that you think are missing"
 msgstr "Nieuwe tags toevoegen waarvan u denkt dat ze ontbreken"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add some initial tags"
 msgstr "Enkele initiële tags toevoegen"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -60,7 +54,6 @@ msgstr ""
 "Nadat u de stimulus bekeken hebt, kunt u uw eigen tags toevoegen die de "
 "stimulus beschrijven."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -71,28 +64,24 @@ msgstr ""
 "Na het bekijken van de stimulus ziet u tags van andere deelnemers die de "
 "stimulus beschrijven."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Are any tags missing?"
 msgstr "Ontbreken er tags?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Creating"
 msgstr "aanmaken"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "If you are sure, you can go ahead."
 msgstr "Als u het zeker weet, kunt u doorgaan."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -103,7 +92,6 @@ msgstr ""
 "Als u de eerste persoon bent die de stimulus ziet, kan het zijn dat u geen "
 "eerdere tags ziet."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -114,78 +102,60 @@ msgstr ""
 "Als u denkt dat de tag een vergissing is of volledig irrelevant, moet u deze"
 " markeren door op het vlag-pictogram te klikken."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "In this experiment you will:"
 msgstr "In dit experiment zult u:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Is it necessary to use this many whitespaces?"
 msgstr "Is het nodig om zoveel witregels te gebruiken?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Keep tags short:"
 msgstr "Houd tags kort:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Let's start with a practice round!"
 msgstr "Laten we beginnen met een oefenronde!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Mark the existing tags"
 msgstr "Markeer de bestaande tags"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Now, let's start the main experiment!"
 msgstr "Laten we nu beginnen met het hoofdexperiment!"
 
-#. ""
-#: __init__.py
-#, fuzzy
-msgctxt "STEP-Tag"
-msgid "On the next page, we will check if you are a native speaker."
-msgstr ""
-"Op de volgende pagina zullen we controleren of u een moedertaalspreker bent."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Please submit or delete it first."
 msgstr "Gelieve deze eerst in te sturen of te verwijderen."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rate tags from other participants"
 msgstr "Beoordeel tags van andere deelnemers"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rating"
 msgstr "Beoordeling"
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
@@ -194,46 +164,30 @@ msgstr ""
 "Geef uw antwoord voor een nieuwe tag door op de {ENTER_KEY} toets te "
 "drukken."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Thanks for participating in this experiment!"
 msgstr "Bedankt voor uw deelname aan dit experiment!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "That was a practice round."
 msgstr "Dat was een oefenronde."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "The following tags are already completed:"
 msgstr "De volgende tags zijn al voltooid:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "There is still some unsubmitted text in the tag field."
 msgstr "Er staat nog niet-ingevulde tekst in het tag-veld."
 
-#. ""
-#: __init__.py
-#, python-brace-format, fuzzy
-msgctxt "STEP-Tag"
-msgid ""
-"To participate in the experiment, you must be a native speaker of "
-"{LANGUAGE}."
-msgstr ""
-"Om deel te nemen aan het experiment, moet u een moedertaalspreker zijn van "
-"{LANGUAGE}."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -241,35 +195,30 @@ msgid "Type in tags describing the stimulus, that are missing above."
 msgstr ""
 "Typ tags in die de stimulus beschrijven, maar die hierboven ontbreken."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus."
 msgstr "Typ tags die de stimulus beschrijven."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type more tags"
 msgstr "Typ meer tags"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "View a stimulus and describe it with tags."
 msgstr "Bekijk een stimulus en beschrijf deze met tags."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You can add more than one tag."
 msgstr "U kunt meer dan één tag toevoegen."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -279,21 +228,18 @@ msgstr ""
 "U kunt tags uit een vervolgkeuzelijst selecteren of geheel nieuwe tags "
 "aanmaken."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to rate all tags!"
 msgstr "U moet alle tags beoordelen!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to supply at least one new tag!"
 msgstr "U moet minstens één nieuwe tag toevoegen!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -304,14 +250,12 @@ msgstr ""
 "U moet de relevantie van elke tag beoordelen door het juiste aantal sterren "
 "aan te klikken."
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Your tag contains {N_WHITESPACES} whitespaces."
 msgstr "Uw tag bevat {N_WHITESPACES} witregels."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"

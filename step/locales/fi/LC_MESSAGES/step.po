@@ -9,13 +9,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgid "Next"
 msgstr "Seuraava"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -24,7 +22,6 @@ msgstr ""
 "1 tähti tarkoittaa, että asia ei ole kovin tärkeä, 5 tähteä tarkoittaa, että"
 " asia on erittäin tärkeä."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -38,21 +35,18 @@ msgstr ""
 "toisistaan, koska \"punaviini\" tarkoittaa jotain muuta kuin vain "
 "\"punainen\" ja \"viini\"."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add new tags that you think are missing"
 msgstr "Lisää uusia tunnisteita, jotka mielestäsi puuttuvat"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add some initial tags"
 msgstr "Lisää alkuperäisiä tunnisteita"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -63,7 +57,6 @@ msgstr ""
 "Kun olet katsonut ärsykkeen, voit lisätä omia tunnisteita, jotka kuvaavat "
 "ärsykettä."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -74,28 +67,24 @@ msgstr ""
 "Kun olet katsonut ärsykkeen, näet muiden osallistujien tunnisteita, jotka "
 "kuvaavat ärsykettä."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Are any tags missing?"
 msgstr "Puuttuuko joitakin tunnisteita?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Creating"
 msgstr "Luominen"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "If you are sure, you can go ahead."
 msgstr "Jos olet varma, voit jatkaa."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -106,7 +95,6 @@ msgstr ""
 "Jos olet ensimmäinen henkilö, joka näkee ärsykkeen, et ehkä näe aiempia "
 "tunnisteita."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -117,157 +105,120 @@ msgstr ""
 "Jos tunniste on mielestäsi virheellinen tai täysin epäolennainen, merkitse "
 "se napsauttamalla lippukuvaketta."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "In this experiment you will:"
 msgstr "Tässä kokeessa sinä:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Is it necessary to use this many whitespaces?"
 msgstr "Onko tarpeen käyttää näin paljon välilyöntejä?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Keep tags short:"
 msgstr "Pidä tunnisteet lyhyinä:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Let's start with a practice round!"
 msgstr "Aloitetaan harjoituskierroksella!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Mark the existing tags"
 msgstr "Merkitse olemassa olevat tunnisteet"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Now, let's start the main experiment!"
 msgstr "Aloitetaan nyt varsinainen kokeilu!"
 
-#. ""
-#: __init__.py
-#, fuzzy
-msgctxt "STEP-Tag"
-msgid "On the next page, we will check if you are a native speaker."
-msgstr "Seuraavalla sivulla tarkistetaan, oletko äidinkielinen puhuja."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Please submit or delete it first."
 msgstr "Lähetä tai poista se ensin."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rate tags from other participants"
 msgstr "Arvioi muiden osallistujien tunnisteita"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rating"
 msgstr "Arviointi"
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Submit your response for a new tag by pressing the {ENTER_KEY} key."
 msgstr "Lähetä vastauksesi uudelle tagille painamalla {ENTER_KEY}-näppäintä."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Thanks for participating in this experiment!"
 msgstr "Kiitos osallistumisesta tähän kokeeseen!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "That was a practice round."
 msgstr "Se oli harjoituskierros."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "The following tags are already completed:"
 msgstr "Seuraavat tunnisteet ovat jo valmiita:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "There is still some unsubmitted text in the tag field."
 msgstr "Tag-kentässä on vielä lähettämätöntä tekstiä."
 
-#. ""
-#: __init__.py
-#, python-brace-format, fuzzy
-msgctxt "STEP-Tag"
-msgid ""
-"To participate in the experiment, you must be a native speaker of "
-"{LANGUAGE}."
-msgstr ""
-"Osallistuaksesi kokeeseen sinun on puhuttava äidinkielenäsi {LANGUAGE}."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus, that are missing above."
 msgstr "Kirjoita ärsykettä kuvaavat tunnisteet, jotka puuttuvat edellä."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus."
 msgstr "Kirjoita ärsykettä kuvaavat tunnisteet."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type more tags"
 msgstr "Kirjoita lisää tunnisteita"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "View a stimulus and describe it with tags."
 msgstr "Näytä ärsyke ja kuvaile sitä tunnisteilla."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You can add more than one tag."
 msgstr "Voit lisätä useamman kuin yhden tunnisteen."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -277,21 +228,18 @@ msgstr ""
 "Voit joko valita tunnisteita pudotusvalikosta tai luoda kokonaan uusia "
 "tunnisteita."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to rate all tags!"
 msgstr "Sinun on arvioitava kaikki tunnisteet!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to supply at least one new tag!"
 msgstr "Sinun on annettava vähintään yksi uusi tunniste!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -302,14 +250,12 @@ msgstr ""
 "Sinun on arvioitava kunkin tunnisteen merkityksellisyys klikkaamalla sopivaa"
 " määrää tähtiä."
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Your tag contains {N_WHITESPACES} whitespaces."
 msgstr "Tagisi sisältää {N_WHITESPACES} välilyöntejä."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"

@@ -9,13 +9,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgid "Next"
 msgstr "Nächste"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -23,7 +21,6 @@ msgid "1 star means not very relevant, 5 stars means very relevant."
 msgstr ""
 "1 Stern bedeutet nicht sehr relevant, 5 Sterne bedeuten sehr relevant."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -36,21 +33,18 @@ msgstr ""
 "werden, während ein zusammengesetztes Wort wie 'Rotwein' nicht getrennt "
 "werden kann, da 'Rotwein' etwas anderes bedeutet als nur 'rot' und 'Wein'."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add new tags that you think are missing"
 msgstr "Fügen Sie neue Tags hinzu, die Ihrer Meinung nach fehlen"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add some initial tags"
 msgstr "Fügen Sie einige erste Tags hinzu"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -61,7 +55,6 @@ msgstr ""
 "Nachdem Sie den Stimulus angesehen haben, können Sie Ihre eigenen Tags "
 "hinzufügen, die den Stimulus beschreiben."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -72,28 +65,24 @@ msgstr ""
 "Nachdem Sie sich den Stimulus angesehen haben, sehen Sie Tags von anderen "
 "Teilnehmern, die den Stimulus beschreiben."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Are any tags missing?"
 msgstr "Fehlen irgendwelche Tags?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Creating"
 msgstr "erstellen"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "If you are sure, you can go ahead."
 msgstr "Wenn Sie sich sicher sind, können Sie fortfahren."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -104,7 +93,6 @@ msgstr ""
 "Wenn Sie die erste Person sind, die den Stimulus sieht, sehen Sie "
 "möglicherweise keine vorherigen Tags."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -116,79 +104,60 @@ msgstr ""
 "irrelevant ist, sollten Sie sie markieren, indem Sie auf das "
 "Markierungssymbol klicken."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "In this experiment you will:"
 msgstr "In diesem Experiment werden Sie:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Is it necessary to use this many whitespaces?"
 msgstr "Ist es notwendig, so viele Leerzeichen zu verwenden?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Keep tags short:"
 msgstr "Halten Sie Tags kurz:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Let's start with a practice round!"
 msgstr "Lassen Sie uns mit einer Übungsrunde beginnen!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Mark the existing tags"
 msgstr "Markieren Sie die vorhandenen Tags"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Now, let's start the main experiment!"
 msgstr "Beginnen wir nun mit dem eigentlichen Experiment!"
 
-#. ""
-#: __init__.py
-#, fuzzy
-msgctxt "STEP-Tag"
-msgid "On the next page, we will check if you are a native speaker."
-msgstr ""
-"Auf der nächsten Seite werden wir überprüfen, ob Sie ein Muttersprachler "
-"sind."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Please submit or delete it first."
 msgstr "Bitte geben Sie sie zuerst ab oder löschen Sie sie."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rate tags from other participants"
 msgstr "Bewerten Sie Tags von anderen Teilnehmern"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rating"
 msgstr "Bewertung"
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
@@ -197,46 +166,30 @@ msgstr ""
 "Senden Sie Ihre Antwort für einen neuen Tag, indem Sie die Taste {ENTER_KEY}"
 " drücken."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Thanks for participating in this experiment!"
 msgstr "Vielen Dank für Ihre Teilnahme an diesem Experiment!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "That was a practice round."
 msgstr "Das war eine Übungsrunde."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "The following tags are already completed:"
 msgstr "Die folgenden Tags sind bereits fertiggestellt:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "There is still some unsubmitted text in the tag field."
 msgstr "Im Tag-Feld befindet sich noch nicht abgeschickter Text."
 
-#. ""
-#: __init__.py
-#, python-brace-format, fuzzy
-msgctxt "STEP-Tag"
-msgid ""
-"To participate in the experiment, you must be a native speaker of "
-"{LANGUAGE}."
-msgstr ""
-"Um an dem Experiment teilzunehmen, müssen Sie Muttersprachler der {LANGUAGE}"
-" sein."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -244,35 +197,30 @@ msgid "Type in tags describing the stimulus, that are missing above."
 msgstr ""
 "Geben Sie die Tags ein, die den Stimulus beschreiben und die oben fehlen."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus."
 msgstr "Geben Sie Tags ein, die den Stimulus beschreiben."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type more tags"
 msgstr "Geben Sie weitere Tags ein"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "View a stimulus and describe it with tags."
 msgstr "Sehen Sie sich einen Stimulus an und beschreiben Sie ihn mit Tags."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You can add more than one tag."
 msgstr "Sie können mehr als ein Tag hinzufügen."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -282,21 +230,18 @@ msgstr ""
 "Sie können entweder Tags aus einer Dropdown-Liste auswählen oder ganz neue "
 "Tags erstellen."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to rate all tags!"
 msgstr "Sie müssen alle Tags bewerten!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to supply at least one new tag!"
 msgstr "Sie müssen mindestens ein neues Schlagwort eingeben!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -307,14 +252,12 @@ msgstr ""
 "Sie sollten die Relevanz jedes Tags bewerten, indem Sie die entsprechende "
 "Anzahl von Sternen anklicken."
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Your tag contains {N_WHITESPACES} whitespaces."
 msgstr "Ihr Tag enthält {N_WHITESPACES} Leerzeichen."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"

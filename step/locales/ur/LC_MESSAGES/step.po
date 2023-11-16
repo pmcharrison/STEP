@@ -9,20 +9,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgid "Next"
 msgstr "اگلے"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "1 star means not very relevant, 5 stars means very relevant."
 msgstr "1 ستارے کا مطلب بہت متعلقہ نہیں ہے، 5 ستاروں کا مطلب ہے بہت متعلقہ۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -35,21 +32,18 @@ msgstr ""
 " 'ریڈ وائن' جیسے مرکب لفظ کو الگ نہیں کیا جاسکتا، کیونکہ 'ریڈ وائن' کا مطلب "
 "صرف 'سرخ' اور 'شراب' سے مختلف ہے '"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add new tags that you think are missing"
 msgstr "نئے ٹیگز شامل کریں جو آپ کے خیال میں غائب ہیں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add some initial tags"
 msgstr "کچھ ابتدائی ٹیگز شامل کریں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -60,7 +54,6 @@ msgstr ""
 "محرک کو دیکھنے کے بعد، آپ اپنے ٹیگز شامل کر سکتے ہیں جو محرک کو بیان کرتے "
 "ہیں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -71,28 +64,24 @@ msgstr ""
 "محرک کو دیکھنے کے بعد، آپ کو دوسرے شرکاء کے ٹیگ نظر آئیں گے جو محرک کو بیان "
 "کرتے ہیں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Are any tags missing?"
 msgstr "کیا کوئی ٹیگ غائب ہیں؟"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Creating"
 msgstr "تخلیق کرنا"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "If you are sure, you can go ahead."
 msgstr "اگر آپ کو یقین ہے تو آپ آگے بڑھ سکتے ہیں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -103,7 +92,6 @@ msgstr ""
 "اگر آپ محرک کو دیکھنے والے پہلے شخص ہیں، تو ہو سکتا ہے آپ کو کوئی پچھلا ٹیگ "
 "نظر نہ آئے۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -114,157 +102,120 @@ msgstr ""
 "اگر آپ کو لگتا ہے کہ ٹیگ ایک غلطی ہے یا مکمل طور پر غیر متعلقہ ہے، تو آپ کو "
 "پرچم کے آئیکن پر کلک کرکے اسے جھنڈا لگانا چاہیے۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "In this experiment you will:"
 msgstr "اس تجربے میں آپ کریں گے:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Is it necessary to use this many whitespaces?"
 msgstr "کیا یہ بہت ساری خالی جگہوں کو استعمال کرنا ضروری ہے؟"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Keep tags short:"
 msgstr "ٹیگز کو مختصر رکھیں:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Let's start with a practice round!"
 msgstr "آئیے ایک پریکٹس راؤنڈ کے ساتھ شروع کریں!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Mark the existing tags"
 msgstr "موجودہ ٹیگز کو نشان زد کریں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Now, let's start the main experiment!"
 msgstr "اب، آئیے اہم تجربہ شروع کریں!"
 
-#. ""
-#: __init__.py
-#, fuzzy
-msgctxt "STEP-Tag"
-msgid "On the next page, we will check if you are a native speaker."
-msgstr "اگلے صفحے پر، ہم چیک کریں گے کہ آیا آپ مقامی بولنے والے ہیں۔"
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Please submit or delete it first."
 msgstr "براہ کرم پہلے اسے جمع کروائیں یا حذف کریں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rate tags from other participants"
 msgstr "دوسرے شرکاء کے ٹیگز کی درجہ بندی کریں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rating"
 msgstr "درجہ بندی"
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Submit your response for a new tag by pressing the {ENTER_KEY} key."
 msgstr "{ENTER_KEY} کلید دبا کر نئے ٹیگ کے لیے اپنا جواب جمع کروائیں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Thanks for participating in this experiment!"
 msgstr "اس تجربے میں حصہ لینے کا شکریہ!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "That was a practice round."
 msgstr "یہ ایک پریکٹس راؤنڈ تھا۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "The following tags are already completed:"
 msgstr "درج ذیل ٹیگز پہلے ہی مکمل ہو چکے ہیں:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "There is still some unsubmitted text in the tag field."
 msgstr "ٹیگ فیلڈ میں اب بھی کچھ غیر جمع شدہ متن موجود ہے۔"
 
-#. ""
-#: __init__.py
-#, python-brace-format, fuzzy
-msgctxt "STEP-Tag"
-msgid ""
-"To participate in the experiment, you must be a native speaker of "
-"{LANGUAGE}."
-msgstr ""
-"تجربے میں حصہ لینے کے لیے، آپ کو {LANGUAGE} کا مقامی بولنے والا ہونا چاہیے۔"
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus, that are missing above."
 msgstr "محرک کو بیان کرنے والے ٹیگز میں ٹائپ کریں، جو اوپر غائب ہیں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus."
 msgstr "محرک کو بیان کرنے والے ٹیگز میں ٹائپ کریں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type more tags"
 msgstr "مزید ٹیگز ٹائپ کریں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "View a stimulus and describe it with tags."
 msgstr "ایک محرک دیکھیں اور اسے ٹیگز کے ساتھ بیان کریں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You can add more than one tag."
 msgstr "آپ ایک سے زیادہ ٹیگ شامل کر سکتے ہیں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -274,21 +225,18 @@ msgstr ""
 "آپ یا تو ڈراپ ڈاؤن فہرست سے ٹیگز منتخب کر سکتے ہیں یا بالکل نئے بنا سکتے "
 "ہیں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to rate all tags!"
 msgstr "آپ کو تمام ٹیگز کی درجہ بندی کرنے کی ضرورت ہے!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to supply at least one new tag!"
 msgstr "آپ کو کم از کم ایک نیا ٹیگ فراہم کرنے کی ضرورت ہے!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -299,14 +247,12 @@ msgstr ""
 "آپ کو ستاروں کی مناسب مقدار پر کلک کرکے ہر ٹیگ کی مطابقت کی درجہ بندی کرنی "
 "چاہیے۔"
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Your tag contains {N_WHITESPACES} whitespaces."
 msgstr "آپ کے ٹیگ میں {N_WHITESPACES} خالی جگہیں ہیں۔"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"

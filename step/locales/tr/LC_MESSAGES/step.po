@@ -9,13 +9,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgid "Next"
 msgstr "Sonraki"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -23,7 +21,6 @@ msgid "1 star means not very relevant, 5 stars means very relevant."
 msgstr ""
 "1 yıldız pek alakalı değil, 5 yıldız ise çok alakalı anlamına gelmektedir."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -36,21 +33,18 @@ msgstr ""
 "sunulmalıdır, ancak 'kırmızı şarap' gibi bileşik bir kelime ayrılamaz, çünkü"
 " 'kırmızı şarap' sadece 'kırmızı' ve 'şarap'tan farklı bir şey ifade eder."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add new tags that you think are missing"
 msgstr "Eksik olduğunu düşündüğünüz yeni etiketler ekleyin"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add some initial tags"
 msgstr "Bazı başlangıç etiketleri ekleyin"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -61,7 +55,6 @@ msgstr ""
 "Uyaranı görüntüledikten sonra, uyaranı tanımlayan kendi etiketlerinizi "
 "ekleyebilirsiniz."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -72,28 +65,24 @@ msgstr ""
 "Uyaranı görüntüledikten sonra, diğer katılımcıların uyaranı tanımlayan "
 "etiketlerini göreceksiniz."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Are any tags missing?"
 msgstr "Eksik etiket var mı?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Creating"
 msgstr "Oluşturma"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "If you are sure, you can go ahead."
 msgstr "Eğer eminseniz devam edebilirsiniz."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -103,7 +92,6 @@ msgid ""
 msgstr ""
 "Uyaranı ilk gören kişi sizseniz, önceki etiketleri göremeyebilirsiniz."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -114,156 +102,120 @@ msgstr ""
 "Etiketin bir hata olduğunu veya tamamen alakasız olduğunu düşünüyorsanız, "
 "bayrak simgesine tıklayarak işaretlemelisiniz."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "In this experiment you will:"
 msgstr "Bu deneyde şunları yapacaksınız:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Is it necessary to use this many whitespaces?"
 msgstr "Bu kadar çok boşluk kullanmak gerekli mi?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Keep tags short:"
 msgstr "Etiketleri kısa tutun:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Let's start with a practice round!"
 msgstr "Bir alıştırma turu ile başlayalım!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Mark the existing tags"
 msgstr "Mevcut etiketleri işaretleyin"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Now, let's start the main experiment!"
 msgstr "Şimdi, ana deneye başlayalım!"
 
-#. ""
-#: __init__.py
-#, fuzzy
-msgctxt "STEP-Tag"
-msgid "On the next page, we will check if you are a native speaker."
-msgstr "Bir sonraki sayfada anadiliniz olup olmadığını kontrol edeceğiz."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Please submit or delete it first."
 msgstr "Lütfen önce gönderin veya silin."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rate tags from other participants"
 msgstr "Diğer katılımcıların etiketlerini değerlendirin"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rating"
 msgstr "Değerlendirme"
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Submit your response for a new tag by pressing the {ENTER_KEY} key."
 msgstr "Yeni bir etiket için {ENTER_KEY} tuşuna basarak yanıtınızı gönderin."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Thanks for participating in this experiment!"
 msgstr "Bu deneye katıldığınız için teşekkürler!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "That was a practice round."
 msgstr "Bu bir alıştırma turuydu."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "The following tags are already completed:"
 msgstr "Aşağıdaki etiketler zaten tamamlandı:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "There is still some unsubmitted text in the tag field."
 msgstr "Etiket alanında hala gönderilmemiş bazı metinler var."
 
-#. ""
-#: __init__.py
-#, python-brace-format, fuzzy
-msgctxt "STEP-Tag"
-msgid ""
-"To participate in the experiment, you must be a native speaker of "
-"{LANGUAGE}."
-msgstr "Deneye katılmak için ana diliniz {LANGUAGE} olmalıdır."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus, that are missing above."
 msgstr "Yukarıda eksik olan uyaranı tanımlayan etiketleri yazın."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus."
 msgstr "Uyaranı tanımlayan etiketleri yazın."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type more tags"
 msgstr "Daha fazla etiket yazın"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "View a stimulus and describe it with tags."
 msgstr "Bir uyaranı görüntüleyin ve etiketlerle tanımlayın."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You can add more than one tag."
 msgstr "Birden fazla etiket ekleyebilirsiniz."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -273,21 +225,18 @@ msgstr ""
 "Etiketleri bir açılır listeden seçebilir veya tamamen yeni etiketler "
 "oluşturabilirsiniz."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to rate all tags!"
 msgstr "Tüm etiketleri değerlendirmeniz gerekir!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to supply at least one new tag!"
 msgstr "En az bir yeni etiket sağlamanız gerekir!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -298,14 +247,12 @@ msgstr ""
 "Her bir etiketin alaka düzeyini uygun sayıda yıldıza tıklayarak "
 "değerlendirmelisiniz."
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Your tag contains {N_WHITESPACES} whitespaces."
 msgstr "Etiketiniz {N_WHITESPACES} boşlukları içeriyor."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"

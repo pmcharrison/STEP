@@ -108,11 +108,6 @@ msgstr ""
 
 #: __init__.py
 msgctxt "STEP-Tag"
-msgid "On the next page, we will check if you are a native speaker."
-msgstr ""
-
-#: __init__.py
-msgctxt "STEP-Tag"
 msgid "Please submit or delete it first."
 msgstr ""
 
@@ -150,14 +145,6 @@ msgstr ""
 #: __init__.py
 msgctxt "STEP-Tag"
 msgid "There is still some unsubmitted text in the tag field."
-msgstr ""
-
-#: __init__.py
-#, python-brace-format
-msgctxt "STEP-Tag"
-msgid ""
-"To participate in the experiment, you must be a native speaker of "
-"{LANGUAGE}."
 msgstr ""
 
 #: __init__.py

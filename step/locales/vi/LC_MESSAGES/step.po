@@ -9,20 +9,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgid "Next"
 msgstr "Kế tiếp"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "1 star means not very relevant, 5 stars means very relevant."
 msgstr "1 sao nghĩa là không phù hợp lắm, 5 sao nghĩa là rất phù hợp."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -35,21 +32,18 @@ msgstr ""
 " ghép như 'rượu vang đỏ' không thể tách rời, vì 'rượu vang đỏ' có nghĩa khác"
 " với chỉ 'đỏ' và 'rượu vang' '."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add new tags that you think are missing"
 msgstr "Thêm thẻ mới mà bạn cho là còn thiếu"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add some initial tags"
 msgstr "Thêm một số thẻ ban đầu"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -60,7 +54,6 @@ msgstr ""
 "Sau khi xem kích thích, bạn có thể thêm các thẻ của riêng mình để mô tả kích"
 " thích."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -71,28 +64,24 @@ msgstr ""
 "Sau khi xem kích thích, bạn sẽ thấy các thẻ từ những người tham gia khác mô "
 "tả kích thích."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Are any tags missing?"
 msgstr "Có thẻ nào bị thiếu không?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Creating"
 msgstr "Tạo"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "If you are sure, you can go ahead."
 msgstr "Nếu bạn chắc chắn, bạn có thể tiếp tục."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -103,7 +92,6 @@ msgstr ""
 "Nếu bạn là người đầu tiên nhìn thấy kích thích, bạn có thể không thấy thẻ "
 "nào trước đó."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -114,158 +102,120 @@ msgstr ""
 "Nếu bạn cho rằng thẻ bị nhầm lẫn hoặc hoàn toàn không liên quan, bạn nên gắn"
 " cờ thẻ đó bằng cách nhấp vào biểu tượng lá cờ."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "In this experiment you will:"
 msgstr "Trong thí nghiệm này bạn sẽ:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Is it necessary to use this many whitespaces?"
 msgstr "Có cần thiết phải sử dụng nhiều khoảng trắng thế này không?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Keep tags short:"
 msgstr "Giữ các thẻ ngắn gọn:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Let's start with a practice round!"
 msgstr "Hãy bắt đầu với một vòng luyện tập!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Mark the existing tags"
 msgstr "Đánh dấu các thẻ hiện có"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Now, let's start the main experiment!"
 msgstr "Bây giờ chúng ta hãy bắt đầu thí nghiệm chính!"
 
-#. ""
-#: __init__.py
-#, fuzzy
-msgctxt "STEP-Tag"
-msgid "On the next page, we will check if you are a native speaker."
-msgstr ""
-"Ở trang tiếp theo, chúng tôi sẽ kiểm tra xem bạn có phải là người bản xứ hay"
-" không."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Please submit or delete it first."
 msgstr "Vui lòng gửi hoặc xóa nó trước."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rate tags from other participants"
 msgstr "Đánh giá thẻ từ những người tham gia khác"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rating"
 msgstr "Xếp hạng"
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Submit your response for a new tag by pressing the {ENTER_KEY} key."
 msgstr "Gửi phản hồi của bạn cho thẻ mới bằng cách nhấn phím {ENTER_KEY}."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Thanks for participating in this experiment!"
 msgstr "Cảm ơn bạn đã tham gia thí nghiệm này!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "That was a practice round."
 msgstr "Đó là một vòng luyện tập."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "The following tags are already completed:"
 msgstr "Các thẻ sau đã được hoàn thành:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "There is still some unsubmitted text in the tag field."
 msgstr "Vẫn còn một số văn bản chưa được gửi trong trường thẻ."
 
-#. ""
-#: __init__.py
-#, python-brace-format, fuzzy
-msgctxt "STEP-Tag"
-msgid ""
-"To participate in the experiment, you must be a native speaker of "
-"{LANGUAGE}."
-msgstr "Để tham gia thử nghiệm, bạn phải là người bản xứ của {LANGUAGE}."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus, that are missing above."
 msgstr "Nhập các thẻ mô tả kích thích bị thiếu ở trên."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus."
 msgstr "Nhập thẻ mô tả kích thích."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type more tags"
 msgstr "Nhập thêm thẻ"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "View a stimulus and describe it with tags."
 msgstr "Xem một kích thích và mô tả nó bằng thẻ."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You can add more than one tag."
 msgstr "Bạn có thể thêm nhiều hơn một thẻ."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -274,21 +224,18 @@ msgid ""
 msgstr ""
 "Bạn có thể chọn thẻ từ danh sách thả xuống hoặc tạo thẻ hoàn toàn mới."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to rate all tags!"
 msgstr "Bạn cần phải đánh giá tất cả các thẻ!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to supply at least one new tag!"
 msgstr "Bạn cần cung cấp ít nhất một thẻ mới!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -299,14 +246,12 @@ msgstr ""
 "Bạn nên đánh giá mức độ liên quan của từng thẻ bằng cách nhấp vào số lượng "
 "sao thích hợp."
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Your tag contains {N_WHITESPACES} whitespaces."
 msgstr "Thẻ của bạn chứa {N_WHITESPACES} khoảng trắng."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"

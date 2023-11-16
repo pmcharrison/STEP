@@ -9,13 +9,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgid "Next"
 msgstr "Următorul"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -24,7 +22,6 @@ msgstr ""
 "1 stea înseamnă că nu este foarte relevant, 5 stele înseamnă că este foarte "
 "relevant."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -38,21 +35,18 @@ msgstr ""
 "poate fi separat, deoarece \"vin roșu\" înseamnă altceva decât doar \"roșu\""
 " și \"vin\"."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add new tags that you think are missing"
 msgstr "Adăugați noi etichete care credeți că lipsesc"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add some initial tags"
 msgstr "Adăugați câteva etichete inițiale"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -63,7 +57,6 @@ msgstr ""
 "După ce ați vizualizat stimulul, puteți adăuga propriile etichete care "
 "descriu stimulul."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -74,28 +67,24 @@ msgstr ""
 "După vizualizarea stimulului, veți vedea etichetele altor participanți care "
 "descriu stimulul."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Are any tags missing?"
 msgstr "Lipsesc anumite etichete?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Creating"
 msgstr "Crearea"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "If you are sure, you can go ahead."
 msgstr "Dacă sunteți sigur, puteți continua."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -106,7 +95,6 @@ msgstr ""
 "Dacă sunteți prima persoană care vede stimulul, este posibil să nu vedeți "
 "etichete anterioare."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -117,77 +105,60 @@ msgstr ""
 "Dacă credeți că eticheta este o greșeală sau complet irelevantă, trebuie să "
 "o marcați făcând clic pe pictograma de marcare."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "In this experiment you will:"
 msgstr "În acest experiment veți:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Is it necessary to use this many whitespaces?"
 msgstr "Este necesar să folosiți atâtea spații albe?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Keep tags short:"
 msgstr "Păstrați etichetele scurte:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Let's start with a practice round!"
 msgstr "Să începem cu o rundă de practică!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Mark the existing tags"
 msgstr "Marcați etichetele existente"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Now, let's start the main experiment!"
 msgstr "Acum, haideți să începem experimentul principal!"
 
-#. ""
-#: __init__.py
-#, fuzzy
-msgctxt "STEP-Tag"
-msgid "On the next page, we will check if you are a native speaker."
-msgstr "Pe pagina următoare, vom verifica dacă sunteți vorbitor nativ."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Please submit or delete it first."
 msgstr "Vă rugăm să o trimiteți sau să o ștergeți mai întâi."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rate tags from other participants"
 msgstr "Evaluați etichetele celorlalți participanți"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rating"
 msgstr "Evaluare"
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
@@ -195,46 +166,30 @@ msgid "Submit your response for a new tag by pressing the {ENTER_KEY} key."
 msgstr ""
 "Trimiteți răspunsul dvs. pentru o nouă etichetă apăsând tasta {ENTER_KEY}."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Thanks for participating in this experiment!"
 msgstr "Vă mulțumim că ați participat la acest experiment!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "That was a practice round."
 msgstr "Aceasta a fost o rundă de antrenament."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "The following tags are already completed:"
 msgstr "Următoarele etichete sunt deja completate:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "There is still some unsubmitted text in the tag field."
 msgstr "Mai există încă text nesupus în câmpul tag-ului."
 
-#. ""
-#: __init__.py
-#, python-brace-format, fuzzy
-msgctxt "STEP-Tag"
-msgid ""
-"To participate in the experiment, you must be a native speaker of "
-"{LANGUAGE}."
-msgstr ""
-"Pentru a participa la experiment, trebuie să fiți vorbitor nativ al limbii "
-"{LANGUAGE}."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -242,35 +197,30 @@ msgid "Type in tags describing the stimulus, that are missing above."
 msgstr ""
 "Introduceți etichetele care descriu stimulul, care lipsesc de mai sus."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus."
 msgstr "Introduceți etichetele care descriu stimulul."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type more tags"
 msgstr "Introduceți mai multe etichete"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "View a stimulus and describe it with tags."
 msgstr "Vizualizați un stimul și descrieți-l cu tag-uri."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You can add more than one tag."
 msgstr "Puteți adăuga mai mult de o etichetă."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -280,21 +230,18 @@ msgstr ""
 "Puteți fie să selectați etichete dintr-o listă derulantă, fie să creați "
 "etichete complet noi."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to rate all tags!"
 msgstr "Trebuie să evaluați toate etichetele!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to supply at least one new tag!"
 msgstr "Trebuie să furnizați cel puțin o etichetă nouă!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -305,14 +252,12 @@ msgstr ""
 "Trebuie să evaluați relevanța fiecărei etichete făcând clic pe numărul "
 "corespunzător de stele."
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Your tag contains {N_WHITESPACES} whitespaces."
 msgstr "Eticheta dvs. conține {N_WHITESPACES} spații albe."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"

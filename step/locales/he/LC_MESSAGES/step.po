@@ -9,20 +9,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgid "Next"
 msgstr "הַבָּא"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "1 star means not very relevant, 5 stars means very relevant."
 msgstr "כוכב אחד פירושו לא מאוד רלוונטי, 5 כוכבים פירושו מאוד רלוונטי."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -34,21 +31,18 @@ msgstr ""
 "יש להגיש מילה כמו 'דשא ירוק' כ'ירוק' ו'דשא', בעוד שלא ניתן להפריד בין מילה "
 "מורכבת כגון 'יין אדום', שכן 'יין אדום' פירושו משהו שונה מסתם 'אדום' ו'יין '."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add new tags that you think are missing"
 msgstr "הוסף תגים חדשים שלדעתך חסרים"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add some initial tags"
 msgstr "הוסף כמה תגים ראשוניים"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -57,7 +51,6 @@ msgid ""
 "stimulus."
 msgstr "לאחר צפייה בגירוי, תוכל להוסיף תגיות משלך המתארות את הגירוי."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -66,28 +59,24 @@ msgid ""
 "describe the stimulus."
 msgstr "לאחר צפייה בגירוי, תראה תגיות של משתתפים אחרים המתארים את הגירוי."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Are any tags missing?"
 msgstr "חסרים תגים?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Creating"
 msgstr "יצירה"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "If you are sure, you can go ahead."
 msgstr "אם אתה בטוח, אתה יכול להמשיך."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -96,7 +85,6 @@ msgid ""
 "tags."
 msgstr "אם אתה האדם הראשון שרואה את הגירוי, ייתכן שלא תראה תגים קודמים."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -107,156 +95,120 @@ msgstr ""
 "אם אתה חושב שהתג הוא טעות או לא רלוונטי לחלוטין, עליך לסמן אותו על ידי לחיצה"
 " על סמל הדגל."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "In this experiment you will:"
 msgstr "בניסוי זה תוכלו:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Is it necessary to use this many whitespaces?"
 msgstr "האם יש צורך להשתמש ברווחים לבנים רבים כל כך?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Keep tags short:"
 msgstr "הקפד על תגים קצרים:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Let's start with a practice round!"
 msgstr "בואו נתחיל בסבב תרגול!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Mark the existing tags"
 msgstr "סמן את התגים הקיימים"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Now, let's start the main experiment!"
 msgstr "עכשיו, בואו נתחיל בניסוי הראשי!"
 
-#. ""
-#: __init__.py
-#, fuzzy
-msgctxt "STEP-Tag"
-msgid "On the next page, we will check if you are a native speaker."
-msgstr "בעמוד הבא, נבדוק אם אתה דובר שפת אם."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Please submit or delete it first."
 msgstr "נא לשלוח או למחוק אותו תחילה."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rate tags from other participants"
 msgstr "דרג תגיות של משתתפים אחרים"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rating"
 msgstr "דֵרוּג"
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Submit your response for a new tag by pressing the {ENTER_KEY} key."
 msgstr "שלח את תגובתך לתג חדש על ידי לחיצה על מקש {ENTER_KEY}."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Thanks for participating in this experiment!"
 msgstr "תודה על ההשתתפות בניסוי זה!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "That was a practice round."
 msgstr "זה היה סבב אימון."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "The following tags are already completed:"
 msgstr "התגים הבאים כבר הושלמו:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "There is still some unsubmitted text in the tag field."
 msgstr "עדיין יש טקסט שלא נשלח בשדה התג."
 
-#. ""
-#: __init__.py
-#, python-brace-format, fuzzy
-msgctxt "STEP-Tag"
-msgid ""
-"To participate in the experiment, you must be a native speaker of "
-"{LANGUAGE}."
-msgstr "כדי להשתתף בניסוי, עליך להיות דובר שפת אם של {LANGUAGE}."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus, that are missing above."
 msgstr "הקלד תגיות המתארות את הגירוי, שחסרות למעלה."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus."
 msgstr "הקלד תגיות המתארות את הגירוי."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type more tags"
 msgstr "הקלד תגים נוספים"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "View a stimulus and describe it with tags."
 msgstr "הצג גירוי ותאר אותו באמצעות תגים."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You can add more than one tag."
 msgstr "אתה יכול להוסיף יותר מתג אחד."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -264,21 +216,18 @@ msgid ""
 "You can either select tags from a dropdown list or create entirely new ones."
 msgstr "אתה יכול לבחור תגים מתוך רשימה נפתחת או ליצור תגים חדשים לגמרי."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to rate all tags!"
 msgstr "אתה צריך לדרג את כל התגים!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to supply at least one new tag!"
 msgstr "עליך לספק לפחות תג חדש אחד!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -288,14 +237,12 @@ msgid ""
 msgstr ""
 "עליך לדרג את הרלוונטיות של כל תג על ידי לחיצה על כמות הכוכבים המתאימה."
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Your tag contains {N_WHITESPACES} whitespaces."
 msgstr "התג שלך מכיל {N_WHITESPACES} רווחים לבנים."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"

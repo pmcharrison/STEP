@@ -9,13 +9,11 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgid "Next"
 msgstr "Következő"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -24,7 +22,6 @@ msgstr ""
 "Az 1 csillag azt jelenti, hogy nem nagyon fontos, az 5 csillag azt jelenti, "
 "hogy nagyon fontos."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -38,21 +35,18 @@ msgstr ""
 " elkülöníteni, mivel a \"vörösbor\" mást jelent, mint a \"vörös\" és a "
 "\"bor\"."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add new tags that you think are missing"
 msgstr "Új címkék hozzáadása, amelyek Ön szerint hiányoznak"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Add some initial tags"
 msgstr "Néhány kezdeti címke hozzáadása"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -63,7 +57,6 @@ msgstr ""
 "Az inger megtekintése után hozzáadhatja saját címkéit, amelyek leírják az "
 "ingert."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -74,28 +67,24 @@ msgstr ""
 "Az inger megtekintése után láthatja a többi résztvevőtől származó, az ingert"
 " leíró címkéket."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Are any tags missing?"
 msgstr "Hiányzik valamelyik címke?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Creating"
 msgstr "A  létrehozása"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "If you are sure, you can go ahead."
 msgstr "Ha biztos benne, akkor folytassa."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -106,7 +95,6 @@ msgstr ""
 "Ha Ön az első személy, aki látja az ingert, előfordulhat, hogy nem látja a "
 "korábbi címkéket."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -117,78 +105,60 @@ msgstr ""
 "Ha úgy gondolja, hogy a címke hibás vagy teljesen irreleváns, akkor jelölje "
 "meg a jelző ikonra kattintva."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "In this experiment you will:"
 msgstr "Ebben a kísérletben:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Is it necessary to use this many whitespaces?"
 msgstr "Szükséges-e ennyi szóköz használata?"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Keep tags short:"
 msgstr "Tartsa rövidre a címkéket:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Let's start with a practice round!"
 msgstr "Kezdjük egy gyakorló körrel!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Mark the existing tags"
 msgstr "Jelöljük meg a meglévő címkéket"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Now, let's start the main experiment!"
 msgstr "Most pedig kezdjük a fő kísérletet!"
 
-#. ""
-#: __init__.py
-#, fuzzy
-msgctxt "STEP-Tag"
-msgid "On the next page, we will check if you are a native speaker."
-msgstr ""
-"A következő oldalon azt fogjuk ellenőrizni, hogy anyanyelvi beszélő vagy-e."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Please submit or delete it first."
 msgstr "Kérjük, előbb küldje el vagy törölje."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rate tags from other participants"
 msgstr "Értékelje a többi résztvevő címkéit"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Rating"
 msgstr "Értékelés"
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
@@ -196,81 +166,60 @@ msgid "Submit your response for a new tag by pressing the {ENTER_KEY} key."
 msgstr ""
 "Küldje el válaszát egy új címkéhez a {ENTER_KEY} billentyű megnyomásával."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Thanks for participating in this experiment!"
 msgstr "Köszönjük, hogy részt vett ebben a kísérletben!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "That was a practice round."
 msgstr "Ez egy gyakorló kör volt."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "The following tags are already completed:"
 msgstr "A következő címkék már elkészültek:"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "There is still some unsubmitted text in the tag field."
 msgstr "A címke mezőben még van néhány be nem küldött szöveg."
 
-#. ""
-#: __init__.py
-#, python-brace-format, fuzzy
-msgctxt "STEP-Tag"
-msgid ""
-"To participate in the experiment, you must be a native speaker of "
-"{LANGUAGE}."
-msgstr ""
-"A kísérletben való részvételhez a {LANGUAGE} nyelv anyanyelvi beszélőjének "
-"kell lennie."
-
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus, that are missing above."
 msgstr "Írja be az ingert leíró címkéket, amelyek a fentiekben hiányoznak."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type in tags describing the stimulus."
 msgstr "Írja be az ösztönzőt leíró címkéket."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "Type more tags"
 msgstr "Írjon be további címkéket"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "View a stimulus and describe it with tags."
 msgstr "Tekintse meg az ingert, és írja le címkékkel."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You can add more than one tag."
 msgstr "Egynél több címkét is hozzáadhat."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -280,21 +229,18 @@ msgstr ""
 "A címkéket kiválaszthatja egy legördülő listából, vagy teljesen újakat "
 "hozhat létre."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to rate all tags!"
 msgstr "Minden címkét értékelnie kell!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
 msgid "You need to supply at least one new tag!"
 msgstr "Legalább egy új címkét kell megadnia!"
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
@@ -305,14 +251,12 @@ msgstr ""
 "Minden egyes címke relevanciáját a megfelelő számú csillagra kattintva kell "
 "értékelnie."
 
-#. ""
 #: __init__.py
 #, python-brace-format, fuzzy
 msgctxt "STEP-Tag"
 msgid "Your tag contains {N_WHITESPACES} whitespaces."
 msgstr "A címke {N_WHITESPACES} fehérjeleket tartalmaz."
 
-#. ""
 #: __init__.py
 #, fuzzy
 msgctxt "STEP-Tag"
