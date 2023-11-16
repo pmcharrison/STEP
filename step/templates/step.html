@@ -1,0 +1,485 @@
+{% macro step_tag(params) %}
+<style>
+
+    /* Bootstrap TagsInput */
+    .bootstrap-tagsinput {
+        display: inline-block;
+        vertical-align: middle;
+        width: 100%;
+        height: auto;
+    }
+
+    .bootstrap-tagsinput input {
+        direction: ltr;
+        border: 0;
+        outline: 0;
+        background-color: transparent;
+        padding: 7px 0;
+        margin-top: 3px;
+        margin-bottom: 3px;
+        width: auto !important;
+        min-width: 100px;
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+
+    .bootstrap-tagsinput input:focus {
+        border: none;
+        box-shadow: none;
+    }
+
+    .bootstrap-tagsinput .twitter-typeahead {
+        width: auto;
+    }
+
+    .bootstrap-tagsinput .tt-dropdown-menu {
+        margin-top: 5px;
+        min-width: 200px;
+    }
+
+    .bootstrap-tagsinput .tag {
+        margin-top: 3px;
+        margin-bottom: 3px;
+        margin-right: 6px;
+        border: 0;
+        border-radius: 100px;
+        padding: 7px 14px;
+        padding-right: 33px;
+        float: left;
+        font-size: 12px;
+        line-height: 1.6666667;
+        font-weight: 400;
+        text-transform: none;
+        position: relative;
+    }
+
+    .bootstrap-tagsinput .tag:not([class*=bg-]) {
+        background-color: #222;
+        color: #fff;
+        font-size: 1em;
+    }
+
+    .bootstrap-tagsinput .tag [data-role="remove"] {
+        cursor: pointer;
+        position: absolute;
+        top: 50%;
+        right: 14px;
+        line-height: 1;
+        margin-top: -8px;
+        opacity: 0.7;
+        filter: alpha(opacity=70);
+    }
+
+    .bootstrap-tagsinput .tag [data-role="remove"]:hover {
+        opacity: 1;
+        filter: alpha(opacity=100);
+    }
+
+    .bootstrap-tagsinput .tag [data-role="remove"]:after {
+        content: "x";
+    }
+
+    .twitter-typeahead {
+        width: 100%;
+    }
+
+    .typeahead,
+    .tt-query,
+    .tt-hint {
+        outline: 0;
+    }
+
+    .tt-hint {
+        color: #999;
+    }
+
+    /* Suggestion menu */
+
+    .tt-menu {
+        width: 100%;
+        margin-top: 1px;
+        min-width: 180px;
+        padding: 8px 0;
+        background-color: #fff;
+        border: 1px solid transparent;
+        border-radius: 3px;
+        max-height: 300px;
+        overflow-y: auto;
+        -webkit-box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+        box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    }
+
+    .typeahead-scrollable .tt-menu {
+        max-height: 250px;
+    }
+
+    .typeahead-rtl .tt-menu {
+        text-align: right;
+    }
+
+    .tt-suggestion {
+        padding: 8px 15px;
+        cursor: pointer;
+    }
+
+    .tt-suggestion:hover,
+    .tt-suggestion:focus,
+    .tt-suggestion.tt-cursor {
+        background-color: #f5f5f5;
+    }
+
+    .tt-dataset-group .tt-suggestion {
+        padding-left: 32px;
+        padding-right: 32px;
+    }
+
+    .tt-heading {
+        font-size: 11px;
+        line-height: 1.82;
+        padding: 8px 15px;
+        text-transform: uppercase;
+        display: block;
+        font-weight: 700;
+        margin-top: 2px;
+        margin-bottom: 2px;
+    }
+
+    .typeahead-template .empty-message {
+        padding: 8px 15px;
+        text-align: center;
+    }
+
+    /* Tags */
+
+    .tag-container, .frozen-container .rating-container {
+        display: inline-block;
+    }
+
+    .tag-item {
+        float: left;
+        border-radius: 0.25rem;
+        overflow: hidden;
+        font-weight: bold;
+        margin: 0em 1em 1em 0em;
+    }
+
+    .tag-item .btn {
+        border: none;
+        overflow: hidden;
+    }
+
+    .tag-item .btn-group > .btn:not(:first-child) {
+        margin: 0;
+    }
+
+
+    .tag-name {
+        font-size: 3em;
+        color: white;
+        padding: 0 0.5em;
+    }
+
+    .frozen {
+        background-color: #19875499;
+        font-size: 1em;
+        padding: 0.2em 1.5em;
+    }
+
+    /* Icons */
+
+    .icon {
+        width: 2em;
+        height: 2em;
+    }
+
+
+    .flag {
+        background: url("/static/step/images/icons/flag-fill.svg") no-repeat;
+        background-position: center;
+        opacity: 0.5;
+    }
+
+    .flag.active {
+        opacity: 1;
+    }
+
+
+    .star {
+        background: url("/static/step/images/icons/star-fill.svg") no-repeat;
+        background-position: center;
+    }
+
+    input[type="radio" i] {
+        display: none;
+    }
+
+    path {
+        fill: #fff;
+    }
+
+    #nextButton {
+        float: right;
+    }
+
+    #main-body {
+        margin-bottom: 10em !important;
+    }
+
+    #trial-progress-caption {
+        display: none;
+    }
+
+</style>
+<div id="content">
+    {% if params.frozen_candidates | length > 0 %}
+    <h5>{{ params.translations.title_frozen }}</h5>
+    <div class="tag-container">
+        <div class="frozen-container">
+            {% for candidate in params.frozen_candidates %}
+            <div id='tag-item-{{ candidate.hash }}' class="tag-item bg-secondary">
+                <div class="row tag-name frozen" id='tag-{{ candidate.hash }}'>{{ candidate.text }}</div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+    {% if params.unfrozen_candidates | length > 0 %}
+    <h2>{{ params.translations.title_unfrozen }}</h2>
+    <div class="tag-container">
+        <div class="rating-container">
+            {% for candidate in params.unfrozen_candidates %}
+            <div id='tag-item-{{ candidate.hash }}' class="tag-item bg-secondary">
+
+                <div class="row tag-name" id='tag-{{ candidate.hash }}'>{{ candidate.text }}</div>
+                <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                    {% for n in range(1, params.n_stars + 1) %}
+                    <label class="btn btn-secondary icon rating{{ n }} star" style="opacity: 0.5;">
+                        <input type="radio" name='tag-{{ candidate.hash }}'
+                               id='tag-{{ candidate.hash }}_{{ n }}'>
+                    </label>
+                    {% endfor %}
+                    <label class="btn btn-secondary icon flag">
+                        <input type="radio" name='tag-{{ candidate.hash }}'
+                               id='tag-{{ candidate.hash }}_flag'>
+                    </label>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+    {% endif %}
+
+
+    <div class="form-group mt-5">
+        {% if params.unfrozen_candidates | length > 0 %}
+        {{ params.translations.instructions_with_tags }}
+        {% else %}
+        {{ params.translations.instructions_without_tags }}
+        {% endif %}
+        <div id="error_area"></div>
+
+        <input type="text" spellcheck="value" class="form-control" id="new_tags"
+               placeholder="{{ params.translations.type_more }}">
+        <button class="btn btn-lg btn-primary mt-3 submit" id="nextButton"
+                onclick="validate();">{{ params.translations.next }}
+        </button>
+    </div>
+</div>
+
+
+<script type="text/javascript" src="/static/step/scripts/bootstrap.bundle.min.js"></script>
+<script type="text/javascript" src="/static/step/scripts/bootstrap-tagsinput.min.js"></script>
+<script type="text/javascript" src="/static/step/scripts/typeahead.bundle.min.js"></script>
+<script>
+    let ratings = {}
+    let newTags;
+    getData = function () {
+        return {
+            'new_tags': newTags,
+            'ratings': ratings
+        }
+    }
+    validate = function () {
+        newTags = []
+        $('.label').each(function (idx, label) {
+            if (label.hidden === false) {
+                let newTag = label.innerText;
+                if (!Object.keys(ratings).includes(newTag)) {
+                    newTags.push(newTag)
+                }
+            }
+        })
+        let nTags = $('.tag-name:not(.frozen)').length;
+
+        if (nTags !== Object.keys(ratings).length) {
+            alert(translations.rate_all_tags)
+        } else if (newTags.length === 0 && nTags === 0) {
+            // if there are no initial tags force people to create new tags
+            alert(translations.specify_one_tag)
+        } else if ($('.bootstrap-tagsinput input')[1].value !== '') {
+            alert(translations.cannot_submit)
+        } else {
+            psynet.nextPage(getData());
+        }
+    }
+    /* App.js */
+    let substringMatcher = function (strs) {
+        return function findMatches(q, cb) {
+            let matches;
+            matches = [];
+            substrRegex = new RegExp(q, 'i');
+            $.each(strs, function (i, str) {
+                if (substrRegex.test(str)) {
+                    matches.push(str);
+                }
+            });
+            cb(matches);
+        };
+    };
+
+
+    let newTagsInput = $('#new_tags')
+
+    newTagsInput.tagsinput({
+        onTagExists: function (item, $tag) {
+            // do nothing
+        },
+        typeaheadjs: ({
+            hint: true,
+            highlight: true,
+            minLength: 1
+        }, {
+            name: 'new_tags',
+            // available_tags is a list of all tags that have been used in the past
+            source: substringMatcher(available_tags)
+        })
+    });
+
+    $('.bootstrap-tagsinput')[0].classList.add('form-control')
+
+
+    // Make sure people can't add tags that are already present
+    // used_tags is a list of all tags that have been used in the current session
+    used_tags.forEach(function (tag) {
+        $('#new_tags').tagsinput('add', tag)
+    })
+    $('.label').each(function (idx, el) {
+        el.hidden = true
+    })
+
+
+    function resetStars(id) {
+        $('#tag-item-' + id + ' .star').each(function (idx, x) {
+            x.style.opacity = 0.5
+            x.classList.remove('active')
+        })
+    }
+
+    function getTagInfo(x) {
+        let cleanedId = x.id.replace('tag-', '').replace('item-', '');
+        let tagId = cleanedId.split('_')[0];
+        let action = cleanedId.split('_')[1];
+        let tagText = $('#tag-item-' + tagId)[0].innerText;
+        return {
+            'id': tagId,
+            'action': action,
+            'text': tagText
+        }
+    }
+
+    $('.tag-item .icon').click(function (x) {
+        let tagInfo = getTagInfo(x.currentTarget.lastElementChild);
+        let tagText = tagInfo['text'];
+        let tagItem = document.getElementById('tag-' + tagInfo['id']);
+
+        tagItem.classList.remove('bg-danger')
+        tagItem.classList.remove('bg-success')
+
+        let rating;
+
+        if (tagInfo['action'] === 'flag') {
+            tagItem.classList.add('bg-danger')
+            resetStars(tagInfo['id'])
+            rating = 0
+        } else {
+            tagItem.classList.add('bg-success')
+            $('#tag-item-' + tagInfo['id'] + ' .flag').each(function (idx, x) {
+                x.classList.remove('active')
+            })
+            rating = parseInt(tagInfo['action'])
+        }
+
+        ratings[tagText] = rating
+    })
+
+    function createElementFromHtml(htmlString) {
+        let div = document.createElement('div');
+        div.innerHTML = htmlString.trim();
+
+        // Change this to div.childNodes to support multiple top-level nodes
+        return div.firstChild;
+    }
+
+    // Force input to be lower case
+    $('input[type=text]').on("input", function () {
+        let value = $(this).val();
+        let numSpaces = value.split(" ").length - 1;
+
+        // Remove error message if it exist
+        let errorArea = $('#errorArea')
+        if (errorArea.children().length >= 1) {
+            errorArea.children()[0].remove()
+        }
+        if (numSpaces > 1) {
+            let errorMsg = '<div class="alert alert-danger" role="alert">' +
+                translations.whitespaces.replace("{N_WHITESPACES}", numSpaces) +
+                '</div>'
+            errorArea.append(createElementFromHtml(errorMsg))
+        }
+        $(this).val(value.toLowerCase())
+    });
+
+
+    function updateStars(tagId, numUpvoteButtons) {
+        resetStars(tagId);
+        // Perform star update
+        let stars = $('#tag-item-' + tagId + ' .star');
+        for (let i = 0; i < numUpvoteButtons; i++) {
+            stars[i].style.opacity = 1
+            stars[i].classList.add('active')
+        }
+    }
+
+    let stars = $('.star')
+
+    stars.click(function (x) {
+        let tagInfo = getTagInfo(x.currentTarget.lastElementChild);
+        updateStars(tagInfo['id'], parseInt(tagInfo['action']));
+    });
+
+    stars.hover(function (x, y) {
+        let tagInfo = getTagInfo(x.currentTarget.lastElementChild);
+        let tagText = tagInfo['text'];
+
+        if (!Object.keys(ratings).includes(tagText)) {
+            updateStars(tagInfo['id'], parseInt(tagInfo['action']));
+        }
+    });
+
+    stars.mouseleave(function (x) {
+        let tagInfo = getTagInfo(x.currentTarget.lastElementChild);
+        let tagText = tagInfo['text'];
+
+        if (!Object.keys(ratings).includes(tagText)) {
+            resetStars(tagInfo['id']);
+        }
+    });
+
+
+    psynet.trial.onEvent("trialConstruct", function (){
+        $('#next-button').hide()
+    });
+
+</script>
+{% endmacro %}
