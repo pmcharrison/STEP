@@ -1,8 +1,10 @@
 import os
 import hashlib
 import random
+
 from os.path import basename
 from typing import List
+from importlib import resources
 
 from dallinger import db
 from markupsafe import Markup
@@ -31,22 +33,30 @@ here = os.path.abspath(os.path.dirname(__file__))
 with open(os.path.join(here, "VERSION")) as version_file:
     __version__ = version_file.read().strip()
 
+PACKAGE_NAME = "step"
+
 logger = get_logger()
 
 ####################
 # Helper functions #
 ####################
 
+
 def get_translator(locale=None):
     from psynet.utils import get_translator
-    return get_translator(locale, module='internat', locales_dir=os.path.join(here, 'locales'))
+
+    return get_translator(
+        locale, module=PACKAGE_NAME, locales_dir=os.path.join(here, "locales")
+    )
 
 
 def custom_hash(text):
     return hashlib.sha1(text.encode()).hexdigest()
 
+
 def sanitize_text_for_json(text):
-    return text.replace(r'\"', '"').replace("'", '`')
+    return text.replace(r"\"", '"').replace("'", "`")
+
 
 ####################
 # Defaults         #
@@ -69,6 +79,7 @@ class StepCandidate:
         self.is_frozen = is_frozen
         self.is_dropout = is_dropout
         self.is_flagged = False
+
 
 class StepStimulus:
     pass
@@ -139,9 +150,7 @@ class StepTagAudioVisual(StepTagStimulus):
             }
         </style>
         """
-        prompt = (
-            f'<img src = "{self.img_url}" class="prompt_img"> <h3>{text}</h3>{css}'
-        )
+        prompt = f'<img src = "{self.img_url}" class="prompt_img"> <h3>{text}</h3>{css}'
         return AudioPrompt(
             audio=self.audio_url,
             text=Markup(prompt),
@@ -340,6 +349,7 @@ class StepTagTrial(StepTrial):
             ),
         )
 
+
 class StepNetwork(ImitationChainNetwork):
     pass
 
@@ -455,6 +465,7 @@ class StepTrialMaker(ImitationChainTrialMaker):
         self,
         expected_trials_per_participant,
         max_iterations,
+        label="StepTrialMaker",
         max_trials_per_participant: int = None,
         early_stopping_criterion: float = 0.8,
         flagging_threshold: int = 2,
@@ -468,9 +479,13 @@ class StepTrialMaker(ImitationChainTrialMaker):
         rating_time_estimate: int = 1,
         creating_time_estimate: int = 4,
         node_class=StepNode,
+        debug=False,
+        show_instructions=True,
+        practice_stimuli: List[StepStimulus] = None,
         *args,
         **kwargs,
     ):
+        kwargs["id_"] = label
         kwargs["network_class"] = StepNetwork
         kwargs["node_class"] = node_class
         kwargs["chain_type"] = "across"
@@ -508,10 +523,17 @@ class StepTrialMaker(ImitationChainTrialMaker):
             self.mean_time_estimate * self.expected_trials_per_participant
         )
 
+        self.debug = debug
+        self.show_instructions = show_instructions
+        if practice_stimuli is None:
+            practice_stimuli = []
+        self.practice_stimuli = practice_stimuli
+        self.n_practice_trials = len(practice_stimuli)
+        self.locale = locale
+
         super().__init__(*args, **kwargs)
         self.flagging_threshold = flagging_threshold
         self.n_stars = n_stars
-        self.locale = locale
         self.dropout_factor = dropout_factor
         self.dropout_ceiling = dropout_ceiling
         self.freeze_on_n_ratings = freeze_on_n_ratings
@@ -520,9 +542,6 @@ class StepTrialMaker(ImitationChainTrialMaker):
         self.rating_time_estimate = rating_time_estimate
         self.creating_time_estimate = creating_time_estimate
         self.early_stopping_criterion = early_stopping_criterion
-
-    def get_translator(self):
-        return get_translator(self.locale)
 
     def custom_network_filter(self, candidates, participant):
         visited_trials = self.trial_class.query.filter_by(
@@ -606,26 +625,36 @@ class StepTrialMaker(ImitationChainTrialMaker):
         answer = self.format_answer(trial, answer)
         trial.answer = answer
         super().finalize_trial(answer, trial, experiment, participant)
-        # early stopping
-        # context_nodes = self.node_class.query.all()
-        # node_summary = pd.DataFrame(
-        #     [{
-        #         "network_id": node.network_id,
-        #         "degree": node.degree,
-        #         "node_id": node.id
-        #     } for node in context_nodes]
-        # )
-        # current_nodes_id = node_summary.groupby("network_id").max("degree")["node_id"].values
-        # current_nodes = filter(lambda x: x.id in current_nodes_id, context_nodes)
         self.decide_if_network_is_full(trial)
+
+    @classmethod
+    def get_instructions_before_practice(cls, locale, **kwargs):
+        raise NotImplementedError("Must be implemented by subclass.")
+
+    def get_practice(self):
+        raise NotImplementedError("Must be implemented by subclass.")
 
     @classmethod
     def get_instructions_after_practice(cls, locale, **kwargs):
         raise NotImplementedError("Must be implemented by subclass.")
 
     @classmethod
-    def get_instructions(cls, debug=False, **kwargs):
+    def get_instructions(cls, locale, debug=False, **kwargs):
         raise NotImplementedError("Must be implemented by subclass.")
+
+    @property
+    def introduction(self):
+        pages = []
+
+        if self.show_instructions:
+            pages.append(self.get_instructions(self.locale))
+
+        if self.n_practice_trials > 0:
+            pages.append(self.get_instructions_before_practice(self.locale))
+            pages.append(self.get_practice())
+            pages.append(self.get_instructions_after_practice(self.locale))
+
+        return join(*pages) if len(pages) > 0 else None
 
 
 @register_table
@@ -879,6 +908,28 @@ class StepTag(StepTrialMaker):
         }
 
     @classmethod
+    def get_instructions_before_practice(cls, locale):
+        _, _p = get_translator(locale)
+        return InfoPage(
+            Markup(
+                " ".join(
+                    [
+                        _p("STEP-Tag", "Let's start with a practice round!"),
+                    ]
+                )
+            ),
+            time_estimate=2,
+        )
+
+    def get_practice(self):
+        practice_pages = []
+        for stimulus in self.practice_stimuli:
+            practice_pages.append(
+                StepTagPractice(locale=self.locale, stimulus=stimulus, time_estimate=10)
+            )
+        return join(*practice_pages)
+
+    @classmethod
     def get_instructions_after_practice(cls, locale, **kwargs):
         _, _p = get_translator(locale)
         return InfoPage(
@@ -915,44 +966,6 @@ class StepTag(StepTrialMaker):
                 )
             ),
             time_estimate=5,
-        )
-
-    @classmethod
-    def get_instructions_before_language_test(cls, locale):
-        _, _p = get_translator(locale)
-        language_dict = get_language_dict(locale)
-        language_name = language_dict[locale]
-        return InfoPage(
-            Markup(
-                " ".join(
-                    [
-                        _p(
-                            "STEP-Tag",
-                            "To participate in the experiment, you must be a native speaker of {LANGUAGE}.",
-                        ).format(LANGUAGE=language_name),
-                        "<br><br>",
-                        _p(
-                            "STEP-Tag",
-                            "On the next page, we will check if you are a native speaker.",
-                        ),
-                    ]
-                )
-            ),
-            time_estimate=2,
-        )
-
-    @classmethod
-    def get_instructions_before_practice(cls, locale):
-        _, _p = get_translator(locale)
-        return InfoPage(
-            Markup(
-                " ".join(
-                    [
-                        _p("STEP-Tag", "Let's start with a practice round!"),
-                    ]
-                )
-            ),
-            time_estimate=2,
         )
 
     @classmethod
@@ -1039,8 +1052,7 @@ class StepTag(StepTrialMaker):
         )
 
     @classmethod
-    def get_instructions(cls, debug=False, **kwargs):
-        locale = kwargs.get("locale")
+    def get_instructions(cls, locale, debug=False, **kwargs):
         _, _p = get_translator(locale)
 
         return join(
@@ -1049,11 +1061,25 @@ class StepTag(StepTrialMaker):
             cls.get_creating_instructions(locale),
         )
 
+    @classmethod
+    def extra_files(cls):
+        return [
+            *super().extra_files(),
+            (
+                resources.files(PACKAGE_NAME) / "static/",
+                f"/static/{PACKAGE_NAME}/",
+            ),
+            (
+                resources.files(PACKAGE_NAME) / "templates/step.html",
+                "/templates/step.html/",
+            ),
+        ]
+
 
 class StepTagPractice(StepTagPage):
     def __init__(
         self,
-        stimulus: StepTagStimulus,
+        stimulus: StepStimulus,
         time_estimate: float,
         locale: str = DEFAULT_LOCALE,
         frozen_candidates: List[StepCandidate] = [],
@@ -1093,4 +1119,3 @@ class StepTagPractice(StepTagPage):
             freeze_on_mean_rating=freeze_on_mean_rating,
             time_estimate=time_estimate,
         )
-
