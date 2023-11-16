@@ -185,6 +185,17 @@ class StepTagVideo(StepTagStimulus):
         )
 
 
+def urls_to_start_nodes(urls):
+    return [
+        StepNode(
+            definition=StepTagDefinition(
+                stimulus=url_to_stimulus(url),
+            )
+        )
+        for url in urls
+    ]
+
+
 def url_to_stimulus(url):
     if url.endswith(StepTagAudio.extensions):
         return StepTagAudio(url)
