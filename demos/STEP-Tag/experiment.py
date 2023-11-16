@@ -10,8 +10,8 @@ from step import (
     StepNode,
     StepTag,
     StepTagDefinition,
-    StepTagPractice,
     url_to_stimulus,
+    urls_to_start_nodes,
 )
 
 logger = get_logger()
@@ -20,22 +20,8 @@ LABEL = "STEP Tag demo"
 INITIAL_VOCABULARY = ["cat", "dog", "mouse"]
 N_TRIALS_PER_PARTICIPANT = 2
 
-seeds = [
-    (
-        "https://mini-kinetics-psy.s3.amazonaws.com/emotional_prosody/03-01-08-02-02-02-24.wav",
-        [],
-    ),
-    (
-        "https://s3.amazonaws.com/generalization-datasets/vegetables/images/thaieggplant3.jpg",
-        ["eggplant", "aubergine", "brinjal"],
-    ),
-    (
-        "https://mini-kinetics-psy.s3.amazonaws.com/mini-kinetics-validation/cut_videos/[zumba]_dLE5YOEqBGs.mp4",
-        ["dance", "dancing"],
-    ),
-]
 
-
+# You can also define your own start nodes with pre-existing tags
 def get_custom_start_nodes():
     # You can also customize your own start nodes
     return [
@@ -67,9 +53,13 @@ class Exp(psynet.experiment.Experiment):
     timeline = Timeline(
         NoConsent(),
         StepTag(
-            start_nodes=[
-                StepNode(definition=StepTagDefinition(url, tags)) for url, tags in seeds
-            ],
+            start_nodes=urls_to_start_nodes(
+                [
+                    "https://mini-kinetics-psy.s3.amazonaws.com/emotional_prosody/03-01-08-02-02-02-24.wav",
+                    "https://s3.amazonaws.com/generalization-datasets/vegetables/images/thaieggplant3.jpg",
+                    "https://mini-kinetics-psy.s3.amazonaws.com/mini-kinetics-validation/cut_videos/[zumba]_dLE5YOEqBGs.mp4",
+                ]
+            ),
             vocabulary=INITIAL_VOCABULARY,
             expected_trials_per_participant=N_TRIALS_PER_PARTICIPANT,
             max_iterations=5,
