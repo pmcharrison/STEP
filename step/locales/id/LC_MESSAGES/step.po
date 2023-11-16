@@ -1,0 +1,324 @@
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Last-Translator: DeepL API\n"
+"Language-Team: DeepL\n"
+"Language: id\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgid "Next"
+msgstr "Berikutnya"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "1 star means not very relevant, 5 stars means very relevant."
+msgstr ""
+"Bintang 1 berarti sangat tidak relevan, bintang 5 berarti sangat relevan."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"A word like 'green grass' should rather be submitted as 'green' and 'grass',"
+" whereas a compound word such as 'red wine' cannot be separated, since 'red "
+"wine' means something different than just 'red' and 'wine'."
+msgstr ""
+"Kata seperti 'rumput hijau' sebaiknya dikirimkan sebagai 'hijau' dan "
+"'rumput', sedangkan kata majemuk seperti 'anggur merah' tidak dapat "
+"dipisahkan, karena 'anggur merah' memiliki arti yang berbeda dari sekadar "
+"'merah' dan 'anggur'."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Add new tags that you think are missing"
+msgstr "Tambahkan tag baru yang menurut Anda kurang"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Add some initial tags"
+msgstr "Tambahkan beberapa tag awal"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"After viewing the stimulus, you can add your own tags that describe the "
+"stimulus."
+msgstr ""
+"Setelah melihat stimulus, Anda dapat menambahkan tag Anda sendiri yang "
+"mendeskripsikan stimulus tersebut."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"After viewing the stimulus, you will see tags from other participants that "
+"describe the stimulus."
+msgstr ""
+"Setelah melihat stimulus, Anda akan melihat tag dari peserta lain yang "
+"mendeskripsikan stimulus tersebut."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Are any tags missing?"
+msgstr "Apakah ada tag yang hilang?"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Creating"
+msgstr "Membuat"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "If you are sure, you can go ahead."
+msgstr "Jika Anda yakin, Anda dapat melanjutkan."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"If you are the first person seeing the stimulus, you may see no previous "
+"tags."
+msgstr ""
+"Jika Anda adalah orang pertama yang melihat stimulus tersebut, Anda mungkin "
+"tidak melihat tag sebelumnya."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"If you think that the tag is a mistake or completely irrelevant, you should "
+"flag it by clicking the flag icon."
+msgstr ""
+"Jika Anda merasa bahwa tag tersebut merupakan kesalahan atau sama sekali "
+"tidak relevan, Anda harus menandainya dengan mengeklik ikon bendera."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "In this experiment you will:"
+msgstr "Dalam percobaan ini Anda akan melakukannya:"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Is it necessary to use this many whitespaces?"
+msgstr "Apakah perlu menggunakan banyak spasi?"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Keep tags short:"
+msgstr "Jaga agar tag tetap pendek:"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Let's start with a practice round!"
+msgstr "Mari kita mulai dengan putaran latihan!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Mark the existing tags"
+msgstr "Tandai tag yang sudah ada"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Now, let's start the main experiment!"
+msgstr "Sekarang, mari kita mulai eksperimen utama!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "On the next page, we will check if you are a native speaker."
+msgstr ""
+"Pada halaman berikutnya, kami akan memeriksa apakah Anda seorang penutur "
+"asli."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Please submit or delete it first."
+msgstr "Silakan kirimkan atau hapus terlebih dahulu."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Rate tags from other participants"
+msgstr "Menilai tag dari peserta lain"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Rating"
+msgstr "Memberi peringkat"
+
+#. ""
+#: __init__.py
+#, python-brace-format, fuzzy
+msgctxt "STEP-Tag"
+msgid "Submit your response for a new tag by pressing the {ENTER_KEY} key."
+msgstr ""
+"Kirimkan tanggapan Anda untuk tag baru dengan menekan tombol {ENTER_KEY}."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Thanks for participating in this experiment!"
+msgstr "Terima kasih telah berpartisipasi dalam percobaan ini!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "That was a practice round."
+msgstr "Itu adalah babak latihan."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "The following tags are already completed:"
+msgstr "Tag berikut ini sudah selesai:"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "There is still some unsubmitted text in the tag field."
+msgstr "Masih ada beberapa teks yang belum dikirim di bidang tag."
+
+#. ""
+#: __init__.py
+#, python-brace-format, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"To participate in the experiment, you must be a native speaker of "
+"{LANGUAGE}."
+msgstr ""
+"Untuk berpartisipasi dalam percobaan ini, Anda harus merupakan penutur asli "
+"{LANGUAGE}."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Type in tags describing the stimulus, that are missing above."
+msgstr "Ketik tag yang mendeskripsikan stimulus yang tidak ada di atas."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Type in tags describing the stimulus."
+msgstr "Ketik tag yang menjelaskan stimulus."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Type more tags"
+msgstr "Ketik lebih banyak tag"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "View a stimulus and describe it with tags."
+msgstr "Melihat stimulus dan mendeskripsikannya dengan tag."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "You can add more than one tag."
+msgstr "Anda dapat menambahkan lebih dari satu tag."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"You can either select tags from a dropdown list or create entirely new ones."
+msgstr ""
+"Anda dapat memilih tag dari daftar tarik-turun atau membuat tag yang sama "
+"sekali baru."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "You need to rate all tags!"
+msgstr "Anda harus menilai semua tag!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "You need to supply at least one new tag!"
+msgstr "Anda harus menyediakan setidaknya satu tag baru!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"You should rate the relevance of each tag by clicking the appropriate amount"
+" of stars."
+msgstr ""
+"Anda harus menilai relevansi setiap tag dengan mengklik jumlah bintang yang "
+"sesuai."
+
+#. ""
+#: __init__.py
+#, python-brace-format, fuzzy
+msgctxt "STEP-Tag"
+msgid "Your tag contains {N_WHITESPACES} whitespaces."
+msgstr "Tag Anda mengandung spasi {N_WHITESPACES}."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"Your tag will then be rated by other players who are playing the game "
+"simultaneously."
+msgstr ""
+"Tag Anda kemudian akan dinilai oleh pemain lain yang memainkan game secara "
+"bersamaan."

@@ -1,0 +1,318 @@
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Last-Translator: DeepL API\n"
+"Language-Team: DeepL\n"
+"Language: sv\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgid "Next"
+msgstr "Nästa"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "1 star means not very relevant, 5 stars means very relevant."
+msgstr ""
+"1 stjärna betyder inte särskilt relevant, 5 stjärnor betyder mycket "
+"relevant."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"A word like 'green grass' should rather be submitted as 'green' and 'grass',"
+" whereas a compound word such as 'red wine' cannot be separated, since 'red "
+"wine' means something different than just 'red' and 'wine'."
+msgstr ""
+"Ett ord som \"grönt gräs\" bör snarare lämnas in som \"grönt\" och \"gräs\","
+" medan ett sammansatt ord som \"rödvin\" inte kan separeras, eftersom "
+"\"rödvin\" betyder något annat än bara \"röd\" och \"vin\"."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Add new tags that you think are missing"
+msgstr "Lägg till nya taggar som du tycker saknas"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Add some initial tags"
+msgstr "Lägg till några inledande taggar"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"After viewing the stimulus, you can add your own tags that describe the "
+"stimulus."
+msgstr ""
+"När du har tittat på stimulus kan du lägga till egna taggar som beskriver "
+"stimulus."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"After viewing the stimulus, you will see tags from other participants that "
+"describe the stimulus."
+msgstr ""
+"När du har tittat på stimulus kommer du att se taggar från andra deltagare "
+"som beskriver stimulus."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Are any tags missing?"
+msgstr "Saknas det några taggar?"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Creating"
+msgstr "Skapa"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "If you are sure, you can go ahead."
+msgstr "Om du är säker kan du gå vidare."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"If you are the first person seeing the stimulus, you may see no previous "
+"tags."
+msgstr ""
+"Om du är den första personen som ser stimulus kanske du inte ser några "
+"tidigare taggar."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"If you think that the tag is a mistake or completely irrelevant, you should "
+"flag it by clicking the flag icon."
+msgstr ""
+"Om du tror att taggen är ett misstag eller helt irrelevant, bör du flagga "
+"den genom att klicka på flaggikonen."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "In this experiment you will:"
+msgstr "I detta experiment kommer du att:"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Is it necessary to use this many whitespaces?"
+msgstr "Är det nödvändigt att använda så här många blanksteg?"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Keep tags short:"
+msgstr "Håll taggarna korta:"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Let's start with a practice round!"
+msgstr "Låt oss börja med en övningsrunda!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Mark the existing tags"
+msgstr "Markera de befintliga taggarna"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Now, let's start the main experiment!"
+msgstr "Låt oss nu börja med huvudexperimentet!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "On the next page, we will check if you are a native speaker."
+msgstr "På nästa sida kommer vi att kontrollera om du är modersmålstalare."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Please submit or delete it first."
+msgstr "Vänligen skicka in eller ta bort den först."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Rate tags from other participants"
+msgstr "Betygsätt taggar från andra deltagare"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Rating"
+msgstr "Betygsättning"
+
+#. ""
+#: __init__.py
+#, python-brace-format, fuzzy
+msgctxt "STEP-Tag"
+msgid "Submit your response for a new tag by pressing the {ENTER_KEY} key."
+msgstr "Skicka in ditt svar för en ny tagg genom att trycka på {ENTER_KEY}."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Thanks for participating in this experiment!"
+msgstr "Tack för att du deltog i detta experiment!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "That was a practice round."
+msgstr "Det var en övningsrunda."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "The following tags are already completed:"
+msgstr "Följande taggar är redan färdiga:"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "There is still some unsubmitted text in the tag field."
+msgstr "Det finns fortfarande text som inte skickats in i taggfältet."
+
+#. ""
+#: __init__.py
+#, python-brace-format, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"To participate in the experiment, you must be a native speaker of "
+"{LANGUAGE}."
+msgstr "För att delta i experimentet måste du ha {LANGUAGE} som modersmål."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Type in tags describing the stimulus, that are missing above."
+msgstr "Skriv in taggar som beskriver stimulus, som saknas ovan."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Type in tags describing the stimulus."
+msgstr "Skriv in taggar som beskriver stimulus."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Type more tags"
+msgstr "Skriv in fler taggar"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "View a stimulus and describe it with tags."
+msgstr "Visa ett stimulus och beskriv det med taggar."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "You can add more than one tag."
+msgstr "Du kan lägga till fler än en tagg."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"You can either select tags from a dropdown list or create entirely new ones."
+msgstr ""
+"Du kan antingen välja taggar från en rullgardinslista eller skapa helt nya."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "You need to rate all tags!"
+msgstr "Du måste betygsätta alla taggar!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "You need to supply at least one new tag!"
+msgstr "Du måste ange minst en ny tagg!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"You should rate the relevance of each tag by clicking the appropriate amount"
+" of stars."
+msgstr ""
+"Du ska bedöma relevansen för varje tagg genom att klicka på lämpligt antal "
+"stjärnor."
+
+#. ""
+#: __init__.py
+#, python-brace-format, fuzzy
+msgctxt "STEP-Tag"
+msgid "Your tag contains {N_WHITESPACES} whitespaces."
+msgstr "Din tagg innehåller {N_WHITESPACES} blanksteg."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"Your tag will then be rated by other players who are playing the game "
+"simultaneously."
+msgstr ""
+"Din tagg kommer sedan att betygsättas av andra spelare som spelar spelet "
+"samtidigt."

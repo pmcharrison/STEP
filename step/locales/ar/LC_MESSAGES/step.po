@@ -1,0 +1,310 @@
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Last-Translator: GoogleTranslate API\n"
+"Language-Team: GoogleTranslate\n"
+"Language: ar\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgid "Next"
+msgstr "التالي"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "1 star means not very relevant, 5 stars means very relevant."
+msgstr ""
+"نجمة واحدة تعني أنها ليست ذات صلة جدًا، و5 نجوم تعني أنها ذات صلة جدًا."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"A word like 'green grass' should rather be submitted as 'green' and 'grass',"
+" whereas a compound word such as 'red wine' cannot be separated, since 'red "
+"wine' means something different than just 'red' and 'wine'."
+msgstr ""
+"يجب بدلاً من ذلك تقديم كلمة مثل \"العشب الأخضر\" على أنها \"أخضر\" و\"عشب\"،"
+" في حين لا يمكن فصل كلمة مركبة مثل \"النبيذ الأحمر\"، لأن كلمة \"النبيذ "
+"الأحمر\" تعني شيئًا مختلفًا عن مجرد \"أحمر\" و\"نبيذ\". '."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Add new tags that you think are missing"
+msgstr "أضف علامات جديدة تعتقد أنها مفقودة"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Add some initial tags"
+msgstr "أضف بعض العلامات الأولية"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"After viewing the stimulus, you can add your own tags that describe the "
+"stimulus."
+msgstr "بعد مشاهدة التحفيز، يمكنك إضافة العلامات الخاصة بك التي تصف التحفيز."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"After viewing the stimulus, you will see tags from other participants that "
+"describe the stimulus."
+msgstr "بعد عرض التحفيز، سترى علامات من المشاركين الآخرين تصف التحفيز."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Are any tags missing?"
+msgstr "هل هناك أي علامات مفقودة؟"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Creating"
+msgstr "خلق"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "If you are sure, you can go ahead."
+msgstr "إذا كنت متأكدا، يمكنك المضي قدما."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"If you are the first person seeing the stimulus, you may see no previous "
+"tags."
+msgstr "إذا كنت أول شخص يرى التحفيز، فقد لا ترى أي علامات سابقة."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"If you think that the tag is a mistake or completely irrelevant, you should "
+"flag it by clicking the flag icon."
+msgstr ""
+"إذا كنت تعتقد أن العلامة خاطئة أو غير ذات صلة على الإطلاق، فيجب عليك الإبلاغ"
+" عنها عن طريق النقر على أيقونة العلم."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "In this experiment you will:"
+msgstr "في هذه التجربة سوف:"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Is it necessary to use this many whitespaces?"
+msgstr "هل من الضروري استخدام هذا العدد من المسافات البيضاء؟"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Keep tags short:"
+msgstr "اجعل العلامات قصيرة:"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Let's start with a practice round!"
+msgstr "لنبدأ بجولة تدريبية!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Mark the existing tags"
+msgstr "ضع علامة على العلامات الموجودة"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Now, let's start the main experiment!"
+msgstr "الآن، لنبدأ التجربة الرئيسية!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "On the next page, we will check if you are a native speaker."
+msgstr "في الصفحة التالية، سوف نتحقق مما إذا كنت متحدثًا أصليًا أم لا."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Please submit or delete it first."
+msgstr "يرجى إرساله أو حذفه أولاً."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Rate tags from other participants"
+msgstr "علامات التقييم من المشاركين الآخرين"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Rating"
+msgstr "تقييم"
+
+#. ""
+#: __init__.py
+#, python-brace-format, fuzzy
+msgctxt "STEP-Tag"
+msgid "Submit your response for a new tag by pressing the {ENTER_KEY} key."
+msgstr "أرسل إجابتك لعلامة جديدة بالضغط على مفتاح {ENTER_KEY}."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Thanks for participating in this experiment!"
+msgstr "شكرا لمشاركتك في هذه التجربة!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "That was a practice round."
+msgstr "لقد كانت تلك جولة تدريب."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "The following tags are already completed:"
+msgstr "العلامات التالية مكتملة بالفعل:"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "There is still some unsubmitted text in the tag field."
+msgstr "لا يزال هناك بعض النص غير المرسل في حقل العلامة."
+
+#. ""
+#: __init__.py
+#, python-brace-format, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"To participate in the experiment, you must be a native speaker of "
+"{LANGUAGE}."
+msgstr "للمشاركة في التجربة، يجب أن تكون متحدثًا أصليًا للغة {LANGUAGE}."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Type in tags describing the stimulus, that are missing above."
+msgstr "اكتب العلامات التي تصف التحفيز، المفقودة أعلاه."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Type in tags describing the stimulus."
+msgstr "اكتب العلامات التي تصف التحفيز."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Type more tags"
+msgstr "اكتب المزيد من العلامات"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "View a stimulus and describe it with tags."
+msgstr "عرض الحافز ووصفه بالعلامات."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "You can add more than one tag."
+msgstr "يمكنك إضافة أكثر من علامة واحدة."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"You can either select tags from a dropdown list or create entirely new ones."
+msgstr ""
+"يمكنك إما تحديد العلامات من القائمة المنسدلة أو إنشاء علامات جديدة تمامًا."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "You need to rate all tags!"
+msgstr "تحتاج إلى تقييم جميع العلامات!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "You need to supply at least one new tag!"
+msgstr "تحتاج إلى توفير علامة جديدة واحدة على الأقل!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"You should rate the relevance of each tag by clicking the appropriate amount"
+" of stars."
+msgstr ""
+"يجب عليك تقييم مدى ملاءمة كل علامة من خلال النقر على العدد المناسب من "
+"النجوم."
+
+#. ""
+#: __init__.py
+#, python-brace-format, fuzzy
+msgctxt "STEP-Tag"
+msgid "Your tag contains {N_WHITESPACES} whitespaces."
+msgstr "تحتوي علامتك على {N_WHITESPACES} مسافات بيضاء."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"Your tag will then be rated by other players who are playing the game "
+"simultaneously."
+msgstr ""
+"سيتم بعد ذلك تقييم علامتك من قبل لاعبين آخرين يلعبون اللعبة في نفس الوقت."

@@ -1,0 +1,318 @@
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Last-Translator: GoogleTranslate API\n"
+"Language-Team: GoogleTranslate\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgid "Next"
+msgstr "Следећи"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "1 star means not very relevant, 5 stars means very relevant."
+msgstr ""
+"1 звездица значи не баш релевантно, 5 звездица значи веома релевантно."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"A word like 'green grass' should rather be submitted as 'green' and 'grass',"
+" whereas a compound word such as 'red wine' cannot be separated, since 'red "
+"wine' means something different than just 'red' and 'wine'."
+msgstr ""
+"Реч као што је „зелена трава“ би радије требало да се поднесе као „зелена“ и"
+" „трава“, док се сложена реч као што је „црвено вино“ не може одвојити, "
+"пошто „црвено вино“ значи нешто другачије од само „црвено“ и „вино“. '."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Add new tags that you think are missing"
+msgstr "Додајте нове ознаке за које мислите да недостају"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Add some initial tags"
+msgstr "Додајте неке почетне ознаке"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"After viewing the stimulus, you can add your own tags that describe the "
+"stimulus."
+msgstr ""
+"Након прегледа стимулуса, можете додати сопствене ознаке које описују "
+"стимулус."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"After viewing the stimulus, you will see tags from other participants that "
+"describe the stimulus."
+msgstr ""
+"Након што погледате стимулус, видећете ознаке других учесника који описују "
+"стимулус."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Are any tags missing?"
+msgstr "Недостају ли неке ознаке?"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Creating"
+msgstr "Креирање"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "If you are sure, you can go ahead."
+msgstr "Ако сте сигурни, можете наставити."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"If you are the first person seeing the stimulus, you may see no previous "
+"tags."
+msgstr ""
+"Ако сте прва особа која види стимулус, можда нећете видети претходне ознаке."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"If you think that the tag is a mistake or completely irrelevant, you should "
+"flag it by clicking the flag icon."
+msgstr ""
+"Ако мислите да је ознака грешка или потпуно ирелевантна, требало би да је "
+"означите кликом на икону заставице."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "In this experiment you will:"
+msgstr "У овом експерименту ћете:"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Is it necessary to use this many whitespaces?"
+msgstr "Да ли је потребно користити оволико размака?"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Keep tags short:"
+msgstr "Нека ознаке буду кратке:"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Let's start with a practice round!"
+msgstr "Почнимо са тренингом!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Mark the existing tags"
+msgstr "Означите постојеће ознаке"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Now, let's start the main experiment!"
+msgstr "Сада, почнимо са главним експериментом!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "On the next page, we will check if you are a native speaker."
+msgstr "На следећој страници ћемо проверити да ли сте изворни говорник."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Please submit or delete it first."
+msgstr "Прво га пошаљите или избришите."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Rate tags from other participants"
+msgstr "Оцените ознаке других учесника"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Rating"
+msgstr "Оцена"
+
+#. ""
+#: __init__.py
+#, python-brace-format, fuzzy
+msgctxt "STEP-Tag"
+msgid "Submit your response for a new tag by pressing the {ENTER_KEY} key."
+msgstr "Пошаљите свој одговор за нову ознаку притиском на тастер {ENTER_KEY}."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Thanks for participating in this experiment!"
+msgstr "Хвала на учешћу у овом експерименту!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "That was a practice round."
+msgstr "То је био круг за вежбање."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "The following tags are already completed:"
+msgstr "Следеће ознаке су већ завршене:"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "There is still some unsubmitted text in the tag field."
+msgstr "У пољу за ознаку још увек постоји неки текст који није послат."
+
+#. ""
+#: __init__.py
+#, python-brace-format, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"To participate in the experiment, you must be a native speaker of "
+"{LANGUAGE}."
+msgstr ""
+"Да бисте учествовали у експерименту, морате да будете изворни говорник "
+"{LANGUAGE}."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Type in tags describing the stimulus, that are missing above."
+msgstr "Укуцајте ознаке које описују стимулус, а које недостају изнад."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Type in tags describing the stimulus."
+msgstr "Унесите ознаке које описују стимулус."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "Type more tags"
+msgstr "Унесите више ознака"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "View a stimulus and describe it with tags."
+msgstr "Погледајте стимуланс и опишите га ознакама."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "You can add more than one tag."
+msgstr "Можете додати више од једне ознаке."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"You can either select tags from a dropdown list or create entirely new ones."
+msgstr ""
+"Можете или да изаберете ознаке са падајуће листе или да креирате потпуно "
+"нове."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "You need to rate all tags!"
+msgstr "Морате оценити све ознаке!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid "You need to supply at least one new tag!"
+msgstr "Морате да обезбедите бар једну нову ознаку!"
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"You should rate the relevance of each tag by clicking the appropriate amount"
+" of stars."
+msgstr ""
+"Требало би да оцените релевантност сваке ознаке тако што ћете кликнути на "
+"одговарајућу количину звездица."
+
+#. ""
+#: __init__.py
+#, python-brace-format, fuzzy
+msgctxt "STEP-Tag"
+msgid "Your tag contains {N_WHITESPACES} whitespaces."
+msgstr "Ваша ознака садржи {N_WHITESPACES} размака."
+
+#. ""
+#: __init__.py
+#, fuzzy
+msgctxt "STEP-Tag"
+msgid ""
+"Your tag will then be rated by other players who are playing the game "
+"simultaneously."
+msgstr ""
+"Вашу ознаку ће тада оценити други играчи који истовремено играју игру."
