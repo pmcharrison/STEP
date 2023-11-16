@@ -1,0 +1,19 @@
+include *.md
+include *.py
+include *.txt
+include *.yaml
+include *.yml
+recursive-include internat *.css
+recursive-include internat *.csv
+recursive-include internat *.json
+recursive-include internat *.html
+recursive-include internat *.ico
+recursive-include internat *.js
+recursive-include internat *.md
+recursive-include internat *.png
+recursive-include internat *.py
+recursive-include internat *.svg
+recursive-include internat *.txt
+recursive-include internat *.pot
+recursive-include internat *.po
+recursive-include internat *.mo
