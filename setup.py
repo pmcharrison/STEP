@@ -3,16 +3,13 @@ import setuptools
 with open("README.md", "r") as fh:
     long_description = fh.read()
 
-import os
 
 PACKAGE_NAME = "step"
-with open(os.path.join(PACKAGE_NAME, "VERSION")) as version_file:
-    version = version_file.read().strip()
 
 
 setuptools.setup(
     name="step",
-    version=version,
+    version="0.0.1",
     author="Pol van Rijn, Harin Lee, Nori Jacoby",
     author_email="pol.van-rijn@ae.mpg.de",
     description="Sequential Transmission Evaluation Pipeline (STEP)",
