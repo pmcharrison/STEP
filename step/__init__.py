@@ -69,14 +69,13 @@ DEFAULT_LOCALE = "en"
 
 
 class StepCandidate:
-    def __init__(self, text, previous_ratings=None, is_frozen=False, is_dropout=False):
+    def __init__(self, text, previous_ratings=None, is_frozen=False):
         self.text = text
         self.hash = custom_hash(text)
         if previous_ratings is None:
             previous_ratings = []
         self.previous_ratings = previous_ratings
         self.is_frozen = is_frozen
-        self.is_dropout = is_dropout
         self.is_flagged = False
 
 
@@ -392,22 +391,6 @@ def freeze_candidate_if_needed(candidate, freeze_on_n_ratings, freeze_on_mean_ra
     return candidate
 
 
-def drop_candidates(candidates, dropout_factor, dropout_ceiling):
-    for candidate in candidates:
-        candidate.is_dropout = False
-    droppable_candidates = [
-        i
-        for i, candidate in enumerate(candidates)
-        if not (candidate.is_dropout or candidate.is_flagged or candidate.is_frozen)
-    ]
-    to_drop = random.sample(
-        droppable_candidates,
-        min(dropout_ceiling, int(len(droppable_candidates) * dropout_factor)),
-    )
-    for candidate_index in to_drop:
-        candidates[candidate_index].is_dropout = True
-    return candidates
-
 
 class StepTrialMaker(ImitationChainTrialMaker):
     """
@@ -420,8 +403,6 @@ class StepTrialMaker(ImitationChainTrialMaker):
     If certain annotations receive a minimal number of ratings (`freeze_on_n_ratings`) with a mean rating above a
     certain threshold (`freeze_on_mean_rating`), they are considered frozen and no longer receive ratings. A chain can
     stop early if a certain number of annotations are frozen (`complete_on_n_frozen`).
-
-    To make the results more robust, dropout can be used. Dropout randomly removes a certain proportion of annotations.
 
 
 
@@ -442,12 +423,6 @@ class StepTrialMaker(ImitationChainTrialMaker):
 
     locale: str
         The ISO-2 language code for the pipeline. The default is "en" (English).
-
-    dropout_factor: float
-        The proportion of candidates to drop out each iteration. The default is 0.
-
-    dropout_ceiling: int
-        The maximum number of candidates to drop out each iteration. The default is 2.
 
     freeze_on_n_ratings: int
         The minimum number of ratings an annotation must receive before it is frozen. The default is 3.
@@ -481,8 +456,6 @@ class StepTrialMaker(ImitationChainTrialMaker):
         flagging_threshold: int = 2,
         n_stars: int = DEFAULT_N_STARS,
         locale: str = DEFAULT_LOCALE,
-        dropout_factor: float = 0.2,
-        dropout_ceiling: int = 2,
         freeze_on_n_ratings: int = 3,
         freeze_on_mean_rating: float = 3.0,
         complete_on_n_frozen: int = 1,
@@ -518,8 +491,6 @@ class StepTrialMaker(ImitationChainTrialMaker):
             freeze_on_n_ratings <= max_iterations
         ), "The freeze_on_n_ratings must be smaller than or equal to max_iterations."
         assert freeze_on_n_ratings >= 1, "The freeze_on_n_ratings must be at least 1."
-        assert dropout_factor >= 0.0, "The dropout_factor must be at least 0.0."
-        assert dropout_factor <= 1.0, "The dropout_factor must be at most 1.0."
 
         self.expected_trials_per_participant = expected_trials_per_participant
 
@@ -544,8 +515,6 @@ class StepTrialMaker(ImitationChainTrialMaker):
         super().__init__(*args, **kwargs)
         self.flagging_threshold = flagging_threshold
         self.n_stars = n_stars
-        self.dropout_factor = dropout_factor
-        self.dropout_ceiling = dropout_ceiling
         self.freeze_on_n_ratings = freeze_on_n_ratings
         self.freeze_on_mean_rating = freeze_on_mean_rating
         self.complete_on_n_frozen = complete_on_n_frozen
@@ -597,12 +566,6 @@ class StepTrialMaker(ImitationChainTrialMaker):
                 candidate.previous_ratings.append(0)
                 candidate.is_flagged = False
                 new_content_container.pop(parsed_candidate_text)
-        elif candidate.is_dropout:
-            # No rating for dropouts, except if the user specifies an existing translation
-            if parsed_candidate_text in new_content_container:
-                candidate.previous_ratings.append(5)
-                new_content_container.pop(parsed_candidate_text)
-            candidate.is_dropout = False
         else:
             rating = rating
             candidate = self._update_candidate(candidate, rating)
@@ -732,7 +695,7 @@ class StepTag(StepTrialMaker):
         shown_tags = [
             candidate.text
             for candidate in candidates
-            if not (candidate.is_frozen or candidate.is_dropout or candidate.is_flagged)
+            if not (candidate.is_frozen or candidate.is_flagged)
         ]
         rated_tags = sorted(raw_answer["ratings"].keys())
         assert sorted(shown_tags) == rated_tags, "Tags must all be rated."
@@ -782,20 +745,17 @@ class StepTag(StepTrialMaker):
             return trial, trial_status
 
         candidates = trial.definition.candidates
-        candidates = drop_candidates(
-            candidates, self.dropout_factor, self.dropout_ceiling
-        )
 
         candidates = random.sample(candidates, len(candidates))  # shuffle the tags
         used_candidates = [
             candidate
             for candidate in candidates
-            if not (candidate.is_flagged or candidate.is_dropout)
+            if not candidate.is_flagged
         ]
         hidden_candidates = [
             candidate
             for candidate in candidates
-            if (candidate.is_flagged or candidate.is_dropout)
+            if candidate.is_flagged
         ]
         used_contents = [candidate.text for candidate in used_candidates]
         frozen_candidates = [
