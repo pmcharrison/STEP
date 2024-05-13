@@ -452,7 +452,6 @@ class StepTrialMaker(ImitationChainTrialMaker):
         max_iterations,
         label="StepTrialMaker",
         max_trials_per_participant: int = None,
-        early_stopping_criterion: float = 0.8,
         flagging_threshold: int = 2,
         n_stars: int = DEFAULT_N_STARS,
         locale: str = DEFAULT_LOCALE,
@@ -520,7 +519,6 @@ class StepTrialMaker(ImitationChainTrialMaker):
         self.complete_on_n_frozen = complete_on_n_frozen
         self.rating_time_estimate = rating_time_estimate
         self.creating_time_estimate = creating_time_estimate
-        self.early_stopping_criterion = early_stopping_criterion
 
     def custom_network_filter(self, candidates, participant):
         visited_trials = self.trial_class.query.filter_by(
