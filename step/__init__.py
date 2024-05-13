@@ -36,6 +36,7 @@ PACKAGE_NAME = "step"
 
 logger = get_logger()
 
+
 ####################
 # Helper functions #
 ####################
@@ -391,7 +392,6 @@ def freeze_candidate_if_needed(candidate, freeze_on_n_ratings, freeze_on_mean_ra
     return candidate
 
 
-
 class StepTrialMaker(ImitationChainTrialMaker):
     """
     This base class for STEP (Sequential Transmission Evaluation Pipeline). STEP is an evaluation pipeline that allows
@@ -535,7 +535,7 @@ class StepTrialMaker(ImitationChainTrialMaker):
             if candidate.head.estimate_time(
                 self.rating_time_estimate, self.creating_time_estimate
             )
-            <= time_left
+               <= time_left
         ]
         return candidates
 
@@ -544,10 +544,9 @@ class StepTrialMaker(ImitationChainTrialMaker):
         candidate = freeze_candidate_if_needed(
             candidate, self.freeze_on_n_ratings, self.freeze_on_mean_rating
         )
-        n_flagged = sum([rating == 0 for rating in candidate.previous_ratings])
-        candidate.is_flagged = n_flagged != 0 and (
-            n_flagged - 1
-        ) % self.flagging_threshold == (self.flagging_threshold - 1)
+        n_total_flags = sum([rating == 0 for rating in candidate.previous_ratings])
+        has_to_be_flagged = n_total_flags > 0 and n_total_flags % self.flagging_threshold == 0
+        candidate.is_flagged = has_to_be_flagged
         return candidate
 
     def update_candidate(
@@ -752,12 +751,16 @@ class StepTag(StepTrialMaker):
             for candidate in candidates
             if not candidate.is_flagged
         ]
+
         hidden_candidates = [
             candidate
             for candidate in candidates
             if candidate.is_flagged
         ]
         used_contents = [candidate.text for candidate in used_candidates]
+        logger.info(f"Used tags: {used_contents} (Trial {trial.id}, Participant {participant.id})")
+        logger.info(
+            f"Hidden tags: {[candidate.text for candidate in hidden_candidates]} (Trial {trial.id}, Participant {participant.id})")
         frozen_candidates = [
             candidate for candidate in used_candidates if candidate.is_frozen
         ]
@@ -863,8 +866,8 @@ class StepTag(StepTrialMaker):
                 "cannot_submit": _p(
                     "STEP-Tag", "There is still some unsubmitted text in the tag field."
                 )
-                + " "
-                + _p("STEP-Tag", "Please submit or delete it first."),
+                                 + " "
+                                 + _p("STEP-Tag", "Please submit or delete it first."),
                 "whitespaces": " ".join(
                     [
                         _p(
