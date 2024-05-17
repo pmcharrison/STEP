@@ -1,3 +1,4 @@
+import html
 import os
 import hashlib
 import random
@@ -325,8 +326,8 @@ class StepTagPage(StepPage):
             ),
             js_vars={
                 **javascript_translations,
-                "available_tags": available_tags,
-                "used_tags": used_tags,
+                "available_tags": [html.escape(tag) for tag in available_tags],
+                "used_tags": [html.escape(tag) for tag in used_tags],
             },
             **kwargs,
         )
@@ -697,7 +698,7 @@ class StepTag(StepTrialMaker):
         rated_tags = sorted(raw_answer["ratings"].keys())
         assert sorted(shown_tags) == rated_tags, "Tags must all be rated."
 
-        new_tags = [tag for tag in raw_answer["new_tags"] if tag not in used_tags]
+        new_tags = [html.unescape(tag) for tag in raw_answer["new_tags"] if tag not in used_tags]
 
         trial.allocated_time = (
             len(rated_tags) * self.rating_time_estimate
@@ -710,8 +711,7 @@ class StepTag(StepTrialMaker):
 
         for i in range(len(unfrozen_candidates)):
             candidate = unfrozen_candidates[i]
-            candidate.text = candidate.text.replace("'", r"`")
-            parsed_candidate_text = sanitize_text_for_json(candidate.text)
+            parsed_candidate_text = sanitize_text_for_json(html.unescape(candidate.text))
             candidate_rating = raw_answer["ratings"][candidate.text]
             new_tags_dict, candidate, n_frozen = self.update_candidate(
                 candidate=candidate,
