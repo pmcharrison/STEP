@@ -383,6 +383,14 @@ class StepNode(ImitationChainNode):
             self.time_estimate = 4 * rating_time_estimate + creating_time_estimate
         return self.time_estimate
 
+    def summarize_trials(self, trials: list, experiment, participant):
+        """
+        Bugfix such that we always return the first answer, also if multiple trials were made. This can happen in rare
+        cases in which participants mistakenly are assigned to the same trial at the same time.
+        """
+
+        return trials[0].answer
+
 
 def freeze_candidate_if_needed(candidate, freeze_on_n_ratings, freeze_on_mean_rating):
     if len(candidate.previous_ratings) >= freeze_on_n_ratings:
@@ -626,6 +634,7 @@ class StepTrialMaker(ImitationChainTrialMaker):
             pages.append(self.get_instructions_after_practice(self.locale))
 
         return join(*pages) if len(pages) > 0 else None
+
 
 
 @register_table
