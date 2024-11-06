@@ -684,6 +684,7 @@ class StepTag(StepTrialMaker):
 
         if "trial_class" in kwargs:
             trial_class=kwargs["trial_class"]
+            del kwargs["trial_class"]
         else:
             trial_class = StepTagTrial
 
