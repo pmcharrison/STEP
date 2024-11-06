@@ -662,7 +662,6 @@ class StepTag(StepTrialMaker):
         rating_time_estimate: int = 3,  # set based on pilot data
         creating_time_estimate: int = 6,  # set based on pilot data
         deposit_assets: bool = True,
-        trial_class=StepTagTrial,
         *args,
         **kwargs,
     ):
@@ -682,6 +681,11 @@ class StepTag(StepTrialMaker):
                 asset = ExternalAsset(url=url, local_key=local_key)
                 node.asset = asset
                 assets.append(asset)
+
+        if "trial_class" in kwargs:
+            trial_class=kwargs["trial_class"]
+        else:
+            trial_class = StepTagTrial
 
         super().__init__(
             trial_class=trial_class,
