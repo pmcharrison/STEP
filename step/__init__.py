@@ -662,6 +662,7 @@ class StepTag(StepTrialMaker):
         rating_time_estimate: int = 3,  # set based on pilot data
         creating_time_estimate: int = 6,  # set based on pilot data
         deposit_assets: bool = True,
+        trial_class=StepTagTrial,
         *args,
         **kwargs,
     ):
@@ -683,7 +684,7 @@ class StepTag(StepTrialMaker):
                 assets.append(asset)
 
         super().__init__(
-            trial_class=StepTagTrial,
+            trial_class=trial_class,
             complete_on_n_frozen=complete_on_n_frozen,
             rating_time_estimate=rating_time_estimate,
             creating_time_estimate=creating_time_estimate,
