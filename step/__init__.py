@@ -377,10 +377,12 @@ class StepNode(ImitationChainNode):
     def get_definitions(self):
         return [self.definition]
 
-    def estimate_time(self, rating_time_estimate, creating_time_estimate):
+    def estimate_time(self, rating_time_estimate, creating_time_estimate, view_time_estimate):
         if self.time_estimate is None:
             # median ratings + creations in pilot
             self.time_estimate = 4 * rating_time_estimate + creating_time_estimate
+        if self.time_estimate < view_time_estimate:
+            self.time_estimate = view_time_estimate
         return self.time_estimate
 
     def summarize_trials(self, trials: list, experiment, participant):
@@ -469,6 +471,7 @@ class StepTrialMaker(ImitationChainTrialMaker):
         complete_on_n_frozen: int = 1,
         rating_time_estimate: int = 1,
         creating_time_estimate: int = 4,
+        view_time_estimate: int = 1,
         node_class=StepNode,
         debug=False,
         show_instructions=True,
@@ -503,7 +506,7 @@ class StepTrialMaker(ImitationChainTrialMaker):
         self.expected_trials_per_participant = expected_trials_per_participant
 
         time_estimates = [
-            node.estimate_time(rating_time_estimate, creating_time_estimate)
+            node.estimate_time(rating_time_estimate, creating_time_estimate, view_time_estimate)
             for node in kwargs["start_nodes"]
         ]
 
@@ -540,7 +543,7 @@ class StepTrialMaker(ImitationChainTrialMaker):
             candidate
             for candidate in candidates
             if candidate.head.estimate_time(
-                self.rating_time_estimate, self.creating_time_estimate
+                self.rating_time_estimate, self.creating_time_estimate, self.view_time_estimate
             )
                <= time_left
         ]
