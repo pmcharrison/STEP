@@ -504,7 +504,7 @@ class StepTrialMaker(ImitationChainTrialMaker):
         assert freeze_on_n_ratings >= 1, "The freeze_on_n_ratings must be at least 1."
 
         self.expected_trials_per_participant = expected_trials_per_participant
-
+        self.view_time_estimate = view_time_estimate
         time_estimates = [
             node.estimate_time(rating_time_estimate, creating_time_estimate, view_time_estimate)
             for node in kwargs["start_nodes"]
