@@ -362,6 +362,59 @@
         })
     });
 
+    newTagsInput.on('beforeItemAdd', function (event) {
+        let newTag = event.item;
+
+        // call endpoint /api/validate_tag with tag=newTag and wait for the response:
+        $.ajax({
+            url: '/api/validate_tag',
+            data: {
+                'tag': newTag
+            },
+            success: function (data) {
+                // if data contains the key "error" then show an error message
+                if (data.hasOwnProperty('error')) {
+                    psynet.alert(data.error)
+                    let alertButton = $("#alert-button");
+                    alertButton.click(function () {
+                        newTagsInput.tagsinput('remove', newTag)
+                    })
+                }
+                else if (data.hasOwnProperty('warning')) {
+                    psynet.alert(data.warning)
+                }
+            },
+            // catch 400 (BAD REQUEST)
+            error: function (xhr, status, error) {
+                console.log(xhr)
+                if (xhr.status === 400) {
+                    psynet.log.warning(`
+No endpoint implemented for validating tags. Consider adding something like this to your StepTagTrial subclass:
+@expose_to_api("validate_tag")
+@staticmethod
+def validate_tag(tag):
+    if ' ' in tag:
+        return {
+            "success": False,
+            "warning": "Avoid using spaces in your tags."  # Translate this
+        }
+    if len(tag) > 15:
+        return {
+            "success": False,
+            "error": "Your tag cannot be longer than 15 characters. The tag is removed.",
+        }
+    return {
+        "success": True,
+    }`
+                    )
+                } else {
+                    psynet.log.error("Error: " + status + " " + error);
+                }
+            }
+        });
+
+    });
+
     $('.bootstrap-tagsinput')[0].classList.add('form-control')
 
 

@@ -701,6 +701,14 @@ class StepTag(StepTrialMaker):
             **kwargs,
         )
 
+    # Implement this in your subclass
+    # @expose_to_api("validate_tag")
+    # @staticmethod
+    # def validate_tag(tag):
+    #     return {
+    #         "success": True,
+    #     }
+
     def format_answer(self, trial, raw_answer):
         used_tags = trial.var.get("used_tags")
         frozen_candidates = trial.var.get("frozen_candidates")
