@@ -2,6 +2,7 @@ import html
 import os
 import hashlib
 import random
+from builtins import isinstance
 
 from os.path import basename
 from typing import List
@@ -63,19 +64,20 @@ DEFAULT_FREEZE_ON_MEAN_RATING = 3.0
 
 
 class StepCandidate:
-    def __init__(self, text, previous_ratings=None, is_frozen=False):
+    def __init__(self, text, hash=None, previous_ratings=None, is_frozen=False, is_flagged=False):
         self.text = text
-        self.hash = custom_hash(text)
+        if hash is None:
+            hash = custom_hash(text)
+        self.hash = hash
         if previous_ratings is None:
             previous_ratings = []
         self.previous_ratings = previous_ratings
         self.is_frozen = is_frozen
-        self.is_flagged = False
+        self.is_flagged = is_flagged
 
 
 class StepStimulus:
     pass
-
 
 class StepTagStimulus(StepStimulus):
     def __init__(self, url):
@@ -182,7 +184,7 @@ def urls_to_start_nodes(urls):
         StepNode(
             definition=StepTagDefinition(
                 stimulus=url_to_stimulus(url),
-            )
+            ).to_dict()
         )
         for url in urls
     ]
@@ -234,8 +236,8 @@ class StepTagDefinition(StepDefinition):
         url: str = None,
         tags: List[str] = None,
         completed=False,
-        stimulus=None,
-        candidates=None,
+        stimulus:StepTagStimulus=None,
+        candidates:List[StepCandidate]=None,
     ):
         assert (
             sum([el is None for el in [url, stimulus]]) == 1
@@ -254,6 +256,14 @@ class StepTagDefinition(StepDefinition):
             candidates = tags_to_candidates(tags)
         self.completed = completed
         super().__init__(stimulus, candidates)
+
+    def to_dict(self):
+        return {
+            "stimulus": self.stimulus.url,
+            "candidates": [candidate.__dict__ for candidate in self.candidates],
+            "completed": self.completed,
+        }
+
 
 
 class StepPage(ModularPage):
@@ -334,8 +344,12 @@ class StepTagTrial(StepTrial):
         frozen_candidates = self.var.get("frozen_candidates")
         unfrozen_candidates = self.var.get("unfrozen_candidates")
 
+        if isinstance(self.node.definition, StepTagDefinition):
+            stimulus = self.node.definition.stimulus
+        else:
+            stimulus = url_to_stimulus(self.node.definition["stimulus"])
         return StepTagPage(
-            stimulus=self.node.definition.stimulus,
+            stimulus=stimulus,
             frozen_candidates=frozen_candidates,
             unfrozen_candidates=unfrozen_candidates,
             available_tags=available_tags,
@@ -361,8 +375,15 @@ class StepNode(ImitationChainNode):
     def create_definition_from_seed(self, seed, experiment, participant):
         return seed
 
+    def cast_definition(self, definition):
+        if isinstance(definition, dict):
+            stimulus = url_to_stimulus(definition["stimulus"])
+            candidates = [StepCandidate(**cand) for cand in definition['candidates']]
+            return StepTagDefinition(stimulus=stimulus, candidates=candidates, completed=definition["completed"])
+        return definition
+
     def get_definitions(self):
-        return [self.definition]
+        return [self.cast_definition(self.definition)]
 
     def estimate_time(self, rating_time_estimate, creating_time_estimate, view_time_estimate):
         if self.time_estimate is None:
@@ -658,7 +679,7 @@ class StepTag(StepTrialMaker):
         # Register assets
         if deposit_assets:
             for node in kwargs["start_nodes"]:
-                url = node.definition.stimulus.url
+                url = node.definition['stimulus']
                 fname = basename(url)
                 short_hash = hashlib.sha1(fname.encode()).hexdigest()
                 # same filename is okay if they are from a different url
@@ -738,18 +759,26 @@ class StepTag(StepTrialMaker):
         for tag in new_tags:
             candidates.append(StepCandidate(text=tag))
 
+        if isinstance(trial.node.definition, StepTagDefinition):
+            stimulus = trial.node.definition.stimulus
+        else:
+            stimulus = url_to_stimulus(trial.node.definition["stimulus"])
+
         return StepTagDefinition(
-            stimulus=trial.node.definition.stimulus,
+            stimulus=stimulus,
             candidates=candidates,
             completed=n_frozen >= self.complete_on_n_frozen,
-        )
+        ).to_dict()
 
     def prepare_trial(self, experiment, participant):
         trial, trial_status = super().prepare_trial(experiment, participant)
         if trial_status in ["wait", "exit"]:
             return trial, trial_status
 
-        candidates = trial.definition.candidates
+        if isinstance(trial.definition, StepTagDefinition):
+            candidates = trial.definition.candidates
+        else:
+            candidates = [StepCandidate(**cand) for cand in trial.definition['candidates']]
 
         candidates = random.sample(candidates, len(candidates))  # shuffle the tags
         used_candidates = [
@@ -786,10 +815,11 @@ class StepTag(StepTrialMaker):
 
     def create_networks_across(self, experiment):
         super().create_networks_across(experiment)
+
         initial_tags = [
-            candidate.text
+            candidate['text']
             for node in self.start_nodes
-            for candidate in node.definition.candidates
+            for candidate in node.definition['candidates']
         ]
         initial_vocabulary = list(set(initial_tags + self.vocabulary))
         Vocabulary.extend(initial_vocabulary)
