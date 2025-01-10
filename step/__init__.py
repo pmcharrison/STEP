@@ -26,7 +26,7 @@ from psynet.trial.imitation_chain import (
     ImitationChainTrial,
     ImitationChainTrialMaker,
 )
-from psynet.utils import get_language_dict, get_logger
+from psynet.utils import get_language_dict, get_logger, get_translator, get_translator_with_context
 from sqlalchemy import Column, Integer, String
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -42,13 +42,6 @@ logger = get_logger()
 # Helper functions #
 ####################
 
-
-def get_translator(locale=None):
-    from psynet.utils import get_translator
-
-    return get_translator(
-        locale, module=PACKAGE_NAME, locales_dir=os.path.join(here, "locales")
-    )
 
 
 def custom_hash(text):
@@ -67,7 +60,6 @@ DEFAULT_N_STARS = 5
 DEFAULT_FLAGGING_THRESHOLD = 2
 DEFAULT_FREEZE_ON_N_RATINGS = 3
 DEFAULT_FREEZE_ON_MEAN_RATING = 3.0
-DEFAULT_LOCALE = "en"
 
 
 class StepCandidate:
@@ -341,7 +333,6 @@ class StepTagTrial(StepTrial):
         used_tags = self.var.get("used_tags")
         frozen_candidates = self.var.get("frozen_candidates")
         unfrozen_candidates = self.var.get("unfrozen_candidates")
-        gettext, pgettext = get_translator(self.var.get("locale"))
 
         return StepTagPage(
             stimulus=self.node.definition.stimulus,
@@ -352,12 +343,8 @@ class StepTagTrial(StepTrial):
             n_stars=self.trial_maker.n_stars,
             complete_on_n_frozen=self.trial_maker.complete_on_n_frozen,
             flagging_threshold=self.trial_maker.flagging_threshold,
-            javascript_translations=self.trial_maker.get_javascript_translations(
-                gettext, pgettext
-            ),
-            jinja_translations=self.trial_maker.get_jinja_translations(
-                gettext, pgettext
-            ),
+            javascript_translations=self.trial_maker.get_javascript_translations(),
+            jinja_translations=self.trial_maker.get_jinja_translations(),
         )
 
 
@@ -432,9 +419,6 @@ class StepTrialMaker(ImitationChainTrialMaker):
     n_stars: int
         The number of stars to use for rating. The default is 5.
 
-    locale: str
-        The ISO-2 language code for the pipeline. The default is "en" (English).
-
     freeze_on_n_ratings: int
         The minimum number of ratings an annotation must receive before it is frozen. The default is 3.
 
@@ -465,7 +449,6 @@ class StepTrialMaker(ImitationChainTrialMaker):
         max_trials_per_participant: int = None,
         flagging_threshold: int = 2,
         n_stars: int = DEFAULT_N_STARS,
-        locale: str = DEFAULT_LOCALE,
         freeze_on_n_ratings: int = 3,
         freeze_on_mean_rating: float = 3.0,
         complete_on_n_frozen: int = 1,
@@ -521,7 +504,6 @@ class StepTrialMaker(ImitationChainTrialMaker):
             practice_stimuli = []
         self.practice_stimuli = practice_stimuli
         self.n_practice_trials = len(practice_stimuli)
-        self.locale = locale
 
         super().__init__(*args, **kwargs)
         self.flagging_threshold = flagging_threshold
@@ -610,18 +592,18 @@ class StepTrialMaker(ImitationChainTrialMaker):
         self.decide_if_network_is_full(trial)
 
     @classmethod
-    def get_instructions_before_practice(cls, locale, **kwargs):
+    def get_instructions_before_practice(cls, **kwargs):
         raise NotImplementedError("Must be implemented by subclass.")
 
     def get_practice(self):
         raise NotImplementedError("Must be implemented by subclass.")
 
     @classmethod
-    def get_instructions_after_practice(cls, locale, **kwargs):
+    def get_instructions_after_practice(cls, **kwargs):
         raise NotImplementedError("Must be implemented by subclass.")
 
     @classmethod
-    def get_instructions(cls, locale, debug=False, **kwargs):
+    def get_instructions(cls, debug=False, **kwargs):
         raise NotImplementedError("Must be implemented by subclass.")
 
     @property
@@ -629,12 +611,12 @@ class StepTrialMaker(ImitationChainTrialMaker):
         pages = []
 
         if self.show_instructions:
-            pages.append(self.get_instructions(self.locale))
+            pages.append(self.get_instructions())
 
         if self.n_practice_trials > 0:
-            pages.append(self.get_instructions_before_practice(self.locale))
+            pages.append(self.get_instructions_before_practice())
             pages.append(self.get_practice())
-            pages.append(self.get_instructions_after_practice(self.locale))
+            pages.append(self.get_instructions_after_practice())
 
         return join(*pages) if len(pages) > 0 else None
 
@@ -799,7 +781,6 @@ class StepTag(StepTrialMaker):
         trial.var.set("frozen_candidates", frozen_candidates)
         trial.var.set("unfrozen_candidates", unfrozen_candidates)
         trial.var.set("hidden_candidates", hidden_candidates)
-        trial.var.set("locale", self.locale)
 
         return trial, trial_status
 
@@ -814,8 +795,8 @@ class StepTag(StepTrialMaker):
         Vocabulary.extend(initial_vocabulary)
 
     @staticmethod
-    def get_instructions_without_tags(gettext, pgettext):
-        _, _p = gettext, pgettext
+    def get_instructions_without_tags():
+        _p = get_translator_with_context()
         out = '<h3 for="new_tags">' + _p("STEP-Tag", "Add some initial tags") + "</h3>"
         out += '<div class="alert alert-primary" role="alert">'
         out += " ".join(
@@ -838,8 +819,8 @@ class StepTag(StepTrialMaker):
         return out
 
     @staticmethod
-    def get_instructions_with_tags(gettext, pgettext):
-        _, _p = gettext, pgettext
+    def get_instructions_with_tags():
+        _p = get_translator_with_context()
         out = '<h3 for="new_tags">' + _p("STEP-Tag", "Are any tags missing?") + "</h3>"
         out += '<div class="alert alert-primary" role="alert">'
         out += " ".join(
@@ -865,22 +846,21 @@ class StepTag(StepTrialMaker):
         return out
 
     @classmethod
-    def get_jinja_translations(cls, gettext, pgettext):
-        _, _p = gettext, pgettext
+    def get_jinja_translations(cls):
+        _ = get_translator()
+        _p = get_translator_with_context()
         return {
             "title_frozen": _p("STEP-Tag", "The following tags are already completed:"),
             "title_unfrozen": _p("STEP-Tag", "Mark the existing tags"),
             "type_more": _p("STEP-Tag", "Type more tags"),
             "next": _("Next"),
-            "instructions_without_tags": cls.get_instructions_without_tags(
-                gettext, pgettext
-            ),
-            "instructions_with_tags": cls.get_instructions_with_tags(gettext, pgettext),
+            "instructions_without_tags": cls.get_instructions_without_tags(),
+            "instructions_with_tags": cls.get_instructions_with_tags(),
         }
 
     @staticmethod
-    def get_javascript_translations(gettext, pgettext):
-        _, _p = gettext, pgettext
+    def get_javascript_translations():
+        _p = get_translator_with_context()
         return {
             "translations": {
                 "rate_all_tags": _p("STEP-Tag", "You need to rate all tags!"),
@@ -905,8 +885,8 @@ class StepTag(StepTrialMaker):
         }
 
     @classmethod
-    def get_instructions_before_practice(cls, locale):
-        _, _p = get_translator(locale)
+    def get_instructions_before_practice(cls):
+        _p = get_translator_with_context()
         return InfoPage(
             Markup(
                 " ".join(
@@ -922,13 +902,13 @@ class StepTag(StepTrialMaker):
         practice_pages = []
         for stimulus in self.practice_stimuli:
             practice_pages.append(
-                StepTagPractice(locale=self.locale, stimulus=stimulus, time_estimate=10)
+                StepTagPractice(stimulus=stimulus, time_estimate=10)
             )
         return join(*practice_pages)
 
     @classmethod
-    def get_instructions_after_practice(cls, locale, **kwargs):
-        _, _p = get_translator(locale)
+    def get_instructions_after_practice(cls, **kwargs):
+        _p = get_translator_with_context()
         return InfoPage(
             Markup(
                 _p("STEP-Tag", "That was a practice round.")
@@ -939,8 +919,8 @@ class StepTag(StepTrialMaker):
         )
 
     @classmethod
-    def get_first_instructions(cls, locale):
-        _, _p = get_translator(locale)
+    def get_first_instructions(cls):
+        _p = get_translator_with_context()
         return InfoPage(
             Markup(
                 " ".join(
@@ -966,8 +946,8 @@ class StepTag(StepTrialMaker):
         )
 
     @classmethod
-    def get_rating_instructions(cls, locale):
-        _, _p = get_translator(locale)
+    def get_rating_instructions(cls):
+        _p = get_translator_with_context()
 
         return InfoPage(
             Markup(
@@ -1011,8 +991,8 @@ class StepTag(StepTrialMaker):
         )
 
     @classmethod
-    def get_creating_instructions(cls, locale):
-        _, _p = get_translator(locale)
+    def get_creating_instructions(cls):
+        _p = get_translator_with_context()
 
         return InfoPage(
             Markup(
@@ -1049,13 +1029,13 @@ class StepTag(StepTrialMaker):
         )
 
     @classmethod
-    def get_instructions(cls, locale, debug=False, **kwargs):
-        _, _p = get_translator(locale)
+    def get_instructions(cls, debug=False, **kwargs):
+        _p = get_translator_with_context()
 
         return join(
-            cls.get_first_instructions(locale),
-            cls.get_rating_instructions(locale),
-            cls.get_creating_instructions(locale),
+            cls.get_first_instructions(),
+            cls.get_rating_instructions(),
+            cls.get_creating_instructions(),
         )
 
     @classmethod
@@ -1078,7 +1058,6 @@ class StepTagPractice(StepTagPage):
         self,
         stimulus: StepStimulus,
         time_estimate: float,
-        locale: str = DEFAULT_LOCALE,
         frozen_candidates: List[StepCandidate] = [],
         unfrozen_candidates: List[StepCandidate] = [],
         available_tags: List[str] = [],
@@ -1096,11 +1075,8 @@ class StepTagPractice(StepTagPage):
         self.used_tags = used_tags
         self.freeze_on_n_ratings = freeze_on_n_ratings
         self.freeze_on_mean_rating = freeze_on_mean_rating
-        gettext, pgettext = get_translator(locale)
-        jinja_translations = step_class.get_jinja_translations(gettext, pgettext)
-        javascript_translations = step_class.get_javascript_translations(
-            gettext, pgettext
-        )
+        jinja_translations = step_class.get_jinja_translations()
+        javascript_translations = step_class.get_javascript_translations()
 
         super().__init__(
             stimulus=stimulus,
