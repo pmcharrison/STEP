@@ -27,7 +27,7 @@ from psynet.trial.imitation_chain import (
     ImitationChainTrial,
     ImitationChainTrialMaker,
 )
-from psynet.utils import get_language_dict, get_logger, get_translator, get_translator_with_context
+from psynet.utils import get_language_dict, get_logger, get_translator
 from sqlalchemy import Column, Integer, String
 
 here = os.path.abspath(os.path.dirname(__file__))
@@ -679,7 +679,11 @@ class StepTag(StepTrialMaker):
         # Register assets
         if deposit_assets:
             for node in kwargs["start_nodes"]:
-                url = node.definition['stimulus']
+                if isinstance(node.definition, StepTagDefinition):
+                    stimulus = node.definition.stimulus
+                    url = stimulus.url
+                else:
+                    url = node.definition['stimulus']
                 fname = basename(url)
                 short_hash = hashlib.sha1(fname.encode()).hexdigest()
                 # same filename is okay if they are from a different url
@@ -816,17 +820,24 @@ class StepTag(StepTrialMaker):
     def create_networks_across(self, experiment):
         super().create_networks_across(experiment)
 
-        initial_tags = [
-            candidate['text']
-            for node in self.start_nodes
-            for candidate in node.definition['candidates']
-        ]
+        if isinstance(self.start_nodes[0].definition, StepTagDefinition):
+            initial_tags = [
+                candidate.text
+                for node in self.start_nodes
+                for candidate in node.definition.candidates
+            ]
+        else:
+            initial_tags = [
+                candidate['text']
+                for node in self.start_nodes
+                for candidate in node.definition['candidates']
+            ]
         initial_vocabulary = list(set(initial_tags + self.vocabulary))
         Vocabulary.extend(initial_vocabulary)
 
     @staticmethod
     def get_instructions_without_tags():
-        _p = get_translator_with_context()
+        _p = get_translator(context=True)
         out = '<h3 for="new_tags">' + _p("STEP-Tag", "Add some initial tags") + "</h3>"
         out += '<div class="alert alert-primary" role="alert">'
         out += " ".join(
@@ -850,7 +861,7 @@ class StepTag(StepTrialMaker):
 
     @staticmethod
     def get_instructions_with_tags():
-        _p = get_translator_with_context()
+        _p = get_translator(context=True)
         out = '<h3 for="new_tags">' + _p("STEP-Tag", "Are any tags missing?") + "</h3>"
         out += '<div class="alert alert-primary" role="alert">'
         out += " ".join(
@@ -878,7 +889,7 @@ class StepTag(StepTrialMaker):
     @classmethod
     def get_jinja_translations(cls):
         _ = get_translator()
-        _p = get_translator_with_context()
+        _p = get_translator(context=True)
         return {
             "title_frozen": _p("STEP-Tag", "The following tags are already completed:"),
             "title_unfrozen": _p("STEP-Tag", "Mark the existing tags"),
@@ -890,7 +901,7 @@ class StepTag(StepTrialMaker):
 
     @staticmethod
     def get_javascript_translations():
-        _p = get_translator_with_context()
+        _p = get_translator(context=True)
         return {
             "translations": {
                 "rate_all_tags": _p("STEP-Tag", "You need to rate all tags!"),
@@ -916,7 +927,7 @@ class StepTag(StepTrialMaker):
 
     @classmethod
     def get_instructions_before_practice(cls):
-        _p = get_translator_with_context()
+        _p = get_translator(context=True)
         return InfoPage(
             Markup(
                 " ".join(
@@ -938,7 +949,7 @@ class StepTag(StepTrialMaker):
 
     @classmethod
     def get_instructions_after_practice(cls, **kwargs):
-        _p = get_translator_with_context()
+        _p = get_translator(context=True)
         return InfoPage(
             Markup(
                 _p("STEP-Tag", "That was a practice round.")
@@ -950,7 +961,7 @@ class StepTag(StepTrialMaker):
 
     @classmethod
     def get_first_instructions(cls):
-        _p = get_translator_with_context()
+        _p = get_translator(context=True)
         return InfoPage(
             Markup(
                 " ".join(
@@ -977,7 +988,7 @@ class StepTag(StepTrialMaker):
 
     @classmethod
     def get_rating_instructions(cls):
-        _p = get_translator_with_context()
+        _p = get_translator(context=True)
 
         return InfoPage(
             Markup(
@@ -1022,7 +1033,7 @@ class StepTag(StepTrialMaker):
 
     @classmethod
     def get_creating_instructions(cls):
-        _p = get_translator_with_context()
+        _p = get_translator(context=True)
 
         return InfoPage(
             Markup(
@@ -1060,7 +1071,7 @@ class StepTag(StepTrialMaker):
 
     @classmethod
     def get_instructions(cls, debug=False, **kwargs):
-        _p = get_translator_with_context()
+        _p = get_translator(context=True)
 
         return join(
             cls.get_first_instructions(),
