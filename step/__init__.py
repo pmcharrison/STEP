@@ -64,7 +64,7 @@ DEFAULT_FREEZE_ON_MEAN_RATING = 3.0
 
 
 class StepCandidate:
-    def __init__(self, text, hash=None, previous_ratings=None, is_frozen=False, is_flagged=False):
+    def __init__(self, text, hash=None, previous_ratings=None, is_frozen=False, is_flagged=False, is_new=True):
         self.text = text
         if hash is None:
             hash = custom_hash(text)
@@ -74,6 +74,7 @@ class StepCandidate:
         self.previous_ratings = previous_ratings
         self.is_frozen = is_frozen
         self.is_flagged = is_flagged
+        self.is_new = is_new
 
 
 class StepStimulus:
@@ -354,10 +355,10 @@ class StepTrial(ImitationChainTrial):
             definition_candidates = self.node.definition.candidates
         else:
             definition_candidates = self.node.definition["candidates"]
-        for candidate in self.answer["candidates"]:
+        candidates = self.answer["candidates"]
+        for candidate in candidates:
             parent_candidate = [_cand for _cand in definition_candidates if _cand["text"] == candidate["text"]]
-            tag_exists = len(parent_candidate) > 0
-            if not tag_exists:
+            if candidate["is_new"]:
                 new_tags.append(candidate["text"])
             else:
                 parent_candidate = parent_candidate[0]
@@ -895,7 +896,7 @@ class StepTag(StepTrialMaker):
         unfrozen_candidates = trial.var.get("unfrozen_candidates")
         hidden_candidates = trial.var.get("hidden_candidates")
         candidates = unfrozen_candidates + frozen_candidates + hidden_candidates
-        used_tags = sorted(used_tags)
+        all_tags = [candidate.text for candidate in candidates]
         shown_tags = [
             candidate.text
             for candidate in candidates
@@ -903,8 +904,9 @@ class StepTag(StepTrialMaker):
         ]
         rated_tags = sorted(raw_answer["ratings"].keys())
         assert sorted(shown_tags) == rated_tags, "Tags must all be rated."
+        _new_tags = [html.unescape(tag) for tag in raw_answer["new_tags"]]
+        new_tags = [tag for tag in _new_tags if tag not in all_tags]
 
-        new_tags = [html.unescape(tag) for tag in raw_answer["new_tags"] if tag not in used_tags]
 
         trial.allocated_time = (
             len(rated_tags) * self.rating_time_estimate
@@ -935,6 +937,13 @@ class StepTag(StepTrialMaker):
         # add new candidates to trial
         for tag in new_tags:
             candidates.append(StepCandidate(text=tag))
+
+        for i, candidate in enumerate(candidates):
+            if candidate.text in _new_tags:
+                candidates[i].is_flagged = False
+                candidates[i].is_new = True
+            else:
+                candidates[i].is_new = False
 
         if isinstance(trial.node.definition, StepTagDefinition):
             stimulus = trial.node.definition.stimulus
