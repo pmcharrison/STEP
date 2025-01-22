@@ -355,7 +355,14 @@ class StepTrial(ImitationChainTrial):
             definition_candidates = self.node.definition.candidates
         else:
             definition_candidates = self.node.definition["candidates"]
-        candidates = self.answer["candidates"]
+        try:
+            candidates = self.answer["candidates"]
+        except KeyError:
+            logger.warning(
+                f"It seems that the answer is not yet provided or malformed for trial {self.id} "
+                f"(Participant {self.participant_id})."
+            )
+            return ""
         for candidate in candidates:
             parent_candidate = [_cand for _cand in definition_candidates if _cand["text"] == candidate["text"]]
             if candidate["is_new"]:
@@ -367,8 +374,10 @@ class StepTrial(ImitationChainTrial):
                 elif parent_candidate["is_frozen"] and candidate["is_frozen"]:
                     completed_tags.append(candidate["text"])
                 else:
-                    rating = candidate["previous_ratings"][-1]
-                    tags_html += print_candidate(candidate, n_stars=self.trial_maker.n_stars)
+                    printed_candidate = print_candidate(candidate, n_stars=self.trial_maker.n_stars)
+                    if printed_candidate == "":
+                        return ""
+                    tags_html += printed_candidate
         out = """
             <style>
             .tag-container {
