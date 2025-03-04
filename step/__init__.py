@@ -1085,6 +1085,7 @@ class StepTag(StepTrialMaker):
             "title_frozen": _p("STEP-Tag", "The following tags are already completed:"),
             "title_unfrozen": _p("STEP-Tag", "Mark the existing tags"),
             "type_more": _p("STEP-Tag", "Type more tags"),
+            'title_tags': _p("STEP-Tag", "Add tags"),
             "next": _("Next"),
             "instructions_without_tags": cls.get_instructions_without_tags(),
             "instructions_with_tags": cls.get_instructions_with_tags(),

@@ -174,7 +174,7 @@
 
 
     .tag-name {
-        font-size: 3em;
+        font-size: 2em;
         color: white;
         padding: 0 0.5em;
     }
@@ -272,15 +272,18 @@
 
 
     <div class="form-group mt-5">
+        <h3>{{ params.translations.title_tags }}</h3>
+         <input type="text" spellcheck="value" class="form-control" id="new_tags"
+               placeholder="{{ params.translations.type_more }}">
+        <hr>
         {% if params.unfrozen_candidates | length > 0 %}
-        {{ params.translations.instructions_with_tags }}
+            {{ params.translations.instructions_with_tags }}
         {% else %}
-        {{ params.translations.instructions_without_tags }}
+            {{ params.translations.instructions_without_tags }}
         {% endif %}
         <div id="error_area"></div>
 
-        <input type="text" spellcheck="value" class="form-control" id="new_tags"
-               placeholder="{{ params.translations.type_more }}">
+
         <button class="btn btn-lg btn-primary mt-3 submit" id="nextButton"
                 onclick="validate();">{{ params.translations.next }}
         </button>
