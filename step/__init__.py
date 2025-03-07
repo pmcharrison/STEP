@@ -495,7 +495,10 @@ class StepTagPage(StepPage):
         self.frozen_candidates = frozen_candidates
         self.unfrozen_candidates = unfrozen_candidates
         self.used_tags = used_tags
-        escaped_js_translations = {k: html.escape(v) for k, v in javascript_translations.items()}
+        escaped_js_translations = {'translations': {
+            k: html.escape(v) for k, v in javascript_translations['translations'].items()
+        }
+        }
 
         super().__init__(
             flagging_threshold,
