@@ -495,6 +495,7 @@ class StepTagPage(StepPage):
         self.frozen_candidates = frozen_candidates
         self.unfrozen_candidates = unfrozen_candidates
         self.used_tags = used_tags
+        escaped_js_translations = {k: html.escape(v) for k, v in javascript_translations.items()}
 
         super().__init__(
             flagging_threshold,
@@ -510,7 +511,7 @@ class StepTagPage(StepPage):
                 translations=jinja_translations,
             ),
             js_vars={
-                **javascript_translations,
+                **escaped_js_translations,
                 "available_tags": [html.escape(tag) for tag in available_tags],
                 "used_tags": [html.escape(tag) for tag in used_tags],
             },
