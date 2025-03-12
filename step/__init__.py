@@ -732,7 +732,7 @@ class StepTrialMaker(ImitationChainTrialMaker):
         candidates = [
             candidate
             for candidate in candidates
-            if candidate.head.estimate_time(
+            if candidate.head is not None and candidate.head.estimate_time(
                 self.rating_time_estimate, self.creating_time_estimate, self.view_time_estimate
             )
                <= time_left
