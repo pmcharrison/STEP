@@ -314,13 +314,13 @@
             }
         })
         let nTags = $('.tag-name:not(.frozen)').length;
-
+        let idx = autoComplete ? 1 : 0;
         if (nTags !== Object.keys(ratings).length) {
             alert(translations.rate_all_tags)
         } else if (newTags.length === 0 && nTags === 0) {
             // if there are no initial tags force people to create new tags
             alert(translations.specify_one_tag)
-        } else if ($('.bootstrap-tagsinput input')[1].value !== '') {
+        } else if ($('.bootstrap-tagsinput input')[idx].value !== '') {
             alert(translations.cannot_submit)
         } else {
             psynet.nextPage(getData());
@@ -348,13 +348,18 @@
         return $("<textarea/>").html(value).text();
     }
 
-    available_tags = available_tags.map(htmlDecode)
+    available_tags = available_tags.map(htmlDecode);
 
-    newTagsInput.tagsinput({
+    // params.auto_complete => wheter to do typeahead
+    const autoComplete = JSON.parse('{{ params.auto_complete | tojson }}');
+
+    let params = {
         onTagExists: function (item, $tag) {
             // do nothing
-        },
-        typeaheadjs: ({
+        }
+    }
+    if (autoComplete){
+        params.typeaheadjs = ({
             hint: true,
             highlight: true,
             minLength: 1
@@ -363,7 +368,9 @@
             // available_tags is a list of all tags that have been used in the past
             source: substringMatcher(available_tags)
         })
-    });
+    }
+
+    newTagsInput.tagsinput(params);
 
     newTagsInput.on('beforeItemAdd', function (event) {
         let newTag = event.item;

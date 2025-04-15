@@ -211,12 +211,13 @@ class StepTagControl(Control):
     macro = "step_tag"
     external_template = "step.html"
 
-    def __init__(self, frozen_candidates, unfrozen_candidates, n_stars, translations):
+    def __init__(self, frozen_candidates, unfrozen_candidates, n_stars, translations, auto_complete):
         super().__init__()
         self.frozen_candidates = frozen_candidates
         self.unfrozen_candidates = unfrozen_candidates
         self.n_stars = n_stars
         self.translations = translations
+        self.auto_complete = auto_complete
 
     @property
     def metadata(self):
@@ -487,6 +488,7 @@ class StepTagPage(StepPage):
         jinja_translations: dict,
         flagging_threshold: int = DEFAULT_FLAGGING_THRESHOLD,
         complete_on_n_frozen: int = 2,
+        auto_complete: bool = True,
         freeze_on_n_ratings: int = DEFAULT_FREEZE_ON_N_RATINGS,
         freeze_on_mean_rating: float = DEFAULT_FREEZE_ON_MEAN_RATING,
         **kwargs,
@@ -512,6 +514,7 @@ class StepTagPage(StepPage):
                 unfrozen_candidates=unfrozen_candidates,
                 n_stars=n_stars,
                 translations=jinja_translations,
+                auto_complete=auto_complete,
             ),
             js_vars={
                 **escaped_js_translations,
@@ -543,6 +546,7 @@ class StepTagTrial(StepTrial):
             used_tags=used_tags,
             n_stars=self.trial_maker.n_stars,
             complete_on_n_frozen=self.trial_maker.complete_on_n_frozen,
+            auto_complete=self.trial_maker.auto_complete,
             flagging_threshold=self.trial_maker.flagging_threshold,
             javascript_translations=self.trial_maker.get_javascript_translations(),
             jinja_translations=self.trial_maker.get_jinja_translations(),
@@ -665,6 +669,7 @@ class StepTrialMaker(ImitationChainTrialMaker):
         view_time_estimate: int = 1,
         node_class=StepNode,
         debug=False,
+        auto_complete=True,
         show_instructions=True,
         practice_stimuli: List[StepStimulus] = None,
         *args,
@@ -707,6 +712,7 @@ class StepTrialMaker(ImitationChainTrialMaker):
         )
 
         self.debug = debug
+        self.auto_complete = auto_complete
         self.show_instructions = show_instructions
         if practice_stimuli is None:
             practice_stimuli = []
