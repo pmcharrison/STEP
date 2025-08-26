@@ -23,29 +23,29 @@ LABEL = "STEP Tag demo"
 INITIAL_VOCABULARY = ["cat", "dog", "mouse"]
 N_TRIALS_PER_PARTICIPANT = 2
 
-
-# You can also define your own start nodes with pre-existing tags
-def get_custom_start_nodes():
-    # You can also customize your own start nodes
-    return [
-        StepNode(
-            definition=StepTagDefinition(
-                name="thaieggplant3",
-                stimulus=StepTagImage(),
-                candidates=[
-                    StepCandidate("example_frozen", is_frozen=True),
-                    StepCandidate("example_unfrozen", is_frozen=False),
-                    StepCandidate("example_frozen2", is_frozen=True),
-                    StepCandidate("example_unfrozen2", is_frozen=False),
-                ],
-            ),
-            assets={
-                "image": asset(
-                    "https://s3.amazonaws.com/generalization-datasets/vegetables/images/thaieggplant3.jpg"
-                ),
-            },
-        )
-    ]
+# Not supported for now
+# # You can also define your own start nodes with pre-existing tags
+# def get_custom_start_nodes():
+#     # You can also customize your own start nodes
+#     return [
+#         StepNode(
+#             definition=StepTagDefinition(
+#                 name="thaieggplant3",
+#                 stimulus=StepTagImage(),
+#                 candidates=[
+#                     StepCandidate("example_frozen", is_frozen=True),
+#                     StepCandidate("example_unfrozen", is_frozen=False),
+#                     StepCandidate("example_frozen2", is_frozen=True),
+#                     StepCandidate("example_unfrozen2", is_frozen=False),
+#                 ],
+#             ),
+#             assets={
+#                 "image": asset(
+#                     "https://s3.amazonaws.com/generalization-datasets/vegetables/images/thaieggplant3.jpg"
+#                 ),
+#             },
+#         )
+#     ]
 
 
 class Exp(psynet.experiment.Experiment):
