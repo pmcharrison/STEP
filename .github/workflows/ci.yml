@@ -20,6 +20,10 @@ jobs:
         run: |
           python -m pip install --upgrade pip wheel
 
+      - name: Install STEP
+        run: |
+          pip install .
+
       - name: Change to STEP-Tag directory
         working-directory: demos/STEP-Tag
         run: echo "In STEP-Tag directory"
