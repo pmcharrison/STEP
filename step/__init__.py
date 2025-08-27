@@ -532,6 +532,7 @@ class StepTagPage(StepPage):
         n_stars: int,
         javascript_translations: dict,
         jinja_translations: dict,
+        assets: dict[str, Asset],
         flagging_threshold: int = DEFAULT_FLAGGING_THRESHOLD,
         complete_on_n_frozen: int = 2,
         auto_complete: bool = True,
@@ -554,7 +555,7 @@ class StepTagPage(StepPage):
             freeze_on_n_ratings,
             freeze_on_mean_rating,
             label="StepTagTrial",
-            prompt=stimulus.prompt(text=""),
+            prompt=stimulus.prompt(text="", assets=assets),
             control=StepTagControl(
                 frozen_candidates=frozen_candidates,
                 unfrozen_candidates=unfrozen_candidates,
@@ -579,10 +580,16 @@ class StepTagTrial(StepTrial):
         used_tags = self.var.get("used_tags")
         frozen_candidates = self.var.get("frozen_candidates")
         unfrozen_candidates = self.var.get("unfrozen_candidates")
-        stimulus = self.node.definition.stimulus
+
+        try:
+            stimulus = self.node.definition.stimulus
+        except AttributeError:
+            import pydevd_pycharm
+            pydevd_pycharm.settrace('localhost', port=12345, stdoutToServer=True, stderrToServer=True)
 
         return StepTagPage(
             stimulus=stimulus,
+            assets=self.assets,
             frozen_candidates=frozen_candidates,
             unfrozen_candidates=unfrozen_candidates,
             available_tags=available_tags,
@@ -850,7 +857,7 @@ class StepTrialMaker(ImitationChainTrialMaker):
         )
         if node_candidates_num_frozen >= self.complete_on_n_frozen:
             node.network.full = True
-            db.session.commit()
+            # db.session.commit()
 
     def format_answer(self, trial, raw_answer):
         raise NotImplementedError("Must be implemented by subclass.")
@@ -904,7 +911,7 @@ class Vocabulary(SQLBase, SQLMixin):
             if Vocabulary.query.filter_by(word=word).count() == 0:
                 new_word = Vocabulary(word=word)
                 db.session.add(new_word)
-        db.session.commit()
+        # db.session.commit()
 
 
 class StepTag(StepTrialMaker):
@@ -1046,7 +1053,7 @@ class StepTag(StepTrialMaker):
             stimulus=stimulus,
             candidates=candidates,
             completed=n_frozen >= self.complete_on_n_frozen,
-        ).to_dict()
+        )
 
     def prepare_trial(self, experiment, participant):
         trial, trial_status = super().prepare_trial(experiment, participant)
