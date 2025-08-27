@@ -581,11 +581,7 @@ class StepTagTrial(StepTrial):
         frozen_candidates = self.var.get("frozen_candidates")
         unfrozen_candidates = self.var.get("unfrozen_candidates")
 
-        try:
-            stimulus = self.node.definition.stimulus
-        except AttributeError:
-            import pydevd_pycharm
-            pydevd_pycharm.settrace('localhost', port=12345, stdoutToServer=True, stderrToServer=True)
+        stimulus = self.node.definition.stimulus
 
         return StepTagPage(
             stimulus=stimulus,
