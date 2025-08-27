@@ -32,3 +32,4 @@ class Exp(psynet.experiment.Experiment):
         ),
     )
 
+    test_n_bots = 20
