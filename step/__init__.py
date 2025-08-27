@@ -5,12 +5,14 @@ import random
 from builtins import isinstance
 
 from os.path import basename
+import string
 from typing import List, Optional
 from importlib import resources
 
 from dallinger import db
 from markupsafe import Markup
 from psynet.asset import Asset, ExternalAsset, asset
+from psynet.bot import BotResponse
 from psynet.data import SQLBase, SQLMixin, register_table
 from psynet.modular_page import (
     AudioPrompt,
@@ -84,7 +86,7 @@ class StepTagStimulus(StepStimulus):
     def preview(self, assets: dict[str, Asset]):
         raise NotImplementedError("This method should be implemented in a subclass.")
 
-    def prompt(self, text, **kw):
+    def prompt(self, text, assets: dict[str, Asset], **kw):
         raise NotImplementedError("This method should be implemented in a subclass.")
 
 
@@ -236,6 +238,39 @@ class StepTagControl(Control):
     def metadata(self):
         return self.__dict__
 
+    def get_bot_response(self, experiment, bot, page, prompt):
+        # Get all candidate tags (unfrozen)
+        candidate_tags = [c.text for c in self.unfrozen_candidates]
+
+        # Randomly assign a rating (1 to n_stars) or flag (0) to each
+        ratings = {}
+        for tag in candidate_tags:
+            if random.random() < 0.2:  # 20% chance to flag
+                ratings[tag] = 0
+            else:
+                ratings[tag] = random.randint(1, self.n_stars)
+
+        # Generate 1-2 new tags not already present
+        existing_tags = set(candidate_tags)
+        n_new = random.randint(1, 2)
+
+        new_tags = []
+        while len(new_tags) < n_new:
+            tag = self.make_random_tag()
+            if tag not in existing_tags and tag not in new_tags:
+                new_tags.append(tag)
+
+        return BotResponse(
+            raw_answer={
+                'new_tags': new_tags,
+                'ratings': ratings
+            }
+        )
+
+    def make_random_tag(self):
+        return ''.join(random.choices(string.ascii_lowercase, k=random.randint(4, 8)))
+
+
 
 class StepDefinition:
     def __init__(
@@ -277,8 +312,6 @@ class StepTagDefinition(StepDefinition):
             "completed": self.completed,
         }
 
-
-
 class StepPage(ModularPage):
     def __init__(
         self,
@@ -294,6 +327,7 @@ class StepPage(ModularPage):
         self.freeze_on_n_ratings = freeze_on_n_ratings
         self.freeze_on_mean_rating = freeze_on_mean_rating
         self.complete_on_n_frozen = complete_on_n_frozen
+
 
 
 class StepTrial(ImitationChainTrial):
