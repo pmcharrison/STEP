@@ -1,0 +1,20 @@
+{
+    "build": { "dockerfile": "../Dockerfile" },
+    "features": {
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
+    },
+    "postCreateCommand": "bash .devcontainer/postcreate.sh",
+    "postAttachCommand": "bash .devcontainer/postattach.sh",
+    "customizations": {
+        "vscode": {
+            "settings": {
+                "python.linting.enabled": true
+            },
+            "extensions": [
+                "ms-python.python",
+                "ms-python.vscode-pylance",
+                "ms-ossdata.vscode-pgsql"
+            ]
+        }
+    }
+}
