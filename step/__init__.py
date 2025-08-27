@@ -6,7 +6,7 @@ from builtins import isinstance
 
 from os.path import basename
 import string
-from typing import List, Optional
+from typing import List, Optional, Union
 from importlib import resources
 
 from dallinger import db
@@ -605,11 +605,13 @@ class StepNetwork(ImitationChainNetwork):
 
 class StepNode(ImitationChainNode):
     time_estimate = Column(Integer)
+    stimulus_name = Column(String)
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         if self.degree > 0:
             self.assets = self.parent.assets
+        self.stimulus_name = self.definition.name
 
     def create_initial_seed(self, experiment, participant):
         return {}
@@ -745,10 +747,16 @@ class StepTrialMaker(ImitationChainTrialMaker):
             kwargs["max_trials_per_participant"] = max_trials_per_participant
         kwargs["recruit_mode"] = "n_trials"
         assert kwargs["start_nodes"] is not None, "You must specify start nodes."
-        assert (
-            len(kwargs["start_nodes"]) >= expected_trials_per_participant
-        ), "You must specify at least as many start nodes as trials per participant."
-        kwargs["chains_per_experiment"] = len(kwargs["start_nodes"])
+
+        if isinstance(kwargs["start_nodes"], list):
+            assert (
+                len(kwargs["start_nodes"]) >= expected_trials_per_participant
+            ), "You must specify at least as many start nodes as trials per participant."
+            chains_per_experiment = len(kwargs["start_nodes"])
+        else:
+            chains_per_experiment = None
+
+        kwargs["chains_per_experiment"] = chains_per_experiment
 
         assert (
             freeze_on_mean_rating <= n_stars
@@ -761,12 +769,16 @@ class StepTrialMaker(ImitationChainTrialMaker):
 
         self.expected_trials_per_participant = expected_trials_per_participant
         self.view_time_estimate = view_time_estimate
-        time_estimates = [
-            node.estimate_time(rating_time_estimate, creating_time_estimate, view_time_estimate)
-            for node in kwargs["start_nodes"]
-        ]
 
-        self.mean_time_estimate = sum(time_estimates) / len(time_estimates)
+        # This logic no longer works because the nodes might not be available yet (they could just be a callable)
+        # time_estimates = [
+        #     node.estimate_time(rating_time_estimate, creating_time_estimate, view_time_estimate)
+        #     for node in kwargs["start_nodes"]
+        # ]
+        # self.mean_time_estimate = sum(time_estimates) / len(time_estimates)
+
+        self.mean_time_estimate = 4 * rating_time_estimate + creating_time_estimate
+
         self.time_budget = (
             self.mean_time_estimate * self.expected_trials_per_participant
         )
@@ -915,7 +927,7 @@ class StepTag(StepTrialMaker):
 
     def __init__(
         self,
-        stimuli: dict[str, Asset],
+        stimuli: Union[dict[str, Asset], callable],
         vocabulary: List[str] = None,
         complete_on_n_frozen: int = 2,
         rating_time_estimate: int = 3,  # set based on pilot data
@@ -924,18 +936,28 @@ class StepTag(StepTrialMaker):
         *args,
         **kwargs,
     ):
-        start_nodes = [
-            StepNode(
-                definition=StepTagDefinition(
-                    name=name,
-                    stimulus=url_to_stimulus(asset.extension),
-                ),
-                assets={
-                    get_url_type(asset.extension): asset
-                }
-            )
-            for name, asset in stimuli.items()
-        ]
+        assert "start_nodes" not in kwargs
+
+        def start_nodes():
+            nonlocal stimuli
+
+            if callable(stimuli):
+                stimuli = stimuli()
+
+            assert isinstance(stimuli, dict), f"stimuli must be a dict, not {type(stimuli)}"
+
+            return [
+                StepNode(
+                    definition=StepTagDefinition(
+                        name=name,
+                        stimulus=url_to_stimulus(asset.extension),
+                    ),
+                    assets={
+                        get_url_type(asset.extension): asset
+                    }
+                )
+                for name, asset in stimuli.items()
+            ]
 
         kwargs["start_nodes"] = start_nodes
 
@@ -1097,18 +1119,15 @@ class StepTag(StepTrialMaker):
     def create_networks_across(self, experiment):
         super().create_networks_across(experiment)
 
-        if isinstance(self.start_nodes[0].definition, StepTagDefinition):
-            initial_tags = [
-                candidate.text
-                for node in self.start_nodes
-                for candidate in node.definition.candidates
-            ]
-        else:
-            initial_tags = [
-                candidate['text']
-                for node in self.start_nodes
-                for candidate in node.definition['candidates']
-            ]
+        # TODO: It would be more efficient if we could get the nodes directly from create_networks_across
+        start_nodes = db.session.query(StepNode).filter_by(trial_maker_id=self.id).all()
+
+        initial_tags = [
+            candidate.text
+            for node in start_nodes
+            for candidate in node.definition.candidates
+        ]
+
         initial_vocabulary = list(set(initial_tags + self.vocabulary))
         Vocabulary.extend(initial_vocabulary)
 
