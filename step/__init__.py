@@ -5,12 +5,14 @@ import random
 from builtins import isinstance
 
 from os.path import basename
-from typing import List
+import string
+from typing import List, Optional
 from importlib import resources
 
 from dallinger import db
 from markupsafe import Markup
-from psynet.asset import ExternalAsset
+from psynet.asset import Asset, ExternalAsset, asset
+from psynet.bot import BotResponse
 from psynet.data import SQLBase, SQLMixin, register_table
 from psynet.modular_page import (
     AudioPrompt,
@@ -81,13 +83,10 @@ class StepStimulus:
     pass
 
 class StepTagStimulus(StepStimulus):
-    def __init__(self, url):
-        self.url = url
-
-    def preview(self):
+    def preview(self, assets: dict[str, Asset]):
         raise NotImplementedError("This method should be implemented in a subclass.")
 
-    def prompt(self, text, **kw):
+    def prompt(self, text, assets: dict[str, Asset], **kw):
         raise NotImplementedError("This method should be implemented in a subclass.")
 
 
@@ -96,10 +95,11 @@ class StepTagImage(StepTagStimulus):
     height = 350
     extensions = (".jpg", ".jpeg", ".png", ".gif")
 
-    def preview(self):
-        return f'<img src = "{self.url}" style="max-width:{self.width}px; width:100%; max-height="{self.height}">'
+    def preview(self, assets: dict[str, Asset]):
+        url = assets["image"].url
+        return f'<img src = "{url}" style="max-width:{self.width}px; width:100%; max-height="{self.height}">'
 
-    def prompt(self, text, **kw):
+    def prompt(self, text, assets: dict[str, Asset], **kw):
         css = f"""
         <style>
         #prompt-image {{
@@ -109,26 +109,24 @@ class StepTagImage(StepTagStimulus):
         </style>
         """
         text = Markup(text + css)
-        return ImagePrompt(self.url, text, width=None, height=None)
+        url = assets["image"].url
+        return ImagePrompt(url, text, width=None, height=None)
 
 
 class StepTagAudioVisual(StepTagStimulus):
     max_height = 350
 
-    def __init__(self, audio_url, img_url):
-        self.audio_url = audio_url
-        self.img_url = img_url
-        super().__init__(audio_url)
-
-    def preview(self):
+    def preview(self, assets: dict[str, Asset]):
+        image_url = assets["image"].url
+        audio_url = assets["audio"].url
         return f"""
-        <img src = "{self.url}" style="width:100%; max-height="{self.max_height}">
+        <img src = "{image_url}" style="width:100%; max-height="{self.max_height}">
         <audio controls>
-            <source src="{self.audio_url}">
+            <source src="{audio_url}">
         </audio>
         """
 
-    def prompt(self, text, **kw):
+    def prompt(self, text, assets: dict[str, Asset], **kw):
         css = """
          <style>
             #prompt-text {
@@ -145,9 +143,11 @@ class StepTagAudioVisual(StepTagStimulus):
             }
         </style>
         """
-        prompt = f'<img src = "{self.img_url}" class="prompt_img"> <h3>{text}</h3>{css}'
+        image_url = assets["image"].url
+        audio_url = assets["audio"].url
+        prompt = f'<img src = "{image_url}" class="prompt_img"> <h3>{text}</h3>{css}'
         return AudioPrompt(
-            audio=self.audio_url,
+            audio=audio_url,
             text=Markup(prompt),
         )
 
@@ -156,11 +156,11 @@ class StepTagAudio(StepTagStimulus):
     controls = True
     extensions = (".mp3", ".wav")
 
-    def preview(self):
-        return f'<audio src = "{self.url}" controls>'
+    def preview(self, assets: dict[str, Asset]):
+        return f'<audio src = "{assets["audio"].url}" controls>'
 
-    def prompt(self, text, **kw):
-        return AudioPrompt(self.url, text, controls=kw.get("controls", self.controls))
+    def prompt(self, text, assets: dict[str, Asset], **kw):
+        return AudioPrompt(assets["audio"].url, text, controls=kw.get("controls", self.controls))
 
 
 class StepTagVideo(StepTagStimulus):
@@ -168,12 +168,14 @@ class StepTagVideo(StepTagStimulus):
     width = 300
     extensions = (".mp4", ".webm")
 
-    def preview(self):
-        return f'<video src = "{self.url}" style="max-width:{self.width}px; width:100%;" controls>'
+    def preview(self, assets: dict[str, Asset]):
+        url = assets["video"].url
+        return f'<video src = "{url}" style="max-width:{self.width}px; width:100%;" controls>'
 
-    def prompt(self, text, **kw):
+    def prompt(self, text, assets: dict[str, Asset], **kw):
+        url = assets["video"].url
         return VideoPrompt(
-            self.url,
+            url,
             text,
             controls=kw.get("controls", self.controls),
             width=kw.get("width", self.width),
@@ -184,22 +186,35 @@ def urls_to_start_nodes(urls):
     return [
         StepNode(
             definition=StepTagDefinition(
+                name=url,
                 stimulus=url_to_stimulus(url),
-            ).to_dict()
+            ),
+            assets={
+                get_url_type(url): asset(url)
+            }
         )
         for url in urls
     ]
 
-
-def url_to_stimulus(url):
+def get_url_type(url):
     if url.endswith(StepTagAudio.extensions):
-        return StepTagAudio(url)
+        return "audio"
     elif url.endswith(StepTagVideo.extensions):
-        return StepTagVideo(url)
+        return "video"
     elif url.endswith(StepTagImage.extensions):
-        return StepTagImage(url)
+        return "image"
     else:
         raise ValueError(f"Unsupported file type: {url}")
+
+
+def url_to_stimulus(url):
+    url_type = get_url_type(url)
+    if url_type == "audio":
+        return StepTagAudio()
+    elif url_type == "video":
+        return StepTagVideo()
+    elif url_type == "image":
+        return StepTagImage()
 
 
 def tags_to_candidates(tags: List[str]):
@@ -223,11 +238,50 @@ class StepTagControl(Control):
     def metadata(self):
         return self.__dict__
 
+    def get_bot_response(self, experiment, bot, page, prompt):
+        # Get all candidate tags (unfrozen)
+        candidate_tags = [c.text for c in self.unfrozen_candidates]
+
+        # Randomly assign a rating (1 to n_stars) or flag (0) to each
+        ratings = {}
+        for tag in candidate_tags:
+            if random.random() < 0.2:  # 20% chance to flag
+                ratings[tag] = 0
+            else:
+                ratings[tag] = random.randint(1, self.n_stars)
+
+        # Generate 1-2 new tags not already present
+        existing_tags = set(candidate_tags)
+        n_new = random.randint(1, 2)
+
+        new_tags = []
+        while len(new_tags) < n_new:
+            tag = self.make_random_tag()
+            if tag not in existing_tags and tag not in new_tags:
+                new_tags.append(tag)
+
+        return BotResponse(
+            raw_answer={
+                'new_tags': new_tags,
+                'ratings': ratings
+            }
+        )
+
+    def make_random_tag(self):
+        return ''.join(random.choices(string.ascii_lowercase, k=random.randint(4, 8)))
+
+
 
 class StepDefinition:
-    def __init__(self, stimulus: StepStimulus, candidates: List[StepCandidate] = None):
+    def __init__(
+            self,
+            name: str,
+            stimulus: Optional[StepTagStimulus] = None,
+            candidates: Optional[List[StepCandidate]] = None
+        ):
         if candidates is None:
             candidates = []
+        self.name = name
         self.stimulus = stimulus
         self.candidates = candidates
 
@@ -235,38 +289,28 @@ class StepDefinition:
 class StepTagDefinition(StepDefinition):
     def __init__(
         self,
-        url: str = None,
-        tags: List[str] = None,
+        *,
+        name: str,
+        stimulus: StepTagStimulus,
+        tags: Optional[List[str]] = None,
         completed=False,
-        stimulus:StepTagStimulus=None,
-        candidates:List[StepCandidate]=None,
+        candidates: Optional[List[StepCandidate]]=None,
     ):
-        assert (
-            sum([el is None for el in [url, stimulus]]) == 1
-        ), "Specify either url or stimulus."
-        assert (
-            sum([el is not None for el in [tags, candidates]]) != 2
-        ), "You cannot both specify tags and candidates."
-        if stimulus is None:
-            assert (
-                url is not None
-            ), "if there is no provided stimulus in StepTagDefinition, you must provide a non-empty url."
-            stimulus = url_to_stimulus(url)
+        if tags is not None and candidates is not None:
+            raise ValueError("You cannot both specify tags and candidates.")
+
         if tags is None:
             tags = []
         if candidates is None:
             candidates = tags_to_candidates(tags)
         self.completed = completed
-        super().__init__(stimulus, candidates)
+        super().__init__(name, stimulus, candidates)
 
     def to_dict(self):
         return {
-            "stimulus": self.stimulus.url,
             "candidates": [candidate.__dict__ for candidate in self.candidates],
             "completed": self.completed,
         }
-
-
 
 class StepPage(ModularPage):
     def __init__(
@@ -283,6 +327,7 @@ class StepPage(ModularPage):
         self.freeze_on_n_ratings = freeze_on_n_ratings
         self.freeze_on_mean_rating = freeze_on_mean_rating
         self.complete_on_n_frozen = complete_on_n_frozen
+
 
 
 class StepTrial(ImitationChainTrial):
@@ -384,61 +429,61 @@ class StepTrial(ImitationChainTrial):
             .tag-container {
                 display: inline-block;
             }
-        
+
             .tag-item {
                 float: left;
                 border-radius: 0.25rem;
                 overflow: hidden;
                 font-weight: bold;
             }
-        
+
             .tag-item .btn {
                 border: none;
                 overflow: hidden;
             }
-        
+
             .tag-item .btn-group > .btn:not(:first-child) {
                 margin: 0;
             }
-        
+
             .tag-name {
                 font-size: 3em;
                 color: white;
                 padding: 0 0.5em;
             }
-        
+
             .icon {
                 width: 2em;
                 height: 2em;
             }
-            
+
             .icon input {
                 display: none;
             }
-        
-        
+
+
             .flag {
                 background: url('data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="white" class="bi bi-flag-fill" viewBox="0 0 16 16"%3E%3Cpath d="M14.778.085A.5.5 0 0 1 15 .5V8a.5.5 0 0 1-.314.464L14.5 8l.186.464-.003.001-.006.003-.023.009a12.435 12.435 0 0 1-.397.15c-.264.095-.631.223-1.047.35-.816.252-1.879.523-2.71.523-.847 0-1.548-.28-2.158-.525l-.028-.01C7.68 8.71 7.14 8.5 6.5 8.5c-.7 0-1.638.23-2.437.477A19.626 19.626 0 0 0 3 9.342V15.5a.5.5 0 0 1-1 0V.5a.5.5 0 0 1 1 0v.282c.226-.079.496-.17.79-.26C4.606.272 5.67 0 6.5 0c.84 0 1.524.277 2.121.519l.043.018C9.286.788 9.828 1 10.5 1c.7 0 1.638-.23 2.437-.477a19.587 19.587 0 0 0 1.349-.476l.019-.007.004-.002h.001"/%3E%3C/svg%3E') no-repeat;
                 background-position: center;
             }
-        
+
             .star {
                 background-image: url('data:image/svg+xml,%3C%3Fxml version="1.0" encoding="utf-8"%3F%3E%3Csvg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 16 16" style="enable-background:new 0 0 16 16;" xml:space="preserve"%3E%3Cstyle type="text/css"%3E.st0%7Bfill:%23FFFFFF;%7D%3C/style%3E%3Cg%3E%3Cpolygon class="st0" points="8,2.6 9.8,6.1 13.7,6.7 10.8,9.5 11.5,13.4 8,11.5 4.5,13.4 5.2,9.5 2.3,6.7 6.2,6.1 "/%3E%3C/g%3E%3C/svg%3E');
             }
-        
+
             path {
                 fill: #fff;
             }
-        
+
             .badge {
                 font-size: 1em;
             }
-        
+
             .media-item {
                 float: left;
                 width: 100%;
             }
-            
+
             .icon.selected {
                 color: var(--bs-btn-active-color) !important;
                 background-color: var(--bs-btn-active-bg) !important;
@@ -478,6 +523,7 @@ class StepTrial(ImitationChainTrial):
 class StepTagPage(StepPage):
     def __init__(
         self,
+        *,
         stimulus: StepTagStimulus,
         frozen_candidates: List[StepCandidate],
         unfrozen_candidates: List[StepCandidate],
@@ -486,6 +532,7 @@ class StepTagPage(StepPage):
         n_stars: int,
         javascript_translations: dict,
         jinja_translations: dict,
+        assets: dict[str, Asset],
         flagging_threshold: int = DEFAULT_FLAGGING_THRESHOLD,
         complete_on_n_frozen: int = 2,
         auto_complete: bool = True,
@@ -508,7 +555,7 @@ class StepTagPage(StepPage):
             freeze_on_n_ratings,
             freeze_on_mean_rating,
             label="StepTagTrial",
-            prompt=stimulus.prompt(text=""),
+            prompt=stimulus.prompt(text="", assets=assets),
             control=StepTagControl(
                 frozen_candidates=frozen_candidates,
                 unfrozen_candidates=unfrozen_candidates,
@@ -534,12 +581,11 @@ class StepTagTrial(StepTrial):
         frozen_candidates = self.var.get("frozen_candidates")
         unfrozen_candidates = self.var.get("unfrozen_candidates")
 
-        if isinstance(self.node.definition, StepTagDefinition):
-            stimulus = self.node.definition.stimulus
-        else:
-            stimulus = url_to_stimulus(self.node.definition["stimulus"])
+        stimulus = self.node.definition.stimulus
+
         return StepTagPage(
             stimulus=stimulus,
+            assets=self.assets,
             frozen_candidates=frozen_candidates,
             unfrozen_candidates=unfrozen_candidates,
             available_tags=available_tags,
@@ -560,6 +606,11 @@ class StepNetwork(ImitationChainNetwork):
 class StepNode(ImitationChainNode):
     time_estimate = Column(Integer)
 
+    def __init__(self, *args, **kwargs):
+        super().__init__(*args, **kwargs)
+        if self.degree > 0:
+            self.assets = self.parent.assets
+
     def create_initial_seed(self, experiment, participant):
         return {}
 
@@ -567,10 +618,16 @@ class StepNode(ImitationChainNode):
         return seed
 
     def cast_definition(self, definition):
-        if isinstance(definition, dict):
-            stimulus = url_to_stimulus(definition["stimulus"])
-            candidates = [StepCandidate(**cand) for cand in definition['candidates']]
-            return StepTagDefinition(stimulus=stimulus, candidates=candidates, completed=definition["completed"])
+        assert isinstance(definition, StepTagDefinition)
+        # if isinstance(definition, dict):
+        #     stimulus = definition["stimulus"]
+        #     candidates = [StepCandidate(**cand) for cand in definition['candidates']]
+        #     return StepTagDefinition(
+        #         name=definition["name"],
+        #         stimulus=stimulus,
+        #         candidates=candidates,
+        #         completed=definition["completed"]
+        #     )
         return definition
 
     def get_definitions(self):
@@ -671,10 +728,13 @@ class StepTrialMaker(ImitationChainTrialMaker):
         debug=False,
         auto_complete=True,
         show_instructions=True,
-        practice_stimuli: List[StepStimulus] = None,
+        practice_stimuli: Optional[List[StepStimulus]] = None,
         *args,
         **kwargs,
     ):
+        if practice_stimuli is not None:
+            raise NotImplementedError("Practice stimuli are not supported yet.")
+
         kwargs["id_"] = label
         kwargs["network_class"] = StepNetwork
         kwargs["node_class"] = node_class
@@ -772,7 +832,6 @@ class StepTrialMaker(ImitationChainTrialMaker):
                 candidate.is_flagged = False
                 new_content_container.pop(parsed_candidate_text)
         else:
-            rating = rating
             candidate = self._update_candidate(candidate, rating)
             if candidate.is_frozen:
                 n_frozen += 1
@@ -794,7 +853,7 @@ class StepTrialMaker(ImitationChainTrialMaker):
         )
         if node_candidates_num_frozen >= self.complete_on_n_frozen:
             node.network.full = True
-            db.session.commit()
+            # db.session.commit()
 
     def format_answer(self, trial, raw_answer):
         raise NotImplementedError("Must be implemented by subclass.")
@@ -848,7 +907,7 @@ class Vocabulary(SQLBase, SQLMixin):
             if Vocabulary.query.filter_by(word=word).count() == 0:
                 new_word = Vocabulary(word=word)
                 db.session.add(new_word)
-        db.session.commit()
+        # db.session.commit()
 
 
 class StepTag(StepTrialMaker):
@@ -856,34 +915,51 @@ class StepTag(StepTrialMaker):
 
     def __init__(
         self,
+        stimuli: dict[str, Asset],
         vocabulary: List[str] = None,
         complete_on_n_frozen: int = 2,
         rating_time_estimate: int = 3,  # set based on pilot data
         creating_time_estimate: int = 6,  # set based on pilot data
-        deposit_assets: bool = True,
+        # deposit_assets: bool = True,
         *args,
         **kwargs,
     ):
+        start_nodes = [
+            StepNode(
+                definition=StepTagDefinition(
+                    name=name,
+                    stimulus=url_to_stimulus(asset.extension),
+                ),
+                assets={
+                    get_url_type(asset.extension): asset
+                }
+            )
+            for name, asset in stimuli.items()
+        ]
+
+        kwargs["start_nodes"] = start_nodes
+
         if vocabulary is None:
             vocabulary = []
         self.vocabulary = vocabulary
-        assets = []
+
 
         # Register assets
-        if deposit_assets:
-            for node in kwargs["start_nodes"]:
-                if isinstance(node.definition, StepTagDefinition):
-                    stimulus = node.definition.stimulus
-                    url = stimulus.url
-                else:
-                    url = node.definition['stimulus']
-                fname = basename(url)
-                short_hash = hashlib.sha1(fname.encode()).hexdigest()
-                # same filename is okay if they are from a different url
-                local_key = f"{short_hash}_{fname}"
-                asset = ExternalAsset(url=url, local_key=local_key)
-                node.asset = asset
-                assets.append(asset)
+        assets = []
+        # if deposit_assets:
+        #     for node in kwargs["start_nodes"]:
+        #         if isinstance(node.definition, StepTagDefinition):
+        #             stimulus = node.definition.stimulus
+        #             url = stimulus.url
+        #         else:
+        #             url = node.definition['stimulus']
+        #         fname = basename(url)
+        #         short_hash = hashlib.sha1(fname.encode()).hexdigest()
+        #         # same filename is okay if they are from a different url
+        #         local_key = f"{short_hash}_{fname}"
+        #         asset = ExternalAsset(url=url, local_key=local_key)
+        #         node.asset = asset
+        #         assets.append(asset)
 
         if "trial_class" in kwargs:
             trial_class=kwargs["trial_class"]
@@ -964,16 +1040,16 @@ class StepTag(StepTrialMaker):
             else:
                 candidates[i].is_new = False
 
-        if isinstance(trial.node.definition, StepTagDefinition):
-            stimulus = trial.node.definition.stimulus
-        else:
-            stimulus = url_to_stimulus(trial.node.definition["stimulus"])
+        assert isinstance(trial.node.definition, StepTagDefinition)
+        name = trial.node.definition.name
+        stimulus = trial.node.definition.stimulus
 
         return StepTagDefinition(
+            name=name,
             stimulus=stimulus,
             candidates=candidates,
             completed=n_frozen >= self.complete_on_n_frozen,
-        ).to_dict()
+        )
 
     def prepare_trial(self, experiment, participant):
         trial, trial_status = super().prepare_trial(experiment, participant)

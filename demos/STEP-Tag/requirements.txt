@@ -1,1 +1,11 @@
+# This pulls the latest version of STEP from the main branch.
+# When running experiments yourself, it's best to use a specific version
+# (e.g. step==0.1.0),
+# or a particular commit on the GitHub repository
+# (e.g. step@git+https://github.com/pmcharrison/step.git@974b879#egg=step).
+step@git+https://github.com/pmcharrison/step.git
+
+# Here we are also specifying that we want the latest development versions of PsyNet and Dallinger.
+# You could alternatively use pinned versions (e.g. psynet==12.1.0).
 psynet@git+https://gitlab.com/PsyNetDev/PsyNet#egg=psynet
+dallinger@git+https://github.com/Dallinger/Dallinger#egg=dallinger
