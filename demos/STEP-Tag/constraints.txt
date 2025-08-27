@@ -4,7 +4,7 @@
 #
 #    dallinger generate-constraints
 #
-# Compiled from a requirement.txt file with md5sum: 230877d5f5fbbc04ccc91d288a0c4653
+# Compiled from a requirement.txt file with md5sum: cb96d33b5a4afbc3cafe5a3cfc85ced4
 #
 ansi2html==1.9.2
     # via
@@ -85,8 +85,9 @@ cryptography==45.0.6
     #   -c https:/raw.githubusercontent.com/Dallinger/Dallinger/v11.4.0/dev-requirements.txt
     #   paramiko
     #   pyopenssl
-dallinger[docker]==11.4.0
+dallinger[docker] @ git+https://github.com/Dallinger/Dallinger
     # via
+    #   -r /var/folders/9w/3cqj1lms4t5c9n3w5k7m95y80000gn/T/tmpg0jwziew/requirements.txt
     #   psynet
     #   step
 decorator==5.2.1
@@ -213,8 +214,6 @@ matplotlib-inline==0.1.7
     # via
     #   -c https:/raw.githubusercontent.com/Dallinger/Dallinger/v11.4.0/dev-requirements.txt
     #   ipython
-mock==5.2.0
-    # via psynet
 numpy==2.2.6
     # via
     #   -c https:/raw.githubusercontent.com/Dallinger/Dallinger/v11.4.0/dev-requirements.txt
@@ -281,8 +280,10 @@ psycopg2==2.9.10
     #   -c https:/raw.githubusercontent.com/Dallinger/Dallinger/v11.4.0/dev-requirements.txt
     #   dallinger
     #   sqlalchemy-postgres-copy
-psynet==12.1.1
-    # via step
+psynet @ git+https://gitlab.com/PsyNetDev/PsyNet
+    # via
+    #   -r /var/folders/9w/3cqj1lms4t5c9n3w5k7m95y80000gn/T/tmpg0jwziew/requirements.txt
+    #   step
 ptyprocess==0.7.0
     # via
     #   -c https:/raw.githubusercontent.com/Dallinger/Dallinger/v11.4.0/dev-requirements.txt
@@ -382,6 +383,8 @@ six==1.17.0
     #   dallinger
     #   python-dateutil
     #   sqlalchemy-postgres-copy
+slack-sdk==3.36.0
+    # via psynet
 sniffio==1.3.1
     # via
     #   -c https:/raw.githubusercontent.com/Dallinger/Dallinger/v11.4.0/dev-requirements.txt
