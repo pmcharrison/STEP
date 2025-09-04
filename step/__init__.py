@@ -14,6 +14,7 @@ from markupsafe import Markup
 from psynet.asset import Asset, ExternalAsset, asset
 from psynet.bot import BotResponse
 from psynet.data import SQLBase, SQLMixin, register_table
+from psynet.experiment import pre_deploy_constant
 from psynet.modular_page import (
     AudioPrompt,
     Control,
@@ -717,7 +718,7 @@ class StepTrialMaker(ImitationChainTrialMaker):
         expected_trials_per_participant,
         max_iterations,
         label="StepTrialMaker",
-        max_trials_per_participant: int = None,
+        max_trials_per_participant: Union[None, int, str] = None,
         flagging_threshold: int = 2,
         n_stars: int = DEFAULT_N_STARS,
         freeze_on_n_ratings: int = 3,
@@ -937,6 +938,23 @@ class StepTag(StepTrialMaker):
         **kwargs,
     ):
         assert "start_nodes" not in kwargs
+
+        self.n_stimuli = pre_deploy_constant(
+            "n_stimuli",
+            lambda: len(stimuli()) if callable(stimuli) else len(stimuli),
+        )
+
+        if complete_on_n_frozen == "n_stimuli":
+            complete_on_n_frozen = self.n_stimuli
+
+        for key in [
+            "expected_trials_per_participant",
+            "max_trials_per_participant",
+            "max_iterations",
+            "complete_on_n_frozen",
+        ]:
+            if key in kwargs and kwargs[key] == "n_stimuli":
+                kwargs[key] = self.n_stimuli
 
         def start_nodes():
             nonlocal stimuli
