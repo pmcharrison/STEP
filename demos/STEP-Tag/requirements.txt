@@ -8,4 +8,3 @@ step@git+https://github.com/pmcharrison/step.git
 # Here we are also specifying that we want the latest development versions of PsyNet and Dallinger.
 # You could alternatively use pinned versions (e.g. psynet==12.1.0).
 psynet@git+https://gitlab.com/PsyNetDev/PsyNet#egg=psynet
-dallinger@git+https://github.com/Dallinger/Dallinger#egg=dallinger
