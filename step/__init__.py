@@ -35,7 +35,8 @@ from sqlalchemy import Column, Integer, String
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-__version__ = "0.0.1"
+with open(os.path.join(here, "VERSION")) as _f:
+    __version__ = _f.read().strip()
 
 PACKAGE_NAME = "step"
 

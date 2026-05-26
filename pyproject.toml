@@ -1,0 +1,86 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.version]
+path = "step/VERSION"
+pattern = "^(?P<version>.+)$"
+
+[project]
+name = "psynet-step"
+dynamic = ["version"]
+authors = [
+    {name = "Pol van Rijn", email = "pol.van-rijn@ae.mpg.de"},
+    {name = "Harin Lee"},
+    {name = "Peter Harrison", email = "pmch2@cam.ac.uk"},
+    {name = "Nori Jacoby", email = "nori.jacoby@ae.mpg.de"},
+]
+maintainers = [
+    {name = "Peter Harrison", email = "pmch2@cam.ac.uk"},
+    {name = "Frank Höger", email = "fh337@cornell.edu"},
+]
+license = {file = "LICENSE"}
+description = "STEP – Sequential Transmission Evaluation Pipeline for PsyNet experiments"
+keywords = ["psychology", "experiments", "online", "evaluation", "tagging", "psynet"]
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Science/Research",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Scientific/Engineering",
+]
+
+dependencies = [
+    "markupsafe",
+    "sqlalchemy",
+]
+
+[project.optional-dependencies]
+# `step` is a PsyNet plugin — every class inherits from psynet / dallinger
+# base classes. Declaring psynet as a hard runtime dependency would create a
+# circular install if PsyNet ever adds psynet-step to its own extras. We
+# expose it as an optional extra instead; users running a PsyNet experiment
+# will already have psynet installed.
+psynet = [
+    "psynet",
+]
+dev = [
+    "pytest",
+]
+publish = [
+    "build",
+    "twine",
+]
+
+[project.urls]
+Homepage = "https://github.com/pmcharrison/STEP"
+Repository = "https://github.com/pmcharrison/STEP"
+Issues = "https://github.com/pmcharrison/STEP/issues"
+
+[tool.hatch.build.targets.wheel]
+include = ["/step"]
+
+[tool.hatch.build.targets.wheel.force-include]
+"step/VERSION" = "step/VERSION"
+
+[tool.hatch.build.targets.sdist]
+exclude = [
+    "/.github",
+    "/.flake8",
+    "/.pre-commit-config.yaml",
+    "/.DS_Store",
+    "/.venv*",
+    "/demos",
+    "/__init__.py",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["demos/STEP-Tag"]
