@@ -11,16 +11,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v4
+        uses: actions/checkout@v6
 
       - name: Install heroku CLI
         run: |
           curl https://cli-assets.heroku.com/install.sh | sh
 
-      - name: Set up Python 3.12.10
-        uses: actions/setup-python@v5
+      - name: Set up Python 3.13
+        uses: actions/setup-python@v6
         with:
-          python-version: '3.12.10'
+          python-version: '3.13'
 
       - name: Install pip and wheel
         run: |
