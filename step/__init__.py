@@ -802,25 +802,22 @@ class StepTrialMaker(ImitationChainTrialMaker):
         self.rating_time_estimate = rating_time_estimate
         self.creating_time_estimate = creating_time_estimate
 
-    def custom_chain_filter(self, chains, participant, experiment):
-        """Drop chains whose next trial would exceed the participant's time budget."""
+    def custom_network_filter(self, candidates, participant):
         visited_trials = self.trial_class.query.filter_by(
             trial_maker_id=self.id, participant_id=participant.id
         ).all()
         total_allocated_time = sum([trial.allocated_time for trial in visited_trials])
         time_left = self.time_budget - total_allocated_time
         logger.info(f"Participant {participant.id} has {time_left} seconds left.")
-        return [
-            chain
-            for chain in chains
-            if chain.head is not None
-            and chain.head.estimate_time(
-                self.rating_time_estimate,
-                self.creating_time_estimate,
-                self.view_time_estimate,
+        candidates = [
+            candidate
+            for candidate in candidates
+            if candidate.head is not None and candidate.head.estimate_time(
+                self.rating_time_estimate, self.creating_time_estimate, self.view_time_estimate
             )
-            <= time_left
+               <= time_left
         ]
+        return candidates
 
     def _update_candidate(self, candidate, rating):
         candidate.previous_ratings.append(rating)
